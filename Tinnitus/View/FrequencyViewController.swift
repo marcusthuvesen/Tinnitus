@@ -10,7 +10,10 @@ import UIKit
 
 class FrequencyViewController: UIViewController {
     
+ 
+    @IBOutlet weak var pinkBackgroundDesign: UIView!
     @IBOutlet weak var playOutlet: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +23,8 @@ class FrequencyViewController: UIViewController {
     
     func setupFrequencyUI(){
         playOutlet.normalButtonUI()
+        pinkBackgroundDesign.layer.cornerRadius = 80
+        pinkBackgroundDesign.transform = CGAffineTransform(rotationAngle: CGFloat(30 * M_PI/180));
     }
 
     @IBAction func playBtn(_ sender: Any) {

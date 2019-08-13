@@ -17,6 +17,10 @@ class Sound_ViewController: UIViewController {
     @IBOutlet weak var fourthBtnOutlet: UIButton!
     @IBOutlet weak var fifthBtnOutlet: UIButton!
     @IBOutlet weak var sixthBtnOutlet: UIButton!
+    @IBOutlet weak var menuBtnOne: UIButton!
+    @IBOutlet weak var menuBtnTwo: UIButton!
+    @IBOutlet weak var menuBtnThree: UIButton!
+    
     
     //Slider Outlets
     @IBOutlet weak var firstSliderOutlet: UISlider!
@@ -26,6 +30,8 @@ class Sound_ViewController: UIViewController {
     @IBOutlet weak var secondOutletBlurImage: UIImageView!
     @IBOutlet weak var thirdOutletBlurImage: UIImageView!
     @IBOutlet weak var fourthOutletBlurImage: UIImageView!
+    @IBOutlet weak var fifthOutletBlurImage: UIImageView!
+    @IBOutlet weak var sixthOutletBlurImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -47,14 +53,15 @@ class Sound_ViewController: UIViewController {
         secondSliderOutlet.setThumbImage(UIImage(named: "storm2"), for: .normal)
         thirdSliderOutlet.setThumbImage(UIImage(named: "sunset2"), for: .normal)
         
-        //reportImageIcon.image = reportImageIcon.image?.imageWithColor(color1: .white)
-       // firstOutletBlurImage.addBlurEffect()
         firstOutletBlurImage.normalButtonUI()
-       // secondOutletBlurImage.addBlurEffect()
         secondOutletBlurImage.normalButtonUI()
         thirdOutletBlurImage.normalButtonUI()
         fourthOutletBlurImage.normalButtonUI()
-       
+        fifthOutletBlurImage.normalButtonUI()
+        sixthOutletBlurImage.normalButtonUI()
+        menuBtnOne.normalButtonUI()
+        menuBtnTwo.normalButtonUI()
+        menuBtnThree.normalButtonUI()
     }
     
     
