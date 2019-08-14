@@ -17,6 +17,14 @@ class Sound_ViewController: UIViewController {
     @IBOutlet weak var fourthBtnOutlet: UIButton!
     @IBOutlet weak var fifthBtnOutlet: UIButton!
     @IBOutlet weak var sixthBtnOutlet: UIButton!
+    @IBOutlet weak var seventhBtnOutlet: UIButton!
+    @IBOutlet weak var eigthBtnOutlet: UIButton!
+    @IBOutlet weak var ninthBtnOutlet: UIButton!
+    @IBOutlet weak var tenthBtnOutlet: UIButton!
+    @IBOutlet weak var eleventhBtnOutlet: UIButton!
+    @IBOutlet weak var twelfthBtnOutlet: UIButton!
+    
+    
     @IBOutlet weak var menuBtnOne: UIButton!
     @IBOutlet weak var menuBtnTwo: UIButton!
     @IBOutlet weak var menuBtnThree: UIButton!
@@ -32,6 +40,12 @@ class Sound_ViewController: UIViewController {
     @IBOutlet weak var fourthOutletBlurImage: UIImageView!
     @IBOutlet weak var fifthOutletBlurImage: UIImageView!
     @IBOutlet weak var sixthOutletBlurImage: UIImageView!
+    @IBOutlet weak var seventhOutletBlurImage: UIImageView!
+    @IBOutlet weak var eigthOutletBlurImage: UIImageView!
+    @IBOutlet weak var ninthOutletBlurImage: UIImageView!
+    @IBOutlet weak var tenthOutletBlurImage: UIImageView!
+    @IBOutlet weak var eleventhOutletBlurImage: UIImageView!
+    @IBOutlet weak var twelfthOutletBlurImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -59,6 +73,12 @@ class Sound_ViewController: UIViewController {
         fourthOutletBlurImage.normalButtonUI()
         fifthOutletBlurImage.normalButtonUI()
         sixthOutletBlurImage.normalButtonUI()
+        seventhOutletBlurImage.normalButtonUI()
+        eigthOutletBlurImage.normalButtonUI()
+        ninthOutletBlurImage.normalButtonUI()
+        tenthOutletBlurImage.normalButtonUI()
+        eleventhOutletBlurImage.normalButtonUI()
+        twelfthOutletBlurImage.normalButtonUI()
         menuBtnOne.normalButtonUI()
         menuBtnTwo.normalButtonUI()
         menuBtnThree.normalButtonUI()
