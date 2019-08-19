@@ -23,7 +23,12 @@ class Sound_ViewController: UIViewController {
     @IBOutlet weak var tenthBtnOutlet: UIButton!
     @IBOutlet weak var eleventhBtnOutlet: UIButton!
     @IBOutlet weak var twelfthBtnOutlet: UIButton!
-    
+    @IBOutlet weak var thirteenthBtnOutlet: UIButton!
+    @IBOutlet weak var fourteenthBtnOutlet: UIButton!
+    @IBOutlet weak var fifteenthBtnOutlet: UIButton!
+    @IBOutlet weak var sixteenthBtnOutlet: UIButton!
+    @IBOutlet weak var seventeenthBtnOutlet: UIButton!
+    @IBOutlet weak var eighteenthBtnOutlet: UIButton!
     
     @IBOutlet weak var menuBtnOne: UIButton!
     @IBOutlet weak var menuBtnTwo: UIButton!
@@ -46,6 +51,13 @@ class Sound_ViewController: UIViewController {
     @IBOutlet weak var tenthOutletBlurImage: UIImageView!
     @IBOutlet weak var eleventhOutletBlurImage: UIImageView!
     @IBOutlet weak var twelfthOutletBlurImage: UIImageView!
+    @IBOutlet weak var thirteenthOutletBlurImage: UIImageView!
+    @IBOutlet weak var fourteenthOutletBlurImage: UIImageView!
+    @IBOutlet weak var fifteenthOutletBlurImage: UIImageView!
+    @IBOutlet weak var sixteenthOutletBlurImage: UIImageView!
+    @IBOutlet weak var seventeenthOutletBlurImage: UIImageView!
+    @IBOutlet weak var eighteenthOutletBlurImage: UIImageView!
+  
     
     
     override func viewDidLoad() {
@@ -63,6 +75,15 @@ class Sound_ViewController: UIViewController {
         fourthBtnOutlet.normalButtonUI()
         fifthBtnOutlet.normalButtonUI()
         sixthBtnOutlet.normalButtonUI()
+       
+        
+        thirteenthBtnOutlet.normalButtonUI()
+        fourteenthBtnOutlet.normalButtonUI()
+        fifteenthBtnOutlet.normalButtonUI()
+        sixteenthBtnOutlet.normalButtonUI()
+        seventeenthBtnOutlet.normalButtonUI()
+        eighteenthBtnOutlet.normalButtonUI()
+        
         firstSliderOutlet.setThumbImage(UIImage(named: "rain3"), for: .normal)
         secondSliderOutlet.setThumbImage(UIImage(named: "storm2"), for: .normal)
         thirdSliderOutlet.setThumbImage(UIImage(named: "sunset2"), for: .normal)
@@ -79,6 +100,13 @@ class Sound_ViewController: UIViewController {
         tenthOutletBlurImage.normalButtonUI()
         eleventhOutletBlurImage.normalButtonUI()
         twelfthOutletBlurImage.normalButtonUI()
+        thirteenthOutletBlurImage.normalButtonUI()
+        fourteenthOutletBlurImage.normalButtonUI()
+        fifteenthBtnOutlet.normalButtonUI()
+        sixteenthOutletBlurImage.normalButtonUI()
+        seventeenthOutletBlurImage.normalButtonUI()
+        eighteenthOutletBlurImage.normalButtonUI()
+        
         menuBtnOne.normalButtonUI()
         menuBtnTwo.normalButtonUI()
         menuBtnThree.normalButtonUI()
