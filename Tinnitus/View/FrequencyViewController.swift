@@ -32,7 +32,6 @@ class FrequencyViewController: UIViewController {
     }
     
     func setupFrequencyUI(){
-        playOutlet.normalButtonUI()
         pinkBackgroundDesign.layer.cornerRadius = 80
         pinkBackgroundDesign.transform = CGAffineTransform(rotationAngle: CGFloat(20 * M_PI/180))
         firstFreqOutlet.normalButtonUI()
@@ -43,9 +42,6 @@ class FrequencyViewController: UIViewController {
         sixthFreqOutlet.normalButtonUI()
     }
 
-    @IBAction func playBtn(_ sender: Any) {
-    }
-    
     @IBAction func frequencyChanged(_ sender: UISlider) {
         let frequencyValue = String(Int(sender.value * 10000))
        frequencyLabel.text = frequencyValue + " KHz"

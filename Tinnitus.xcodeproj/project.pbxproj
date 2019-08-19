@@ -15,6 +15,7 @@
 		2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7CE22FB2BC100D70005 /* Extension_Btn_UI.swift */; };
 		2526D7D122FB2F4700D70005 /* Sound_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */; };
 		2526D7D322FD78C000D70005 /* Extension_BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */; };
+		2526D7D5230B423500D70005 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D4230B423300D70005 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2526D7CE22FB2BC100D70005 /* Extension_Btn_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Btn_UI.swift; sourceTree = "<group>"; };
 		2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound_ViewController.swift; sourceTree = "<group>"; };
 		2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_BlurEffect.swift; sourceTree = "<group>"; };
+		2526D7D4230B423300D70005 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				2526D7BB22F9701C00D70005 /* FrequencyViewController.swift */,
 				2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */,
 				2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */,
+				2526D7D4230B423300D70005 /* SettingsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				2526D7BA22F9701C00D70005 /* AppDelegate.swift in Sources */,
 				2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */,
 				2526D7D322FD78C000D70005 /* Extension_BlurEffect.swift in Sources */,
+				2526D7D5230B423500D70005 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

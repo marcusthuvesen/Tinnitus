@@ -30,6 +30,7 @@ class Sound_ViewController: UIViewController {
     @IBOutlet weak var seventeenthBtnOutlet: UIButton!
     @IBOutlet weak var eighteenthBtnOutlet: UIButton!
     
+    //Menu Outlets
     @IBOutlet weak var menuBtnOne: UIButton!
     @IBOutlet weak var menuBtnTwo: UIButton!
     @IBOutlet weak var menuBtnThree: UIButton!
@@ -64,25 +65,11 @@ class Sound_ViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        setupUI()
+        setupSoundVC_UI()
     }
     
     
-    func setupUI(){
-        firstBtnOutlet.normalButtonUI()
-        secondBtnOutlet.normalButtonUI()
-        thirdBtnOutlet.normalButtonUI()
-        fourthBtnOutlet.normalButtonUI()
-        fifthBtnOutlet.normalButtonUI()
-        sixthBtnOutlet.normalButtonUI()
-       
-        
-        thirteenthBtnOutlet.normalButtonUI()
-        fourteenthBtnOutlet.normalButtonUI()
-        fifteenthBtnOutlet.normalButtonUI()
-        sixteenthBtnOutlet.normalButtonUI()
-        seventeenthBtnOutlet.normalButtonUI()
-        eighteenthBtnOutlet.normalButtonUI()
+    func setupSoundVC_UI(){
         
         firstSliderOutlet.setThumbImage(UIImage(named: "rain3"), for: .normal)
         secondSliderOutlet.setThumbImage(UIImage(named: "storm2"), for: .normal)
@@ -102,7 +89,7 @@ class Sound_ViewController: UIViewController {
         twelfthOutletBlurImage.normalButtonUI()
         thirteenthOutletBlurImage.normalButtonUI()
         fourteenthOutletBlurImage.normalButtonUI()
-        fifteenthBtnOutlet.normalButtonUI()
+        fifteenthOutletBlurImage.normalButtonUI()
         sixteenthOutletBlurImage.normalButtonUI()
         seventeenthOutletBlurImage.normalButtonUI()
         eighteenthOutletBlurImage.normalButtonUI()
@@ -111,6 +98,73 @@ class Sound_ViewController: UIViewController {
         menuBtnTwo.normalButtonUI()
         menuBtnThree.normalButtonUI()
     }
+    
+    func buttonClickedChanged(senderOutlet : UIImageView, sender: UIControl){
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            senderOutlet.normalButtonIsClickedUI()
+        }else{
+            senderOutlet.backgroundColor = UIView.CustomColors.blue
+        }
+    }
+    
+    @IBAction func firstSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: firstOutletBlurImage, sender: sender)
+    }
+    @IBAction func secondSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: secondOutletBlurImage, sender: sender)
+    }
+    @IBAction func thirdSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: thirdOutletBlurImage, sender: sender)
+    }
+    @IBAction func fourthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: fourthOutletBlurImage, sender: sender)
+    }
+    @IBAction func fifthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: fifthOutletBlurImage, sender: sender)
+    }
+    @IBAction func sixthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: sixthOutletBlurImage, sender: sender)
+    }
+    @IBAction func seventhSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: seventhOutletBlurImage, sender: sender)
+    }
+    @IBAction func eigthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: eigthOutletBlurImage, sender: sender)
+    }
+    @IBAction func ninthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: ninthOutletBlurImage, sender: sender)
+    }
+    @IBAction func tenthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: tenthOutletBlurImage, sender: sender)
+    }
+    @IBAction func eleventhSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: eleventhOutletBlurImage, sender: sender)
+    }
+    @IBAction func twelfthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: twelfthOutletBlurImage, sender: sender)
+    }
+    @IBAction func thirteenthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: thirteenthOutletBlurImage, sender: sender)
+    }
+    @IBAction func fourteenthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: fourteenthOutletBlurImage, sender: sender)
+    }
+    @IBAction func fifteenthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: fifteenthOutletBlurImage, sender: sender)
+    }
+    @IBAction func sixteenthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: sixteenthOutletBlurImage, sender: sender)
+    }
+    @IBAction func seventeenthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: seventeenthOutletBlurImage, sender: sender)
+    }
+    @IBAction func eighteenthSoundBtn(_ sender: UIButton) {
+        buttonClickedChanged(senderOutlet: eighteenthOutletBlurImage, sender: sender)
+    }
+    
+    
+    
     
     
 }
