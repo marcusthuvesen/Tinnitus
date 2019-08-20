@@ -16,6 +16,8 @@
 		2526D7D122FB2F4700D70005 /* Sound_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */; };
 		2526D7D322FD78C000D70005 /* Extension_BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */; };
 		2526D7D5230B423500D70005 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D4230B423300D70005 /* SettingsViewController.swift */; };
+		2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */; };
+		2526D7D9230CAAAF00D70005 /* PremiumPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D8230CAAAF00D70005 /* PremiumPopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound_ViewController.swift; sourceTree = "<group>"; };
 		2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_BlurEffect.swift; sourceTree = "<group>"; };
 		2526D7D4230B423300D70005 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PremiumPopup.storyboard; sourceTree = "<group>"; };
+		2526D7D8230CAAAF00D70005 /* PremiumPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,6 @@
 				2526D7CC22FB24F200D70005 /* View */,
 				2526D7CD22FB24F900D70005 /* Controller */,
 				2526D7B922F9701C00D70005 /* AppDelegate.swift */,
-				2526D7BD22F9701C00D70005 /* Main.storyboard */,
 				2526D7C022F9702500D70005 /* Assets.xcassets */,
 				2526D7C222F9702500D70005 /* LaunchScreen.storyboard */,
 				2526D7C522F9702500D70005 /* Info.plist */,
@@ -89,6 +92,9 @@
 				2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */,
 				2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */,
 				2526D7D4230B423300D70005 /* SettingsViewController.swift */,
+				2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */,
+				2526D7BD22F9701C00D70005 /* Main.storyboard */,
+				2526D7D8230CAAAF00D70005 /* PremiumPopupViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2526D7C422F9702500D70005 /* LaunchScreen.storyboard in Resources */,
+				2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */,
 				2526D7C122F9702500D70005 /* Assets.xcassets in Resources */,
 				2526D7BF22F9701C00D70005 /* Main.storyboard in Resources */,
 			);
@@ -176,6 +183,7 @@
 				2526D7BA22F9701C00D70005 /* AppDelegate.swift in Sources */,
 				2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */,
 				2526D7D322FD78C000D70005 /* Extension_BlurEffect.swift in Sources */,
+				2526D7D9230CAAAF00D70005 /* PremiumPopupViewController.swift in Sources */,
 				2526D7D5230B423500D70005 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

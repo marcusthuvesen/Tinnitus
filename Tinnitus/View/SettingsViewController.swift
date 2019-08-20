@@ -15,10 +15,16 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
        setupSettingsUI()
+        
     }
     
     func setupSettingsUI(){
         settingsPremiumOutlet.premiumButtonUI()
     }
 
+    @IBAction func settingsPremiumBtn(_ sender: Any) {
+        let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopupViewController") as! PremiumPopupViewController
+        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        tabBarController?.present(popOverVC, animated: true)
+    }
 }
