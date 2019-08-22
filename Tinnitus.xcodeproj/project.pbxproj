@@ -19,6 +19,7 @@
 		2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */; };
 		2526D7D9230CAAAF00D70005 /* PremiumPopupVC_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D8230CAAAF00D70005 /* PremiumPopupVC_UI.swift */; };
 		253F16D5230D79470070C68F /* FactsVC_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253F16D4230D79470070C68F /* FactsVC_UI.swift */; };
+		25C97755230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C97754230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PremiumPopup.storyboard; sourceTree = "<group>"; };
 		2526D7D8230CAAAF00D70005 /* PremiumPopupVC_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPopupVC_UI.swift; sourceTree = "<group>"; };
 		253F16D4230D79470070C68F /* FactsVC_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsVC_UI.swift; sourceTree = "<group>"; };
+		25C97754230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSlider_CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				25C97753230F1247000D0607 /* Storyboards */,
+				2526D7D8230CAAAF00D70005 /* PremiumPopupVC_UI.swift */,
+				25C97754230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift */,
 				2526D7CE22FB2BC100D70005 /* Extension_Btn_UI.swift */,
 				2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */,
 				2526D7BB22F9701C00D70005 /* FrequencyVC_UI.swift */,
 				2526D7D022FB2F4700D70005 /* SoundVC_UI.swift */,
 				2526D7D4230B423300D70005 /* SettingsVC_UI.swift */,
-				2526D7D8230CAAAF00D70005 /* PremiumPopupVC_UI.swift */,
 				253F16D4230D79470070C68F /* FactsVC_UI.swift */,
 			);
 			path = Views;
@@ -200,6 +203,7 @@
 				2526D7D122FB2F4700D70005 /* SoundVC_UI.swift in Sources */,
 				2526D7BC22F9701C00D70005 /* FrequencyVC_UI.swift in Sources */,
 				2526D7BA22F9701C00D70005 /* AppDelegate.swift in Sources */,
+				25C97755230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift in Sources */,
 				2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */,
 				253F16D5230D79470070C68F /* FactsVC_UI.swift in Sources */,
 				2526D7D322FD78C000D70005 /* Extension_BlurEffect.swift in Sources */,

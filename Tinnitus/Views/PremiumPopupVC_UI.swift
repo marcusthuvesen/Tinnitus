@@ -8,8 +8,9 @@
 
 import UIKit
 
-class PremiumPopupVC_UI: UIViewController {
-
+class PremiumPopupVC_UI: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+    
+    
     @IBOutlet weak var backgroundPopupImage: UIImageView!
     @IBOutlet weak var premiumContainerView: UIView!
     @IBOutlet weak var continueBtnOutlet: UIButton!
@@ -23,10 +24,39 @@ class PremiumPopupVC_UI: UIViewController {
     @IBOutlet weak var secondPopupBtnView: UIView!
     @IBOutlet weak var thirdPopupBtnView: UIView!
     
+    @IBOutlet weak var sliderCollectionView: UICollectionView!
+    @IBOutlet weak var sliderPageController: UIPageControl!
+    
+    var sliderImageArray = [UIImage(named: "background1"), UIImage(named: "background2"), UIImage(named: "background5"), UIImage(named: "background6")]
+    var sliderTimer = Timer()
+    var counter = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sliderPageController.numberOfPages = sliderImageArray.count
+        sliderPageController.currentPage = 0
+        sliderCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
+        DispatchQueue.main.async {
+            self.sliderTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.sliderChangeImage), userInfo: nil, repeats: true)
+        }
         setupPremiumPopupUI()
+    }
+    
+    @objc func sliderChangeImage(){
+        if counter < sliderImageArray.count{
+            let index = IndexPath.init(item: counter, section: 0)
+            self.sliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+            sliderPageController.currentPage = counter
+            counter += 1
+        } else{
+            counter = 0
+            let index = IndexPath.init(item: counter, section: 0)
+            self.sliderCollectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: false)
+            sliderPageController.currentPage = counter
+            counter = 1
+        }
     }
     
     func setupPremiumPopupUI(){
@@ -44,6 +74,38 @@ class PremiumPopupVC_UI: UIViewController {
         firstPopupBtnView.disselectedPopupButtonsUI()
         secondPopupBtnView.selectedPopupButtonUI()
         thirdPopupBtnView.disselectedPopupButtonsUI()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sliderImageArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sliderCell", for: indexPath) as! PopupSlider_CollectionViewCell
+        if let arrayImage = sliderImageArray[indexPath.row]{
+            cell.sliderCellImage.image = arrayImage
+        }
+        
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = sliderCollectionView.frame.size
+        return CGSize(width: size.width, height: size.height)
     }
 
     @IBAction func dismissPopupBtn(_ sender: Any) {

@@ -275,61 +275,63 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Ads." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szv-rz-yxL">
-                                                <rect key="frame" x="53" y="159" width="72" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Access all premium sounds." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beB-dl-goi">
-                                                <rect key="frame" x="53" y="224" width="255" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Frequency Matcher unlimited." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fk8-AG-lwe">
-                                                <rect key="frame" x="53" y="291" width="313" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ecg-lines (1)" translatesAutoresizingMaskIntoConstraints="NO" id="daD-7c-5CH">
-                                                <rect key="frame" x="4" y="285" width="38" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.95294117649999999" green="0.32549019610000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="9Bh-IE-Ykj">
-                                                <rect key="frame" x="8" y="346" width="38" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.95294117649999999" green="0.32549019610000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="openLock" translatesAutoresizingMaskIntoConstraints="NO" id="KV3-B0-kUh">
-                                                <rect key="frame" x="4" y="218" width="38" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.95294117649999999" green="0.32549019610000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ecg-lines (1)" translatesAutoresizingMaskIntoConstraints="NO" id="vSX-eP-srI">
-                                                <rect key="frame" x="7" y="153" width="38" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" red="0.95294117649999999" green="0.32549019610000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save your sound mix to favorites." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSI-0h-byk">
-                                                <rect key="frame" x="53" y="352" width="301" height="24"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xdN-Sh-Okw">
+                                                <rect key="frame" x="8" y="120" width="358" height="301"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="MBY-vb-daK">
+                                                    <size key="itemSize" width="357" height="279"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sliderCell" id="RAV-wQ-AVW" customClass="PopupSlider_CollectionViewCell" customModule="Tinnitus" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="11" width="357" height="279"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="357" height="279"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jwj-Ob-ZBe">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="357" height="279"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="Jwj-Ob-ZBe" secondAttribute="trailing" id="4zf-aO-bPn"/>
+                                                            <constraint firstItem="Jwj-Ob-ZBe" firstAttribute="leading" secondItem="RAV-wQ-AVW" secondAttribute="leading" id="BeF-1d-r51"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Jwj-Ob-ZBe" secondAttribute="bottom" id="Obz-Ap-ifS"/>
+                                                            <constraint firstItem="Jwj-Ob-ZBe" firstAttribute="top" secondItem="RAV-wQ-AVW" secondAttribute="top" id="Zgu-s2-Cat"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="sliderCellImage" destination="Jwj-Ob-ZBe" id="ia8-ee-k88"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="59c-xY-qYI" id="nWK-Kf-8SJ"/>
+                                                    <outlet property="delegate" destination="59c-xY-qYI" id="VOz-pg-rpj"/>
+                                                </connections>
+                                            </collectionView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pCf-dx-Mbz">
+                                                <rect key="frame" x="167.5" y="436" width="39" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="37" id="boi-B7-Dbt"/>
+                                                </constraints>
+                                            </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xdN-Sh-Okw" secondAttribute="trailing" constant="8" id="4ER-e8-8zy"/>
                                             <constraint firstItem="cRZ-0X-N5Z" firstAttribute="leading" secondItem="O4e-Na-dSR" secondAttribute="leading" constant="8" id="ZHh-pa-pOD"/>
                                             <constraint firstItem="PDU-E7-AHv" firstAttribute="top" secondItem="O4e-Na-dSR" secondAttribute="top" constant="70" id="bsQ-gb-5MB"/>
+                                            <constraint firstItem="pCf-dx-Mbz" firstAttribute="top" secondItem="xdN-Sh-Okw" secondAttribute="bottom" constant="15" id="e95-ba-S57"/>
+                                            <constraint firstAttribute="bottom" secondItem="pCf-dx-Mbz" secondAttribute="bottom" constant="20" id="gGf-g9-Ihx"/>
+                                            <constraint firstItem="xdN-Sh-Okw" firstAttribute="leading" secondItem="O4e-Na-dSR" secondAttribute="leading" constant="8" id="kqo-Yc-ZAz"/>
                                             <constraint firstItem="cRZ-0X-N5Z" firstAttribute="top" secondItem="O4e-Na-dSR" secondAttribute="top" constant="8" id="ob6-v4-r2U"/>
+                                            <constraint firstItem="xdN-Sh-Okw" firstAttribute="top" secondItem="PDU-E7-AHv" secondAttribute="bottom" constant="20" id="tbB-vV-r2Z"/>
                                             <constraint firstItem="PDU-E7-AHv" firstAttribute="centerX" secondItem="O4e-Na-dSR" secondAttribute="centerX" id="tmb-u2-FDl"/>
+                                            <constraint firstItem="pCf-dx-Mbz" firstAttribute="centerX" secondItem="O4e-Na-dSR" secondAttribute="centerX" id="vEO-h6-xNm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -379,6 +381,8 @@
                         <outlet property="premiumContainerView" destination="nSx-ml-85N" id="BND-Bn-VBL"/>
                         <outlet property="secondPopupBtnView" destination="cGr-Rf-3Vm" id="9Oc-ic-RDH"/>
                         <outlet property="secondSubBtnOutlet" destination="0Qj-r0-oNT" id="PFZ-M4-GYn"/>
+                        <outlet property="sliderCollectionView" destination="xdN-Sh-Okw" id="yus-3m-mng"/>
+                        <outlet property="sliderPageController" destination="pCf-dx-Mbz" id="4vV-UR-UbY"/>
                         <outlet property="thirdPopupBtnView" destination="Kvh-7E-yB1" id="jow-FJ-5uf"/>
                         <outlet property="thirdSubBtnOutlet" destination="p1p-b3-iDN" id="Ucv-9c-n4f"/>
                     </connections>
@@ -389,8 +393,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ecg-lines (1)" width="32" height="32"/>
-        <image name="openLock" width="64" height="64"/>
         <image name="star" width="64" height="64"/>
     </resources>
 </document>

@@ -63,7 +63,7 @@ extension UIView {
     func disselectedPopupButtonsUI(){
         self.layer.cornerRadius = 20
         self.layer.masksToBounds = true
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 4
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.backgroundColor = CustomColors.veryLightGray
     }
