@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PremiumPopupViewController: UIViewController {
+class PremiumPopupVC_UI: UIViewController {
 
     @IBOutlet weak var backgroundPopupImage: UIImageView!
     @IBOutlet weak var premiumContainerView: UIView!
@@ -16,6 +16,13 @@ class PremiumPopupViewController: UIViewController {
     @IBOutlet weak var firstSubBtnOutlet: UIButton!
     @IBOutlet weak var secondSubBtnOutlet: UIButton!
     @IBOutlet weak var thirdSubBtnOutlet: UIButton!
+    @IBOutlet weak var premiumAvatarImage: UIImageView!
+    @IBOutlet weak var mostPopularView: UIView!
+    
+    @IBOutlet weak var firstPopupBtnView: UIView!
+    @IBOutlet weak var secondPopupBtnView: UIView!
+    @IBOutlet weak var thirdPopupBtnView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,8 +34,16 @@ class PremiumPopupViewController: UIViewController {
         firstSubBtnOutlet.normalButtonUI()
         secondSubBtnOutlet.normalButtonUI()
         thirdSubBtnOutlet.normalButtonUI()
-        continueBtnOutlet.premiumButtonUI()
+        continueBtnOutlet.premiumPopupContinueUI()
         backgroundPopupImage.addBlurEffect()
+        premiumAvatarImage.tintColor = UIColor.purple
+//        firstSubBtnOutlet.popupButtonsUI()
+//        secondSubBtnOutlet.selectedPopupButtonUI()
+//        thirdSubBtnOutlet.popupButtonsUI()
+        mostPopularView.mostPopularButtonUI()
+        firstPopupBtnView.disselectedPopupButtonsUI()
+        secondPopupBtnView.selectedPopupButtonUI()
+        thirdPopupBtnView.disselectedPopupButtonsUI()
     }
 
     @IBAction func dismissPopupBtn(_ sender: Any) {

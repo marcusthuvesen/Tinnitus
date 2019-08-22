@@ -8,32 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		2526D7BA22F9701C00D70005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7B922F9701C00D70005 /* AppDelegate.swift */; };
-		2526D7BC22F9701C00D70005 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7BB22F9701C00D70005 /* FrequencyViewController.swift */; };
+		2526D7BC22F9701C00D70005 /* FrequencyVC_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7BB22F9701C00D70005 /* FrequencyVC_UI.swift */; };
 		2526D7BF22F9701C00D70005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2526D7BD22F9701C00D70005 /* Main.storyboard */; };
 		2526D7C122F9702500D70005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2526D7C022F9702500D70005 /* Assets.xcassets */; };
 		2526D7C422F9702500D70005 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2526D7C222F9702500D70005 /* LaunchScreen.storyboard */; };
 		2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7CE22FB2BC100D70005 /* Extension_Btn_UI.swift */; };
-		2526D7D122FB2F4700D70005 /* Sound_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */; };
+		2526D7D122FB2F4700D70005 /* SoundVC_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D022FB2F4700D70005 /* SoundVC_UI.swift */; };
 		2526D7D322FD78C000D70005 /* Extension_BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */; };
-		2526D7D5230B423500D70005 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D4230B423300D70005 /* SettingsViewController.swift */; };
+		2526D7D5230B423500D70005 /* SettingsVC_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D4230B423300D70005 /* SettingsVC_UI.swift */; };
 		2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */; };
-		2526D7D9230CAAAF00D70005 /* PremiumPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D8230CAAAF00D70005 /* PremiumPopupViewController.swift */; };
+		2526D7D9230CAAAF00D70005 /* PremiumPopupVC_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526D7D8230CAAAF00D70005 /* PremiumPopupVC_UI.swift */; };
+		253F16D5230D79470070C68F /* FactsVC_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253F16D4230D79470070C68F /* FactsVC_UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2526D7B622F9701C00D70005 /* Tinnitus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinnitus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2526D7B922F9701C00D70005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2526D7BB22F9701C00D70005 /* FrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
+		2526D7BB22F9701C00D70005 /* FrequencyVC_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyVC_UI.swift; sourceTree = "<group>"; };
 		2526D7BE22F9701C00D70005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2526D7C022F9702500D70005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2526D7C322F9702500D70005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2526D7C522F9702500D70005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2526D7CE22FB2BC100D70005 /* Extension_Btn_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_Btn_UI.swift; sourceTree = "<group>"; };
-		2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound_ViewController.swift; sourceTree = "<group>"; };
+		2526D7D022FB2F4700D70005 /* SoundVC_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundVC_UI.swift; sourceTree = "<group>"; };
 		2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_BlurEffect.swift; sourceTree = "<group>"; };
-		2526D7D4230B423300D70005 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2526D7D4230B423300D70005 /* SettingsVC_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC_UI.swift; sourceTree = "<group>"; };
 		2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PremiumPopup.storyboard; sourceTree = "<group>"; };
-		2526D7D8230CAAAF00D70005 /* PremiumPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPopupViewController.swift; sourceTree = "<group>"; };
+		2526D7D8230CAAAF00D70005 /* PremiumPopupVC_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPopupVC_UI.swift; sourceTree = "<group>"; };
+		253F16D4230D79470070C68F /* FactsVC_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsVC_UI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,44 +68,61 @@
 		2526D7B822F9701C00D70005 /* Tinnitus */ = {
 			isa = PBXGroup;
 			children = (
-				2526D7CB22FB24EB00D70005 /* Model */,
-				2526D7CC22FB24F200D70005 /* View */,
-				2526D7CD22FB24F900D70005 /* Controller */,
-				2526D7B922F9701C00D70005 /* AppDelegate.swift */,
-				2526D7C022F9702500D70005 /* Assets.xcassets */,
-				2526D7C222F9702500D70005 /* LaunchScreen.storyboard */,
 				2526D7C522F9702500D70005 /* Info.plist */,
+				2526D7CB22FB24EB00D70005 /* Models */,
+				2526D7CC22FB24F200D70005 /* Views */,
+				2526D7CD22FB24F900D70005 /* Controllers */,
+				25C97752230F0A2E000D0607 /* SupportFiles */,
 			);
 			path = Tinnitus;
 			sourceTree = "<group>";
 		};
-		2526D7CB22FB24EB00D70005 /* Model */ = {
+		2526D7CB22FB24EB00D70005 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		2526D7CC22FB24F200D70005 /* View */ = {
+		2526D7CC22FB24F200D70005 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				25C97753230F1247000D0607 /* Storyboards */,
 				2526D7CE22FB2BC100D70005 /* Extension_Btn_UI.swift */,
-				2526D7BB22F9701C00D70005 /* FrequencyViewController.swift */,
-				2526D7D022FB2F4700D70005 /* Sound_ViewController.swift */,
 				2526D7D222FD78C000D70005 /* Extension_BlurEffect.swift */,
-				2526D7D4230B423300D70005 /* SettingsViewController.swift */,
+				2526D7BB22F9701C00D70005 /* FrequencyVC_UI.swift */,
+				2526D7D022FB2F4700D70005 /* SoundVC_UI.swift */,
+				2526D7D4230B423300D70005 /* SettingsVC_UI.swift */,
+				2526D7D8230CAAAF00D70005 /* PremiumPopupVC_UI.swift */,
+				253F16D4230D79470070C68F /* FactsVC_UI.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2526D7CD22FB24F900D70005 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		25C97752230F0A2E000D0607 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2526D7C022F9702500D70005 /* Assets.xcassets */,
+				2526D7B922F9701C00D70005 /* AppDelegate.swift */,
+				2526D7C222F9702500D70005 /* LaunchScreen.storyboard */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		25C97753230F1247000D0607 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */,
 				2526D7BD22F9701C00D70005 /* Main.storyboard */,
-				2526D7D8230CAAAF00D70005 /* PremiumPopupViewController.swift */,
 			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2526D7CD22FB24F900D70005 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,13 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2526D7D122FB2F4700D70005 /* Sound_ViewController.swift in Sources */,
-				2526D7BC22F9701C00D70005 /* FrequencyViewController.swift in Sources */,
+				2526D7D122FB2F4700D70005 /* SoundVC_UI.swift in Sources */,
+				2526D7BC22F9701C00D70005 /* FrequencyVC_UI.swift in Sources */,
 				2526D7BA22F9701C00D70005 /* AppDelegate.swift in Sources */,
 				2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */,
+				253F16D5230D79470070C68F /* FactsVC_UI.swift in Sources */,
 				2526D7D322FD78C000D70005 /* Extension_BlurEffect.swift in Sources */,
-				2526D7D9230CAAAF00D70005 /* PremiumPopupViewController.swift in Sources */,
-				2526D7D5230B423500D70005 /* SettingsViewController.swift in Sources */,
+				2526D7D9230CAAAF00D70005 /* PremiumPopupVC_UI.swift in Sources */,
+				2526D7D5230B423500D70005 /* SettingsVC_UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

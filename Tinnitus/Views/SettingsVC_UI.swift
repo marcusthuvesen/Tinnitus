@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsVC_UI: UIViewController {
 
     @IBOutlet weak var settingsPremiumOutlet: UIButton!
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func settingsPremiumBtn(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopupViewController") as! PremiumPopupViewController
+        let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopupVC_UI") as! PremiumPopupVC_UI
         popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         tabBarController?.present(popOverVC, animated: true)
     }

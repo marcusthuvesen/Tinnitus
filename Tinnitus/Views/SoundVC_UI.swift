@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Sound_ViewController: UIViewController {
+class SoundVC_UI: UIViewController {
     
     //Button Outlets
     @IBOutlet weak var firstBtnOutlet: UIButton!

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FrequencyViewController: UIViewController {
+class FrequencyVC_UI: UIViewController {
     
  
     @IBOutlet weak var pinkBackgroundDesign: UIView!
