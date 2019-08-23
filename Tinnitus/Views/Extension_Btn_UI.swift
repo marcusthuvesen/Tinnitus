@@ -17,8 +17,6 @@ extension UIView {
         static var blue = UIColor(red: 6.0/255, green: 18.0/255, blue: 60.0/255, alpha: 1.0)
         static var gold = UIColor(red: 238.0/255, green: 187.0/255, blue: 87.0/255, alpha: 1.0)
         static var veryLightGray = UIColor(red: 224.0/255, green: 225.0/255, blue: 230.0/255, alpha: 1)
-        
-      
     }
    
     func roundedCorners(myRadius : CGFloat, borderWith: CGFloat?, borderColor : UIColor?) {
@@ -36,6 +34,9 @@ extension UIView {
         }
     }
     
+    func goldBackground(){
+        self.tintColor = CustomColors.gold
+    }
     
     func normalButtonUI(){
         self.layer.cornerRadius = 20

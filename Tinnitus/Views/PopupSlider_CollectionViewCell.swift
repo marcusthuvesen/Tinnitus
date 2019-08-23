@@ -11,5 +11,7 @@ import UIKit
 class PopupSlider_CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sliderCellImage: UIImageView!
+    @IBOutlet weak var sliderCellTitleLabel: UILabel!
+    @IBOutlet weak var sliderCellSubLabel: UILabel!
     
 }
