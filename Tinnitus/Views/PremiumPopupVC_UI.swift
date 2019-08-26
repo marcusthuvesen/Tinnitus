@@ -24,12 +24,23 @@ class PremiumPopupVC_UI: UIViewController, UIPageViewControllerDelegate{
     @IBOutlet weak var secondPopupBtnView: UIView!
     @IBOutlet weak var thirdPopupBtnView: UIView!
     
+    @IBOutlet weak var firstPopupViewLabelOne: UILabel!
+    @IBOutlet weak var firstPopupViewLabelTwo: UILabel!
+    @IBOutlet weak var firstPopupViewLabelThree: UILabel!
+    
+    @IBOutlet weak var secondPopupViewLabelOne: UILabel!
+    @IBOutlet weak var secondPopupViewLabelTwo: UILabel!
+    @IBOutlet weak var secondPopupViewLabelThree: UILabel!
+    
+    @IBOutlet weak var thirdPopupViewLabelOne: UILabel!
+    @IBOutlet weak var thirdPopupViewLabelTwo: UILabel!
+    @IBOutlet weak var thirdPopupViewLabelThree: UILabel!
+    
+    
     @IBOutlet weak var popupCollectionView: UICollectionView!
     @IBOutlet weak var popupCVPageController: UIPageControl!
-   var test = 5
     
     lazy var popupCollectionView_UI: PopupCollectionView_UI = {
-        print("in lazy")
         let popupCollectionView_UI = PopupCollectionView_UI(popupCVPageController : popupCVPageController, popupCollectionView : popupCollectionView)
         
         return popupCollectionView_UI
@@ -37,26 +48,28 @@ class PremiumPopupVC_UI: UIViewController, UIPageViewControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        popupCollectionView.dataSource = self.popupCollectionView_UI
-        popupCollectionView.delegate = self.popupCollectionView_UI
-        
+        setupDelegates()
         setupPremiumPopupUI()
-        
-        
     }
     
-    
+    func setupDelegates(){
+        popupCollectionView.dataSource = self.popupCollectionView_UI
+        popupCollectionView.delegate = self.popupCollectionView_UI
+    }
     
     func setupPremiumPopupUI(){
         premiumContainerView.normalButtonUI()
-        firstSubBtnOutlet.normalButtonUI()
-        secondSubBtnOutlet.normalButtonUI()
-        thirdSubBtnOutlet.normalButtonUI()
+        
+        
         continueBtnOutlet.premiumPopupContinueUI()
         backgroundPopupImage.addBlurEffect()
         premiumAvatarImage.goldBackground()
         mostPopularView.mostPopularButtonUI()
+        
+        firstSubBtnOutlet.normalButtonUI()
+        secondSubBtnOutlet.normalButtonUI()
+        thirdSubBtnOutlet.normalButtonUI()
+
         firstPopupBtnView.disselectedPopupButtonsUI()
         secondPopupBtnView.selectedPopupButtonUI()
         thirdPopupBtnView.disselectedPopupButtonsUI()
@@ -65,5 +78,51 @@ class PremiumPopupVC_UI: UIViewController, UIPageViewControllerDelegate{
     @IBAction func dismissPopupBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func firstSubBtnClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            mostPopularView.isHidden = true
+            firstPopupBtnView.selectedPopupButtonUI()
+            secondPopupBtnView.disselectedPopupButtonsUI()
+            thirdPopupBtnView.disselectedPopupButtonsUI()
+            changePremiumTintColors(firstLabel: firstPopupViewLabelOne, secondLabel: firstPopupViewLabelTwo, thirdLabel: firstPopupViewLabelThree, isClicked: true)
+            changePremiumTintColors(firstLabel: secondPopupViewLabelOne, secondLabel: secondPopupViewLabelTwo, thirdLabel: secondPopupViewLabelThree, isClicked: false)
+            changePremiumTintColors(firstLabel: thirdPopupViewLabelOne, secondLabel: thirdPopupViewLabelTwo, thirdLabel: thirdPopupViewLabelThree, isClicked: false)
+        }
+    }
+    @IBAction func secondSubBtnClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            mostPopularView.isHidden = false
+            firstPopupBtnView.disselectedPopupButtonsUI()
+            secondPopupBtnView.selectedPopupButtonUI()
+            thirdPopupBtnView.disselectedPopupButtonsUI()
+            changePremiumTintColors(firstLabel: firstPopupViewLabelOne, secondLabel: firstPopupViewLabelTwo, thirdLabel: firstPopupViewLabelThree, isClicked: false)
+            changePremiumTintColors(firstLabel: secondPopupViewLabelOne, secondLabel: secondPopupViewLabelTwo, thirdLabel: secondPopupViewLabelThree, isClicked: true)
+            changePremiumTintColors(firstLabel: thirdPopupViewLabelOne, secondLabel: thirdPopupViewLabelTwo, thirdLabel: thirdPopupViewLabelThree, isClicked: false)
+        }
+    }
+    @IBAction func thirdSubBtnClicked(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            mostPopularView.isHidden = true
+            firstPopupBtnView.disselectedPopupButtonsUI()
+            secondPopupBtnView.disselectedPopupButtonsUI()
+            thirdPopupBtnView.selectedPopupButtonUI()
+            changePremiumTintColors(firstLabel: firstPopupViewLabelOne, secondLabel: firstPopupViewLabelTwo, thirdLabel: firstPopupViewLabelThree, isClicked: false)
+            changePremiumTintColors(firstLabel: secondPopupViewLabelOne, secondLabel: secondPopupViewLabelTwo, thirdLabel: secondPopupViewLabelThree, isClicked: false)
+            changePremiumTintColors(firstLabel: thirdPopupViewLabelOne, secondLabel: thirdPopupViewLabelTwo, thirdLabel: thirdPopupViewLabelThree, isClicked: true)
+        }
+    }
+    
+    func changePremiumTintColors(firstLabel : UILabel, secondLabel : UILabel, thirdLabel : UILabel, isClicked : Bool){
+        var newTintColor : UIColor
+        newTintColor = isClicked == true ? UIView.CustomColors.gold : .black
+        
+        firstLabel.tintColor = newTintColor
+        secondLabel.tintColor = newTintColor
+        thirdLabel.tintColor = newTintColor
+    }
+   
     
 }

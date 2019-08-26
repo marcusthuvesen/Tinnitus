@@ -14,4 +14,9 @@ class PopupSlider_CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var sliderCellTitleLabel: UILabel!
     @IBOutlet weak var sliderCellSubLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        sliderCellImage.contentMode = .scaleAspectFit
+    }
+    
 }

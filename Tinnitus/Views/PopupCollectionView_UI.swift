@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopupCollectionView_UI : PremiumPopupVC_UI, UICollectionViewDataSource, UICollectionViewDelegate {
+class PopupCollectionView_UI : PremiumPopupVC_UI, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     var sliderImageArray = [UIImage(named: "stop"), UIImage(named: "ecg-lines2"), UIImage(named: "star2"), UIImage(named: "openLock2")]
     var sliderLabelArray = ["No Ads", "Unlimited Cure", "Save Favorites", "Unlock Sounds"]
@@ -18,6 +18,25 @@ class PopupCollectionView_UI : PremiumPopupVC_UI, UICollectionViewDataSource, UI
     var popupCV : UICollectionView!
     var pageController : UIPageControl!
     
+    init(popupCVPageController : UIPageControl, popupCollectionView : UICollectionView){
+        super.init(nibName: "PremiumPopupVC_UI", bundle: nil)
+        self.popupCV = popupCollectionView
+        self.pageController = popupCVPageController
+        popupCVPageController.numberOfPages = sliderImageArray.count
+        popupCVPageController.currentPage = 0
+        
+        sliderTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(sliderChangeImage), userInfo: nil, repeats: true)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        popupCV.collectionViewLayout.invalidateLayout()
+    }
+
     @objc func sliderChangeImage(){
         if counter < sliderImageArray.count{
             scrollToCV_Image()
@@ -33,21 +52,6 @@ class PopupCollectionView_UI : PremiumPopupVC_UI, UICollectionViewDataSource, UI
         let index = IndexPath.init(item: counter, section: 0)
         popupCV.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
         pageController.currentPage = counter
-    }
-    
-    init(popupCVPageController : UIPageControl, popupCollectionView : UICollectionView){
-        super.init(nibName: "PremiumPopupVC_UI", bundle: nil)
-        self.popupCV = popupCollectionView
-        self.pageController = popupCVPageController
-        popupCVPageController.numberOfPages = sliderImageArray.count
-        popupCVPageController.currentPage = 0
-        popupCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-        sliderTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(sliderChangeImage), userInfo: nil, repeats: true)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,4 +80,22 @@ class PopupCollectionView_UI : PremiumPopupVC_UI, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
+    
+    // UICollectionViewDelegateFlowLayout -
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sectionInset = (collectionViewLayout as! UICollectionViewFlowLayout).sectionInset
+        
+        // Approximate height of cell
+        //print(self.premiumContainerView.frame.height)
+        let referenceHeight: CGFloat = collectionView.frame.height
+        print(referenceHeight)
+        let referenceWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
+            - sectionInset.left
+            - sectionInset.right
+            - collectionView.contentInset.left
+            - collectionView.contentInset.right
+        
+        return CGSize(width: referenceWidth, height: referenceHeight)
+    }
+    
 }
