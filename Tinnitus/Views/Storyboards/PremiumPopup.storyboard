@@ -13,7 +13,7 @@
         <!--Premium PopupVCUI-->
         <scene sceneID="iUW-tk-6El">
             <objects>
-                <viewController storyboardIdentifier="PremiumPopupVC_UI" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="59c-xY-qYI" customClass="PremiumPopupVC_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PremiumPopupVC_UI" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="59c-xY-qYI" customClass="PremiumPopupVC_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdq-hb-2N3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sliderCell" id="RAV-wQ-AVW" customClass="PopupSlider_CollectionViewCell" customModule="Tinnitus" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopupCV_Cell" id="RAV-wQ-AVW" customClass="PopupSlider_CollectionViewCell" customModule="Tinnitus" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="10.5" width="374" height="300"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -335,10 +335,6 @@
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="59c-xY-qYI" id="nWK-Kf-8SJ"/>
-                                                    <outlet property="delegate" destination="59c-xY-qYI" id="VOz-pg-rpj"/>
-                                                </connections>
                                             </collectionView>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pCf-dx-Mbz">
                                                 <rect key="frame" x="167.5" y="436" width="39" height="37"/>
@@ -404,12 +400,12 @@
                         <outlet property="firstPopupBtnView" destination="PqW-eD-hWB" id="xZ2-KY-i01"/>
                         <outlet property="firstSubBtnOutlet" destination="lnj-Ae-JKR" id="deG-oE-eIz"/>
                         <outlet property="mostPopularView" destination="4Mr-eJ-xD6" id="HiW-qg-wQ1"/>
+                        <outlet property="popupCVPageController" destination="pCf-dx-Mbz" id="4vV-UR-UbY"/>
+                        <outlet property="popupCollectionView" destination="xdN-Sh-Okw" id="yus-3m-mng"/>
                         <outlet property="premiumAvatarImage" destination="VpU-ap-Xnc" id="lB0-l7-dPE"/>
                         <outlet property="premiumContainerView" destination="nSx-ml-85N" id="BND-Bn-VBL"/>
                         <outlet property="secondPopupBtnView" destination="cGr-Rf-3Vm" id="9Oc-ic-RDH"/>
                         <outlet property="secondSubBtnOutlet" destination="0Qj-r0-oNT" id="PFZ-M4-GYn"/>
-                        <outlet property="sliderCollectionView" destination="xdN-Sh-Okw" id="yus-3m-mng"/>
-                        <outlet property="sliderPageController" destination="pCf-dx-Mbz" id="4vV-UR-UbY"/>
                         <outlet property="thirdPopupBtnView" destination="Kvh-7E-yB1" id="jow-FJ-5uf"/>
                         <outlet property="thirdSubBtnOutlet" destination="p1p-b3-iDN" id="Ucv-9c-n4f"/>
                     </connections>
