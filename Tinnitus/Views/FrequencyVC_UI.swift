@@ -7,12 +7,12 @@
 //
 import Foundation
 import UIKit
+import MediaPlayer
 
 class FrequencyVC_UI: UIViewController {
     
  
     @IBOutlet weak var pinkBackgroundDesign: UIView!
-    @IBOutlet weak var playOutlet: UIButton!
     @IBOutlet weak var firstFreqOutlet: UIButton!
     @IBOutlet weak var secondFreqOutlet: UIButton!
     @IBOutlet weak var thirdFreqOutlet: UIButton!
@@ -24,11 +24,12 @@ class FrequencyVC_UI: UIViewController {
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var frequencyLabel: UILabel!
     
+    //var audioPlayer = MPVolumeView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupFrequencyUI()
-    
     }
     
     func setupFrequencyUI(){
@@ -47,6 +48,9 @@ class FrequencyVC_UI: UIViewController {
        frequencyLabel.text = frequencyValue + " KHz"
     }
     @IBAction func volumeChanged(_ sender: UISlider) {
+      MPVolumeView.setVolume(sender.value)
+        print(sender.value)
+       print(AVAudioSession.sharedInstance().outputVolume)
     }
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
@@ -101,3 +105,20 @@ class FrequencyVC_UI: UIViewController {
     
 }
 
+extension MPVolumeView {
+    static func setVolume(_ volume: Float) {
+        // Need to use the MPVolumeView in order to change volume, but don't care about UI set so frame to .zero
+        let volumeView = MPVolumeView(frame: .zero)
+        // Search for the slider
+        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+        // Update the slider value with the desired volume.
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            slider?.value = volume
+        }
+        // Optional - Remove the HUD
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            volumeView.alpha = 0.000001
+            window.addSubview(volumeView)
+        }
+    }
+}

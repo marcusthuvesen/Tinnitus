@@ -10,21 +10,6 @@ import UIKit
 
 extension UIView {
     
-    func roundedCorners(myRadius : CGFloat, borderWith: CGFloat?, borderColor : UIColor?) {
-        
-        self.layer.cornerRadius = self.frame.size.height/myRadius
-        //self.clipsToBounds = true
-        self.layer.masksToBounds = true
-        
-        if borderWith != nil {
-            self.layer.borderWidth = 2
-        }
-        
-        if let color = borderColor {
-            self.layer.borderColor = color.cgColor
-        }
-    }
-    
     func goldBackground(){
         self.tintColor = CustomColors.gold
     }
@@ -59,8 +44,6 @@ extension UIView {
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.backgroundColor = CustomColors.veryLightGray
     }
-    
-   
     
     func selectedPopupButtonUI(){
         self.layer.cornerRadius = 20

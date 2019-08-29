@@ -8,18 +8,19 @@
 
 import UIKit
 
-class PopupCollectionView_UI : PremiumPopupVC_UI, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class PopupCollectionView_UI : PremiumPopup_UI, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     var sliderImageArray = [UIImage(named: "stop"), UIImage(named: "ecg-lines2"), UIImage(named: "star2"), UIImage(named: "openLock2")]
     var sliderLabelArray = ["No Ads", "Unlimited Cure", "Save Favorites", "Unlock Sounds"]
     var sliderSubLabelArray = ["Remove all ads", "Use Tinnitus Matcher unlimited", "Favorite your mixed sounds for later use", "Access all sounds from the library"]
+    
     var sliderTimer = Timer()
     var counter = 0
     var popupCV : UICollectionView!
     var pageController : UIPageControl!
     
     init(popupCVPageController : UIPageControl, popupCollectionView : UICollectionView){
-        super.init(nibName: "PremiumPopupVC_UI", bundle: nil)
+        super.init(nibName: "PremiumPopup_UI", bundle: nil)
         self.popupCV = popupCollectionView
         self.pageController = popupCVPageController
         popupCVPageController.numberOfPages = sliderImageArray.count
@@ -88,7 +89,7 @@ class PopupCollectionView_UI : PremiumPopupVC_UI, UICollectionViewDataSource, UI
         // Approximate height of cell
         //print(self.premiumContainerView.frame.height)
         let referenceHeight: CGFloat = collectionView.frame.height
-        print(referenceHeight)
+        
         let referenceWidth = collectionView.safeAreaLayoutGuide.layoutFrame.width
             - sectionInset.left
             - sectionInset.right
