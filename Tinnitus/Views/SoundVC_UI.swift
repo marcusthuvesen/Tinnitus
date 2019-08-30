@@ -62,6 +62,11 @@ class SoundVC_UI: UIViewController {
     @IBOutlet weak var seventeenthOutletBlurImage: UIImageView!
     @IBOutlet weak var eighteenthOutletBlurImage: UIImageView!
   
+    @IBOutlet weak var soundScrollView: UIScrollView!
+    @IBOutlet weak var favoriteLabel: UILabel!
+    @IBOutlet weak var mechanicLabel: UILabel!
+    @IBOutlet weak var natureLabel: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -161,22 +166,73 @@ class SoundVC_UI: UIViewController {
     //Send To Premium Popup
     @IBAction func fourteenthSoundBtn(_ sender: UIButton) {
         //buttonClickedChanged(senderOutlet: fourteenthOutletBlurImage, sender: sender)
+        sendToPopup()
     }
     @IBAction func fifteenthSoundBtn(_ sender: UIButton) {
         //buttonClickedChanged(senderOutlet: fifteenthOutletBlurImage, sender: sender)
+        sendToPopup()
     }
     @IBAction func sixteenthSoundBtn(_ sender: UIButton) {
         //buttonClickedChanged(senderOutlet: sixteenthOutletBlurImage, sender: sender)
+        sendToPopup()
     }
     @IBAction func seventeenthSoundBtn(_ sender: UIButton) {
         //buttonClickedChanged(senderOutlet: seventeenthOutletBlurImage, sender: sender)
+        sendToPopup()
     }
     @IBAction func eighteenthSoundBtn(_ sender: UIButton) {
         //buttonClickedChanged(senderOutlet: eighteenthOutletBlurImage, sender: sender)
+        sendToPopup()
     }
     
+    func sendToPopup(){
+        let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopup_UI") as! PremiumPopup_UI
+        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        tabBarController?.present(popOverVC, animated: true)
+    }
     
+    @IBAction func menuBtnOne(_ sender: Any) {
+        self.soundScrollView.scrollToView(view: self.natureLabel, animated: true)
+
+    }
     
+    @IBAction func menuBtnTwo(_ sender: Any) {
+        self.soundScrollView.scrollToView(view: self.mechanicLabel, animated: true)
+
+    }
     
+    @IBAction func menuBtnThree(_ sender: Any) {
+        self.soundScrollView.scrollToView(view: self.favoriteLabel, animated: true)
+
+    }
+    
+}
+
+
+extension UIScrollView {
+    
+    // Scroll to a specific view so that it's top is at the top our scrollview
+    func scrollToView(view:UIView, animated: Bool) {
+        if let origin = view.superview {
+            // Get the Y position of your child view
+            let childStartPoint = origin.convert(view.frame.origin, to: self)
+            // Scroll to a rectangle starting at the Y of your subview, with a height of the scrollview
+            self.scrollRectToVisible(CGRect(x:0, y:childStartPoint.y,width: 1,height: self.frame.height), animated: animated)
+        }
+    }
+    
+    // Bonus: Scroll to top
+    func scrollToTop(animated: Bool) {
+        let topOffset = CGPoint(x: 0, y: -contentInset.top)
+        setContentOffset(topOffset, animated: animated)
+    }
+    
+    // Bonus: Scroll to bottom
+    func scrollToBottom() {
+        let bottomOffset = CGPoint(x: 0, y: contentSize.height - bounds.size.height + contentInset.bottom)
+        if(bottomOffset.y > 0) {
+            setContentOffset(bottomOffset, animated: true)
+        }
+    }
     
 }
