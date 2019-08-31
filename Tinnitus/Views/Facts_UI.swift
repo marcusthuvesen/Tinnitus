@@ -8,40 +8,57 @@
 
 import UIKit
 
-class Facts_UI: UIViewController {
+class Facts_UI: UIViewController, FactsDelegate {
+   
+    
     
     @IBOutlet weak var firstFactBtnOutlet: UIButton!
     @IBOutlet weak var secondFactBtnOutlet: UIButton!
     @IBOutlet weak var thirdFactBtnOutlet: UIButton!
     @IBOutlet weak var fourthFactBtnOutlet: UIButton!
     
+    let factsPresenter = FactsPresenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       setupFactUI()
+        setupFactUI()
+        setupFactsDelegate()
     }
     
     func setupFactUI(){
 //        firstFactBtnOutlet.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
     }
     
-    @IBAction func firstFactBtn(_ sender: Any) {
-        pushToVC()
-    }
-    @IBAction func secondFactBtn(_ sender: Any) {
-        pushToVC()
-    }
-    @IBAction func thirdFactBtn(_ sender: Any) {
-        pushToVC()
-    }
-    @IBAction func fourthFactBtn(_ sender: Any) {
-        pushToVC()
+    func setupFactsDelegate(){
+        factsPresenter.setFactsViewDelegate(factsDelegate : self)
     }
     
-    func pushToVC(){
+    func displayText(specificTitleText: String, specificTextViewText : String) {
+        pushToVC(specificFactTitleText: specificTitleText, specificTextViewText: specificTextViewText)
+    }
+    
+    
+    @IBAction func firstFactBtn(_ sender: Any) {
+        factsPresenter.factButtonSelected(buttonPressed: "First")
+    }
+    @IBAction func secondFactBtn(_ sender: Any) {
+        factsPresenter.factButtonSelected(buttonPressed: "Second")
+        
+    }
+    @IBAction func thirdFactBtn(_ sender: Any) {
+        factsPresenter.factButtonSelected(buttonPressed: "Third")
+        
+    }
+    @IBAction func fourthFactBtn(_ sender: Any) {
+        factsPresenter.factButtonSelected(buttonPressed: "Fourth")
+    }
+    
+    func pushToVC(specificFactTitleText : String, specificTextViewText : String){
         let specificFactVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SpecificFact_UI") as! SpecificFact_UI
         specificFactVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        specificFactVC.factTitleText = specificFactTitleText
+        specificFactVC.factTextViewText = specificTextViewText
         tabBarController?.present(specificFactVC, animated: true)
     }
     

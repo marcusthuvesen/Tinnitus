@@ -15,7 +15,6 @@ class Settings_UI: UIViewController {
         super.viewDidLoad()
 
        setupSettingsUI()
-        
     }
     
     func setupSettingsUI(){

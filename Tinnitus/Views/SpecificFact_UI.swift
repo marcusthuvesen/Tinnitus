@@ -10,12 +10,21 @@ import UIKit
 
 class SpecificFact_UI: UIViewController {
 
+    @IBOutlet weak var specificFactTitleLabel: UILabel!
+    @IBOutlet weak var specificFactTextView: UITextView!
+    var factTitleText = ""
+    var factTextViewText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupSpecificFactUI()
     }
     
+    func setupSpecificFactUI(){
+        specificFactTitleLabel.text = factTitleText
+        specificFactTextView.text = factTextViewText
+    }
 
     @IBAction func dismissVCBtn(_ sender: Any) {
         self.dismiss(animated: true, completion:    nil)
