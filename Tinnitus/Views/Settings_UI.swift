@@ -11,6 +11,8 @@ import UIKit
 class Settings_UI: UIViewController {
 
     @IBOutlet weak var settingsPremiumOutlet: UIButton!
+    let shareOnSocialMedia = ShareOnSocialMedia()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +28,14 @@ class Settings_UI: UIViewController {
         popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         tabBarController?.present(popOverVC, animated: true)
     }
+    
+    
+    @IBAction func rateUsBtn(_ sender: UIButton) {
+        AppStoreReviewManager.requestReviewIfAppropriate()
+    }
+    
+    @IBAction func shareOnSocialMediaBtn(_ sender: Any) {
+        shareOnSocialMedia.shareAppOnSocialMedia(vc : self)
+    }
+    
 }

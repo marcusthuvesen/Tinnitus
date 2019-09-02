@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+import AVFoundation
 import MediaPlayer
 
 class FrequencyVC_UI: UIViewController {
@@ -21,15 +22,54 @@ class FrequencyVC_UI: UIViewController {
     
     @IBOutlet weak var sixthFreqOutlet: UIButton!
     @IBOutlet weak var frequencySlider: UISlider!
-    @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var frequencyLabel: UILabel!
+    @IBOutlet weak var volumeContainerView: UIView!
     
-    //var audioPlayer = MPVolumeView()
+
+    var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupFrequencyUI()
+        // 1
+       setupVolumeSliderView()
+    }
+    
+    func setupVolumeSliderView(){
+        if let asset = NSDataAsset(name: "amorphis-my-enemy") {
+            
+            // 2
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback)
+                try AVAudioSession.sharedInstance().setActive(true)
+                try audioPlayer = AVAudioPlayer(data:asset.data, fileTypeHint:"mp3")
+                audioPlayer.prepareToPlay()
+            } catch {
+                print("error")
+            }
+        }
+        
+        var volumeView = MPVolumeView()
+       // volumeView.backgroundColor = UIColor(white: 1, alpha: 0.8)
+        volumeView.frame = CGRect(x: 0, y: 0, width: 0.9*volumeContainerView.frame.width, height: volumeContainerView.frame.height)
+        print("width \(volumeContainerView.frame.width)")
+        print("height \(volumeContainerView.frame.height)")
+        print("width2 \(volumeView.frame.width)")
+        print("height2 \(volumeView.frame.height)")
+        
+//        let topConstraint = NSLayoutConstraint(item: volumeView, attribute: .top, relatedBy: .equal, toItem: volumeContainerView, attribute: .top, multiplier: 1, constant: 0)
+//        let bottomConstraint = NSLayoutConstraint(item: volumeView, attribute: .bottom, relatedBy: .equal, toItem: volumeContainerView, attribute: .bottom, multiplier: 1, constant: 0)
+//        let leadingConstraint = NSLayoutConstraint(item: volumeView, attribute: .leading, relatedBy: .equal, toItem: volumeContainerView, attribute: .leading, multiplier: 1, constant: 0)
+//        let trailingConstraint = NSLayoutConstraint(item: volumeView, attribute: .trailing, relatedBy: .equal, toItem: volumeContainerView, attribute: .trailing, multiplier: 1, constant: 0)
+//
+//
+        //volumeView.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
+        
+        volumeContainerView.addSubview(volumeView)
+        volumeContainerView.bringSubviewToFront(volumeView)
+        self.view.layoutIfNeeded()
+
     }
     
     func setupFrequencyUI(){
@@ -47,13 +87,13 @@ class FrequencyVC_UI: UIViewController {
         let frequencyValue = String(Int(sender.value * 10000))
        frequencyLabel.text = frequencyValue + " KHz"
     }
-    @IBAction func volumeChanged(_ sender: UISlider) {
-      MPVolumeView.setVolume(sender.value)
-        print(sender.value)
-       print(AVAudioSession.sharedInstance().outputVolume)
-    }
-    
+
     @IBAction func firstSoundBtn(_ sender: UIButton) {
+        audioPlayer.play()
+        
+        // 2
+        print("here")
+    
        sender.isSelected = !sender.isSelected
         if sender.isSelected{
             firstFreqOutlet.normalButtonIsClickedUI()
@@ -105,20 +145,3 @@ class FrequencyVC_UI: UIViewController {
     
 }
 
-extension MPVolumeView {
-    static func setVolume(_ volume: Float) {
-        // Need to use the MPVolumeView in order to change volume, but don't care about UI set so frame to .zero
-        let volumeView = MPVolumeView(frame: .zero)
-        // Search for the slider
-        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
-        // Update the slider value with the desired volume.
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
-            slider?.value = volume
-        }
-        // Optional - Remove the HUD
-        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-            volumeView.alpha = 0.000001
-            window.addSubview(volumeView)
-        }
-    }
-}

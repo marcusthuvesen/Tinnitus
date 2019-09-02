@@ -65,7 +65,7 @@ class PremiumPopup_UI: UIViewController, UIPageViewControllerDelegate, PremiumPo
         premiumContainerView.normalButtonUI()
         
         continueBtnOutlet.premiumPopupContinueUI()
-        backgroundPopupImage.addBlurEffect()
+      //  backgroundPopupImage.addBlurEffect()
         premiumAvatarImage.goldBackground()
         mostPopularView.mostPopularButtonUI()
         
