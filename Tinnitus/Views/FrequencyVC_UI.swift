@@ -10,9 +10,9 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
-class FrequencyVC_UI: UIViewController {
+class FrequencyVC_UI: UIViewController, FrequencyDelegate {
+  
     
- 
     @IBOutlet weak var pinkBackgroundDesign: UIView!
     @IBOutlet weak var firstFreqOutlet: UIButton!
     @IBOutlet weak var secondFreqOutlet: UIButton!
@@ -24,57 +24,50 @@ class FrequencyVC_UI: UIViewController {
     @IBOutlet weak var frequencySlider: UISlider!
     @IBOutlet weak var frequencyLabel: UILabel!
     @IBOutlet weak var volumeContainerView: UIView!
+    @IBOutlet weak var volumeLabel: UILabel!
     
-
     var audioPlayer = AVAudioPlayer()
+    let audioSession = AVAudioSession.sharedInstance()
+    let volumeView = MPVolumeView()
+    let myUnit = ToneOutputUnit()
+    var frequencyPresenter = FrequencyPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        do {
+            try audioSession.setActive(true)
+            startObservingVolumeChanges()
+        } catch {
+        }
+        startObservingVolumeChanges()
+        setupFrequencyDelegate()
         setupFrequencyUI()
-        // 1
-       setupVolumeSliderView()
+        setupVolumeSliderView()
+        setupToneSound()
+    }
+    
+    func setupFrequencyDelegate(){
+        frequencyPresenter.setFrequencyViewDelegate(frequencyDelegate: self)
     }
     
     func setupVolumeSliderView(){
-        if let asset = NSDataAsset(name: "amorphis-my-enemy") {
-            
-            // 2
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback)
-                try AVAudioSession.sharedInstance().setActive(true)
-                try audioPlayer = AVAudioPlayer(data:asset.data, fileTypeHint:"mp3")
-                audioPlayer.prepareToPlay()
-            } catch {
-                print("error")
-            }
-        }
-        
-        var volumeView = MPVolumeView()
-       // volumeView.backgroundColor = UIColor(white: 1, alpha: 0.8)
         volumeView.frame = CGRect(x: 0, y: 0, width: 0.9*volumeContainerView.frame.width, height: volumeContainerView.frame.height)
-        print("width \(volumeContainerView.frame.width)")
-        print("height \(volumeContainerView.frame.height)")
-        print("width2 \(volumeView.frame.width)")
-        print("height2 \(volumeView.frame.height)")
-        
-//        let topConstraint = NSLayoutConstraint(item: volumeView, attribute: .top, relatedBy: .equal, toItem: volumeContainerView, attribute: .top, multiplier: 1, constant: 0)
-//        let bottomConstraint = NSLayoutConstraint(item: volumeView, attribute: .bottom, relatedBy: .equal, toItem: volumeContainerView, attribute: .bottom, multiplier: 1, constant: 0)
-//        let leadingConstraint = NSLayoutConstraint(item: volumeView, attribute: .leading, relatedBy: .equal, toItem: volumeContainerView, attribute: .leading, multiplier: 1, constant: 0)
-//        let trailingConstraint = NSLayoutConstraint(item: volumeView, attribute: .trailing, relatedBy: .equal, toItem: volumeContainerView, attribute: .trailing, multiplier: 1, constant: 0)
-//
-//
-        //volumeView.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint])
-        
         volumeContainerView.addSubview(volumeView)
-        volumeContainerView.bringSubviewToFront(volumeView)
-        self.view.layoutIfNeeded()
-
+    }
+   
+    
+    func setupToneSound(){
+        
+        myUnit.setFrequency(freq: 0)
+        myUnit.setToneVolume(vol: 0.5)
+        myUnit.enableSpeaker()
+        myUnit.setToneTime(t: 20000)
     }
     
     func setupFrequencyUI(){
         pinkBackgroundDesign.layer.cornerRadius = 80
-        pinkBackgroundDesign.transform = CGAffineTransform(rotationAngle: CGFloat(20 * M_PI/180))
+        pinkBackgroundDesign.transform = CGAffineTransform(rotationAngle: CGFloat(20 * Double.pi/180))
         firstFreqOutlet.normalButtonUI()
         secondFreqOutlet.normalButtonUI()
         thirdFreqOutlet.normalButtonUI()
@@ -82,65 +75,58 @@ class FrequencyVC_UI: UIViewController {
         fifthFreqOutlet.normalButtonUI()
         sixthFreqOutlet.normalButtonUI()
     }
-
-    @IBAction func frequencyChanged(_ sender: UISlider) {
-        let frequencyValue = String(Int(sender.value * 10000))
-       frequencyLabel.text = frequencyValue + " KHz"
-    }
-
-    @IBAction func firstSoundBtn(_ sender: UIButton) {
-        audioPlayer.play()
+    private struct Observation {
+        static let VolumeKey = "outputVolume"
+        static var Context = 0
         
-        // 2
-        print("here")
+    }
+    func startObservingVolumeChanges() {
+        audioSession.addObserver(self, forKeyPath: Observation.VolumeKey, options: [.initial, .new], context: &Observation.Context)
+    }
     
-       sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            firstFreqOutlet.normalButtonIsClickedUI()
-        }else{
-            firstFreqOutlet.backgroundColor = UIView.CustomColors.blue
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if context == &Observation.Context {
+            if keyPath == Observation.VolumeKey, let volume = (change?[NSKeyValueChangeKey.newKey] as? NSNumber)?.floatValue {
+                volumeLabel.text = "Volume: \(Int(volume*100))%"
+            }
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
+    }
+    
+    func stopObservingVolumeChanges() {
+        audioSession.removeObserver(self, forKeyPath: Observation.VolumeKey, context: &Observation.Context)
+    }
+    
+    func buttonSelected(buttonOutlet : UIButton) {
+        buttonOutlet.normalButtonIsClickedUI()
+    }
+    
+    func buttonUnselected( buttonOutlet : UIButton) {
+        buttonOutlet.backgroundColor = UIView.CustomColors.blue
+    }
+    
+    @IBAction func frequencyChanged(_ sender: UISlider) {
+        frequencyPresenter.frequencyAction(sender: sender, frequencyLabel: frequencyLabel, myUnit: myUnit)
+    }
+    @IBAction func firstSoundBtn(_ sender: UIButton) {
+        myUnit.stop()
+        frequencyPresenter.frequencyButtonSelected(sender: sender)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            secondFreqOutlet.normalButtonIsClickedUI()
-        }else{
-            secondFreqOutlet.backgroundColor = UIView.CustomColors.blue
-        }
+        frequencyPresenter.frequencyButtonSelected(sender: sender)
     }
     @IBAction func thirdSoundBtn(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            thirdFreqOutlet.normalButtonIsClickedUI()
-        }else{
-            thirdFreqOutlet.backgroundColor = UIView.CustomColors.blue
-        }
+        frequencyPresenter.frequencyButtonSelected(sender: sender)
     }
     @IBAction func fourthSoundBtn(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            fourthFreqOutlet.normalButtonIsClickedUI()
-        }else{
-            fourthFreqOutlet.backgroundColor = UIView.CustomColors.blue
-        }
-        
+        frequencyPresenter.frequencyButtonSelected(sender: sender)
     }
     @IBAction func fifthSoundBtn(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            fifthFreqOutlet.normalButtonIsClickedUI()
-        }else{
-            fifthFreqOutlet.backgroundColor = UIView.CustomColors.blue
-        }
+        frequencyPresenter.frequencyButtonSelected(sender: sender)
     }
     @IBAction func sixthSoundBtn(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            sixthFreqOutlet.normalButtonIsClickedUI()
-        }else{
-            sixthFreqOutlet.backgroundColor = UIView.CustomColors.blue
-        }
+        frequencyPresenter.frequencyButtonSelected(sender: sender)
     }
     
 }

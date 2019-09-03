@@ -16,11 +16,7 @@ class FactsPresenter{
     
     weak private var factsDelegate : FactsDelegate?
     private var provideFactText = ProvideFactText()
-    
-    init(){
-        
-    }
-    
+   
     func setFactsViewDelegate(factsDelegate : FactsDelegate){
         self.factsDelegate = factsDelegate
     }
