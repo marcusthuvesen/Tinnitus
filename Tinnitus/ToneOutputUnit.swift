@@ -159,7 +159,9 @@ final class ToneOutputUnit: NSObject {
     }
     
     func start() {
+        if (!audioRunning) {
            try? auAudioUnit.startHardware()
             audioRunning = true
+        }
     }
 }

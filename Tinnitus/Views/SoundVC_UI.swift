@@ -67,12 +67,14 @@ class SoundVC_UI: UIViewController {
     @IBOutlet weak var mechanicLabel: UILabel!
     @IBOutlet weak var natureLabel: UILabel!
     
+    @IBOutlet weak var playBarContainerView: PlayBar!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSoundVC_UI()
+     
     }
     
     
@@ -236,3 +238,4 @@ extension UIScrollView {
     }
     
 }
+

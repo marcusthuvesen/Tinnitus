@@ -24,6 +24,8 @@
 		254EA0EC231AF82A008E2D64 /* ShareOnSocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */; };
 		2581C229231DA9AD00A99EE4 /* ToneOutputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */; };
 		2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */; };
+		2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */; };
+		2581C22F231EAC9500A99EE4 /* PlayBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22E231EAC9500A99EE4 /* PlayBar.swift */; };
 		2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586C565231941D200D960A5 /* FactsPresenter.swift */; };
 		2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2586C567231AA15600D960A5 /* Onboarding.storyboard */; };
 		258931832311226B00435B69 /* PopupCollectionView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258931822311226B00435B69 /* PopupCollectionView_UI.swift */; };
@@ -53,6 +55,8 @@
 		254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOnSocialMedia.swift; sourceTree = "<group>"; };
 		2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
 		2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPresenter.swift; sourceTree = "<group>"; };
+		2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
+		2581C22E231EAC9500A99EE4 /* PlayBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBar.swift; sourceTree = "<group>"; };
 		2586C565231941D200D960A5 /* FactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsPresenter.swift; sourceTree = "<group>"; };
 		2586C567231AA15600D960A5 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		258931822311226B00435B69 /* PopupCollectionView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCollectionView_UI.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 				254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */,
 				254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */,
 				2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */,
+				2581C22E231EAC9500A99EE4 /* PlayBar.swift */,
 				2526D7CB22FB24EB00D70005 /* Models */,
 				2526D7CC22FB24F200D70005 /* Views */,
 				2526D7CD22FB24F900D70005 /* Presenters */,
@@ -157,6 +162,7 @@
 				2526D7BD22F9701C00D70005 /* Main.storyboard */,
 				2586C567231AA15600D960A5 /* Onboarding.storyboard */,
 				254EA0E9231AF4C6008E2D64 /* About.storyboard */,
+				2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 				2526D7C422F9702500D70005 /* LaunchScreen.storyboard in Resources */,
 				2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */,
 				254EA0EA231AF4C6008E2D64 /* About.storyboard in Resources */,
+				2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */,
 				2526D7C122F9702500D70005 /* Assets.xcassets in Resources */,
 				2526D7BF22F9701C00D70005 /* Main.storyboard in Resources */,
 				2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */,
@@ -250,6 +257,7 @@
 				2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */,
 				253F16D5230D79470070C68F /* Facts_UI.swift in Sources */,
 				2526D7D9230CAAAF00D70005 /* PremiumPopup_UI.swift in Sources */,
+				2581C22F231EAC9500A99EE4 /* PlayBar.swift in Sources */,
 				2526D7D5230B423500D70005 /* Settings_UI.swift in Sources */,
 				253AABFE2316E72A003CEE16 /* PremiumPopupPresenter.swift in Sources */,
 				2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */,
