@@ -7,17 +7,38 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SoundDelegate : NSObjectProtocol{
-    func soundBtnSelected()
-    func soundBtnUnselected()
+    func soundBtnSelected(senderOutlet : UIImageView, soundName : String)
+    func soundBtnUnselected(senderOutlet : UIImageView, soundName : String)
 }
 
 class SoundPresenter{
     weak private var soundDelegate : SoundDelegate?
-    //private var provideFactText = ProvideFactText()
+    private var audioNames = AudioFiles()
     
     
+    func setSoundViewDelegate(soundDelegate : SoundDelegate){
+        self.soundDelegate = soundDelegate
+    }
+    
+    func soundButtonClicked(senderOutlet : UIImageView, sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        print("sender tag in btnCLiked \(sender.tag)")
+        let soundName = audioNames.provideAudioName(senderTag: sender.tag)
+        
+        if sender.isSelected{
+            
+            print(soundName)
+            self.soundDelegate?.soundBtnSelected(senderOutlet : senderOutlet, soundName : soundName)
+        } else {
+            
+            print(soundName)
+            self.soundDelegate?.soundBtnUnselected(senderOutlet: senderOutlet, soundName: soundName)
+        }
+        
+    }
     
     
     

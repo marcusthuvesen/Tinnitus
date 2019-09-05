@@ -25,7 +25,6 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     //Volume Outlets
     @IBOutlet weak var soundVolumeView: UIView!
     
-    
     //Slider Outlets
     @IBOutlet weak var firstSliderOutlet: UISlider!
     @IBOutlet weak var secondSliderOutlet: UISlider!
@@ -39,14 +38,20 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     
     @IBOutlet weak var playBarContainerView: PlayBar!
     
+    
     var audioPlayer: AVAudioPlayer?
+    let soundPresenter = SoundPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSoundVC_UI()
+        setupSoundDelegate()
     }
     
+    func setupSoundDelegate(){
+        soundPresenter.setSoundViewDelegate(soundDelegate: self)
+    }
     
     func setupSoundVC_UI(){
         
@@ -64,27 +69,15 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     }
     
     
-    func soundBtnSelected() {
-        
-    }
-    
-    func soundBtnUnselected() {
-        
-    }
-    
-    func buttonClickedChanged(senderOutlet : UIImageView, sender: UIControl, soundName : String? = nil){
+    func soundBtnSelected(senderOutlet : UIImageView, soundName : String) {
+        senderOutlet.normalButtonIsClickedUI()
         soundVolumeView.isHidden = false
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            senderOutlet.normalButtonIsClickedUI()
-        }else{
-            senderOutlet.backgroundColor = UIView.CustomColors.blue
-            if soundName != nil{
-                //Sound.stop(file: soundName!)
-                Sound.stop(file: soundName!, fileExtension: "wav")
-            }
-            
-        }
+        Sound.play(file: soundName, fileExtension: "wav", numberOfLoops: -1)
+    }
+    
+    func soundBtnUnselected(senderOutlet : UIImageView, soundName : String) {
+        senderOutlet.backgroundColor = UIView.CustomColors.blue
+        Sound.stop(file: soundName, fileExtension: "wav")
     }
     
     //    func checkIfNoBtnIsClicked(){
@@ -95,49 +88,50 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     //    }
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
-        Sound.play(file: "rain", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[0], sender: soundBtnOutlets[0], soundName: "rain")
+        print(sender.tag)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
-        Sound.play(file: "beachWaves", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[1], sender: soundBtnOutlets[1], soundName: "beachWaves")
+        print(sender.tag)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func thirdSoundBtn(_ sender: UIButton) {
-        Sound.play(file: "thunder", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[2], sender: soundBtnOutlets[2], soundName: "thunder")
+        print(sender.tag)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func fourthSoundBtn(_ sender: UIButton) {
-        Sound.play(file: "waves", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[3], sender: soundBtnOutlets[3], soundName: "waves")
+        print(sender.tag)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func fifthSoundBtn(_ sender: UIButton) {
-        Sound.play(file: "fire", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[4], sender: soundBtnOutlets[4], soundName: "fire")
+        print(sender.tag)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func sixthSoundBtn(_ sender: UIButton) {
-        Sound.play(file: "cicadas", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[5], sender: soundBtnOutlets[5], soundName: "cicadas")
+        print(sender.tag)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func seventhSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[6], sender: soundBtnOutlets[6], soundName: nil)
+        print(sender.tag)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func eigthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[7], sender: soundBtnOutlets[7], soundName: nil)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func ninthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[8], sender: soundBtnOutlets[8], soundName: nil)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func tenthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[9], sender: soundBtnOutlets[9], soundName: nil)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func eleventhSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[10], sender: soundBtnOutlets[10], soundName: nil)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func twelfthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[11], sender: soundBtnOutlets[11], soundName: nil)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     @IBAction func thirteenthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: btnBackgroundImages[12], sender: soundBtnOutlets[12], soundName: nil)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
     
     //Send To Premium Popup
