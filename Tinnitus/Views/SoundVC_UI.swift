@@ -12,27 +12,10 @@ import SwiftySound
 
 class SoundVC_UI: UIViewController, SoundDelegate {
     
-    
-    
     //Button Outlets
-    @IBOutlet weak var firstBtnOutlet: UIButton!
-    @IBOutlet weak var secondBtnOutlet: UIButton!
-    @IBOutlet weak var thirdBtnOutlet: UIButton!
-    @IBOutlet weak var fourthBtnOutlet: UIButton!
-    @IBOutlet weak var fifthBtnOutlet: UIButton!
-    @IBOutlet weak var sixthBtnOutlet: UIButton!
-    @IBOutlet weak var seventhBtnOutlet: UIButton!
-    @IBOutlet weak var eigthBtnOutlet: UIButton!
-    @IBOutlet weak var ninthBtnOutlet: UIButton!
-    @IBOutlet weak var tenthBtnOutlet: UIButton!
-    @IBOutlet weak var eleventhBtnOutlet: UIButton!
-    @IBOutlet weak var twelfthBtnOutlet: UIButton!
-    @IBOutlet weak var thirteenthBtnOutlet: UIButton!
-    @IBOutlet weak var fourteenthBtnOutlet: UIButton!
-    @IBOutlet weak var fifteenthBtnOutlet: UIButton!
-    @IBOutlet weak var sixteenthBtnOutlet: UIButton!
-    @IBOutlet weak var seventeenthBtnOutlet: UIButton!
-    @IBOutlet weak var eighteenthBtnOutlet: UIButton!
+     @IBOutlet var soundBtnOutlets: [UIButton]!
+    //BackgroundImages Outlets
+     @IBOutlet var btnBackgroundImages: [UIImageView]!
     
     //Menu Outlets
     @IBOutlet weak var menuBtnOne: UIButton!
@@ -47,24 +30,7 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     @IBOutlet weak var firstSliderOutlet: UISlider!
     @IBOutlet weak var secondSliderOutlet: UISlider!
     @IBOutlet weak var thirdSliderOutlet: UISlider!
-    @IBOutlet weak var firstOutletBlurImage: UIImageView!
-    @IBOutlet weak var secondOutletBlurImage: UIImageView!
-    @IBOutlet weak var thirdOutletBlurImage: UIImageView!
-    @IBOutlet weak var fourthOutletBlurImage: UIImageView!
-    @IBOutlet weak var fifthOutletBlurImage: UIImageView!
-    @IBOutlet weak var sixthOutletBlurImage: UIImageView!
-    @IBOutlet weak var seventhOutletBlurImage: UIImageView!
-    @IBOutlet weak var eigthOutletBlurImage: UIImageView!
-    @IBOutlet weak var ninthOutletBlurImage: UIImageView!
-    @IBOutlet weak var tenthOutletBlurImage: UIImageView!
-    @IBOutlet weak var eleventhOutletBlurImage: UIImageView!
-    @IBOutlet weak var twelfthOutletBlurImage: UIImageView!
-    @IBOutlet weak var thirteenthOutletBlurImage: UIImageView!
-    @IBOutlet weak var fourteenthOutletBlurImage: UIImageView!
-    @IBOutlet weak var fifteenthOutletBlurImage: UIImageView!
-    @IBOutlet weak var sixteenthOutletBlurImage: UIImageView!
-    @IBOutlet weak var seventeenthOutletBlurImage: UIImageView!
-    @IBOutlet weak var eighteenthOutletBlurImage: UIImageView!
+   
     
     @IBOutlet weak var soundScrollView: UIScrollView!
     @IBOutlet weak var favoriteLabel: UILabel!
@@ -79,7 +45,6 @@ class SoundVC_UI: UIViewController, SoundDelegate {
         super.viewDidLoad()
         
         setupSoundVC_UI()
-        
     }
     
     
@@ -89,24 +54,9 @@ class SoundVC_UI: UIViewController, SoundDelegate {
         secondSliderOutlet.setThumbImage(UIImage(named: "storm2"), for: .normal)
         thirdSliderOutlet.setThumbImage(UIImage(named: "sunset2"), for: .normal)
         
-        firstOutletBlurImage.normalButtonUI()
-        secondOutletBlurImage.normalButtonUI()
-        thirdOutletBlurImage.normalButtonUI()
-        fourthOutletBlurImage.normalButtonUI()
-        fifthOutletBlurImage.normalButtonUI()
-        sixthOutletBlurImage.normalButtonUI()
-        seventhOutletBlurImage.normalButtonUI()
-        eigthOutletBlurImage.normalButtonUI()
-        ninthOutletBlurImage.normalButtonUI()
-        tenthOutletBlurImage.normalButtonUI()
-        eleventhOutletBlurImage.normalButtonUI()
-        twelfthOutletBlurImage.normalButtonUI()
-        thirteenthOutletBlurImage.normalButtonUI()
-        fourteenthOutletBlurImage.normalButtonUI()
-        fifteenthOutletBlurImage.normalButtonUI()
-        sixteenthOutletBlurImage.normalButtonUI()
-        seventeenthOutletBlurImage.normalButtonUI()
-        eighteenthOutletBlurImage.normalButtonUI()
+        for image in btnBackgroundImages{
+            image.normalButtonUI()
+        }
         
         menuBtnOne.normalButtonUI()
         menuBtnTwo.normalButtonUI()
@@ -115,11 +65,11 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     
     
     func soundBtnSelected() {
-        <#code#>
+        
     }
     
     func soundBtnUnselected() {
-        <#code#>
+        
     }
     
     func buttonClickedChanged(senderOutlet : UIImageView, sender: UIControl, soundName : String? = nil){
@@ -146,48 +96,48 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
         Sound.play(file: "rain", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: firstOutletBlurImage, sender: sender, soundName: "rain")
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[0], sender: soundBtnOutlets[0], soundName: "rain")
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
         Sound.play(file: "beachWaves", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: secondOutletBlurImage, sender: sender, soundName: "beachWaves")
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[1], sender: soundBtnOutlets[1], soundName: "beachWaves")
     }
     @IBAction func thirdSoundBtn(_ sender: UIButton) {
         Sound.play(file: "thunder", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: thirdOutletBlurImage, sender: sender, soundName: "thunder")
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[2], sender: soundBtnOutlets[2], soundName: "thunder")
     }
     @IBAction func fourthSoundBtn(_ sender: UIButton) {
         Sound.play(file: "waves", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: fourthOutletBlurImage, sender: sender, soundName: "waves")
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[3], sender: soundBtnOutlets[3], soundName: "waves")
     }
     @IBAction func fifthSoundBtn(_ sender: UIButton) {
         Sound.play(file: "fire", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: fifthOutletBlurImage, sender: sender, soundName: "fire")
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[4], sender: soundBtnOutlets[4], soundName: "fire")
     }
     @IBAction func sixthSoundBtn(_ sender: UIButton) {
         Sound.play(file: "cicadas", fileExtension: "wav", numberOfLoops: -1)
-        buttonClickedChanged(senderOutlet: sixthOutletBlurImage, sender: sender, soundName: "cicadas")
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[5], sender: soundBtnOutlets[5], soundName: "cicadas")
     }
     @IBAction func seventhSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: seventhOutletBlurImage, sender: sender, soundName: nil)
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[6], sender: soundBtnOutlets[6], soundName: nil)
     }
     @IBAction func eigthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: eigthOutletBlurImage, sender: sender, soundName: nil)
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[7], sender: soundBtnOutlets[7], soundName: nil)
     }
     @IBAction func ninthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: ninthOutletBlurImage, sender: sender, soundName: nil)
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[8], sender: soundBtnOutlets[8], soundName: nil)
     }
     @IBAction func tenthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: tenthOutletBlurImage, sender: sender, soundName: nil)
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[9], sender: soundBtnOutlets[9], soundName: nil)
     }
     @IBAction func eleventhSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: eleventhOutletBlurImage, sender: sender, soundName: nil)
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[10], sender: soundBtnOutlets[10], soundName: nil)
     }
     @IBAction func twelfthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: twelfthOutletBlurImage, sender: sender, soundName: nil)
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[11], sender: soundBtnOutlets[11], soundName: nil)
     }
     @IBAction func thirteenthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: thirteenthOutletBlurImage, sender: sender, soundName: nil)
+        buttonClickedChanged(senderOutlet: btnBackgroundImages[12], sender: soundBtnOutlets[12], soundName: nil)
     }
     
     //Send To Premium Popup

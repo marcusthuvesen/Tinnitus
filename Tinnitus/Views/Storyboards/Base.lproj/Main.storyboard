@@ -91,26 +91,6 @@
                                                     <constraint firstAttribute="height" constant="40" id="gUI-Eh-U9V"/>
                                                 </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nv5-WG-gJH">
-                                                <rect key="frame" x="148.5" y="674" width="117" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s4f-Tg-Nrm">
-                                                <rect key="frame" x="281.5" y="674" width="116.5" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-IV-5Yh">
-                                                <rect key="frame" x="16" y="850" width="116.5" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bm4-Zc-feo">
-                                                <rect key="frame" x="148.5" y="850" width="117" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tLK-5Y-aom">
-                                                <rect key="frame" x="281.5" y="850" width="116.5" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-xY-CCU">
                                                 <rect key="frame" x="16" y="218" width="116.5" height="160"/>
                                                 <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,6 +117,50 @@
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E09-I4-YEs">
                                                 <rect key="frame" x="16" y="674" width="116.5" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nv5-WG-gJH">
+                                                <rect key="frame" x="148.5" y="674" width="117" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s4f-Tg-Nrm">
+                                                <rect key="frame" x="281.5" y="674" width="116.5" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-IV-5Yh">
+                                                <rect key="frame" x="16" y="850" width="116.5" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bm4-Zc-feo">
+                                                <rect key="frame" x="148.5" y="850" width="117" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tLK-5Y-aom">
+                                                <rect key="frame" x="281.5" y="850" width="116.5" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4AP-S3-19s">
+                                                <rect key="frame" x="16" y="1130" width="116.5" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fYv-Sr-VX8">
+                                                <rect key="frame" x="148.5" y="1130" width="117" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="icf-jz-0Q4">
+                                                <rect key="frame" x="281.5" y="1130" width="116.5" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6z-wF-hNZ">
+                                                <rect key="frame" x="16" y="1306" width="116.5" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qwu-dc-zKX">
+                                                <rect key="frame" x="148.5" y="1306" width="117" height="160"/>
+                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="odr-Xz-x2U">
+                                                <rect key="frame" x="281.5" y="1306" width="116.5" height="160"/>
                                                 <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Y55-vv-9uv">
@@ -334,30 +358,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4AP-S3-19s">
-                                                <rect key="frame" x="16" y="1130" width="116.5" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fYv-Sr-VX8">
-                                                <rect key="frame" x="148.5" y="1130" width="117" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="icf-jz-0Q4">
-                                                <rect key="frame" x="281.5" y="1130" width="116.5" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6z-wF-hNZ">
-                                                <rect key="frame" x="16" y="1306" width="116.5" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qwu-dc-zKX">
-                                                <rect key="frame" x="148.5" y="1306" width="117" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="odr-Xz-x2U">
-                                                <rect key="frame" x="281.5" y="1306" width="116.5" height="160"/>
-                                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="T2l-M8-A5Z">
                                                 <rect key="frame" x="16" y="1130" width="382" height="160"/>
                                                 <subviews>
@@ -648,54 +648,54 @@
                     </tabBarItem>
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
-                        <outlet property="eighteenthBtnOutlet" destination="Xvj-tF-qda" id="Zwv-g0-j7t"/>
-                        <outlet property="eighteenthOutletBlurImage" destination="odr-Xz-x2U" id="69r-ni-Qec"/>
-                        <outlet property="eigthBtnOutlet" destination="i8B-EH-l3f" id="tum-11-9MX"/>
-                        <outlet property="eigthOutletBlurImage" destination="nv5-WG-gJH" id="Ps7-WX-otm"/>
-                        <outlet property="eleventhBtnOutlet" destination="r5F-9h-LFr" id="0JF-Wv-6F7"/>
-                        <outlet property="eleventhOutletBlurImage" destination="bm4-Zc-feo" id="6ow-8z-5vI"/>
                         <outlet property="favoriteLabel" destination="NKO-YY-oeC" id="WgA-7U-i8H"/>
-                        <outlet property="fifteenthBtnOutlet" destination="b92-oT-ZKs" id="nfE-bc-7pT"/>
-                        <outlet property="fifteenthOutletBlurImage" destination="icf-jz-0Q4" id="6oH-Ij-Lvm"/>
-                        <outlet property="fifthBtnOutlet" destination="2xC-o0-bAN" id="Tkt-Mb-9PM"/>
-                        <outlet property="fifthOutletBlurImage" destination="9Hg-az-ZwT" id="YRR-2c-Ipd"/>
-                        <outlet property="firstBtnOutlet" destination="onk-Xi-Vc2" id="DFF-cL-6i3"/>
-                        <outlet property="firstOutletBlurImage" destination="tqB-xY-CCU" id="Z2E-oQ-CA1"/>
                         <outlet property="firstSliderOutlet" destination="Rnc-ob-leO" id="ZBM-Bb-udL"/>
-                        <outlet property="fourteenthBtnOutlet" destination="NEO-WT-WQE" id="w60-9h-Brc"/>
-                        <outlet property="fourteenthOutletBlurImage" destination="fYv-Sr-VX8" id="eXP-mu-gUS"/>
-                        <outlet property="fourthBtnOutlet" destination="pch-Yg-3X5" id="ukc-HG-eMQ"/>
-                        <outlet property="fourthOutletBlurImage" destination="vcI-ko-Eos" id="X88-ef-nB9"/>
                         <outlet property="mechanicLabel" destination="7XG-bC-JuU" id="NXk-If-t0l"/>
                         <outlet property="menuBtnOne" destination="pyR-af-KXE" id="ySM-ng-gQX"/>
                         <outlet property="menuBtnThree" destination="zy3-2m-fJD" id="wPW-Hr-1hQ"/>
                         <outlet property="menuBtnTwo" destination="1Hk-8E-SdI" id="rEf-OM-0Nb"/>
                         <outlet property="natureLabel" destination="jwz-SX-ahF" id="8Vi-WU-kpv"/>
-                        <outlet property="ninthBtnOutlet" destination="qx4-E2-OYn" id="lAl-3i-m07"/>
-                        <outlet property="ninthOutletBlurImage" destination="s4f-Tg-Nrm" id="uoe-9x-npf"/>
                         <outlet property="playBarContainerView" destination="RJ2-Ze-KUn" id="kpW-bB-L8j"/>
-                        <outlet property="secondBtnOutlet" destination="lrW-WT-Tyn" id="F76-QN-Cyf"/>
-                        <outlet property="secondOutletBlurImage" destination="DXk-me-6F0" id="F7Y-w5-bkr"/>
                         <outlet property="secondSliderOutlet" destination="x2w-6S-FEz" id="E2d-PC-f2P"/>
-                        <outlet property="seventeenthBtnOutlet" destination="3A3-mw-MfQ" id="nqI-WO-BSV"/>
-                        <outlet property="seventeenthOutletBlurImage" destination="Qwu-dc-zKX" id="sJF-7J-x1A"/>
-                        <outlet property="seventhBtnOutlet" destination="9Hm-lw-lof" id="fKJ-rx-8Op"/>
-                        <outlet property="seventhOutletBlurImage" destination="E09-I4-YEs" id="7iv-J6-CEu"/>
-                        <outlet property="sixteenthBtnOutlet" destination="z9h-Fh-Azh" id="xxI-PD-M0Q"/>
-                        <outlet property="sixteenthOutletBlurImage" destination="v6z-wF-hNZ" id="gMC-sb-Bla"/>
-                        <outlet property="sixthBtnOutlet" destination="yR2-AL-iKc" id="12j-cH-UBM"/>
-                        <outlet property="sixthOutletBlurImage" destination="NA2-hk-8J4" id="SOo-le-XI0"/>
                         <outlet property="soundScrollView" destination="pfR-V4-hrg" id="Asm-Yr-tgd"/>
                         <outlet property="soundVolumeView" destination="Adp-Ir-B3F" id="LDe-Ab-399"/>
-                        <outlet property="tenthBtnOutlet" destination="Qhh-XY-zgK" id="83r-ij-7nS"/>
-                        <outlet property="tenthOutletBlurImage" destination="fAl-IV-5Yh" id="PD0-f1-aiH"/>
-                        <outlet property="thirdBtnOutlet" destination="n9e-Uk-Yq5" id="i2N-8F-twK"/>
-                        <outlet property="thirdOutletBlurImage" destination="TV2-nD-tm9" id="zGO-La-5OW"/>
                         <outlet property="thirdSliderOutlet" destination="jsF-Iz-VtV" id="hJ8-CY-DmI"/>
-                        <outlet property="thirteenthBtnOutlet" destination="51p-vN-GjS" id="0YY-pk-CZr"/>
-                        <outlet property="thirteenthOutletBlurImage" destination="4AP-S3-19s" id="dMb-5b-lHi"/>
-                        <outlet property="twelfthBtnOutlet" destination="Wf4-ci-vWr" id="0Zq-3w-AKi"/>
-                        <outlet property="twelfthOutletBlurImage" destination="tLK-5Y-aom" id="9gu-W5-3Yd"/>
+                        <outletCollection property="soundBtnOutlets" destination="lrW-WT-Tyn" collectionClass="NSMutableArray" id="jqM-jH-eYg"/>
+                        <outletCollection property="soundBtnOutlets" destination="pch-Yg-3X5" collectionClass="NSMutableArray" id="EUS-6r-3ed"/>
+                        <outletCollection property="soundBtnOutlets" destination="yR2-AL-iKc" collectionClass="NSMutableArray" id="EMi-5r-MEz"/>
+                        <outletCollection property="soundBtnOutlets" destination="2xC-o0-bAN" collectionClass="NSMutableArray" id="YSC-SX-NiR"/>
+                        <outletCollection property="soundBtnOutlets" destination="onk-Xi-Vc2" collectionClass="NSMutableArray" id="iEA-Xd-5Ay"/>
+                        <outletCollection property="soundBtnOutlets" destination="n9e-Uk-Yq5" collectionClass="NSMutableArray" id="YEY-3d-EGA"/>
+                        <outletCollection property="soundBtnOutlets" destination="9Hm-lw-lof" collectionClass="NSMutableArray" id="39V-G1-OsY"/>
+                        <outletCollection property="soundBtnOutlets" destination="i8B-EH-l3f" collectionClass="NSMutableArray" id="OWK-68-WxX"/>
+                        <outletCollection property="soundBtnOutlets" destination="qx4-E2-OYn" collectionClass="NSMutableArray" id="bOi-TR-gpO"/>
+                        <outletCollection property="soundBtnOutlets" destination="Qhh-XY-zgK" collectionClass="NSMutableArray" id="AsD-kx-Hsu"/>
+                        <outletCollection property="soundBtnOutlets" destination="r5F-9h-LFr" collectionClass="NSMutableArray" id="J9d-9t-147"/>
+                        <outletCollection property="soundBtnOutlets" destination="Wf4-ci-vWr" collectionClass="NSMutableArray" id="PVi-Li-mKX"/>
+                        <outletCollection property="soundBtnOutlets" destination="51p-vN-GjS" collectionClass="NSMutableArray" id="oee-ir-Z8l"/>
+                        <outletCollection property="soundBtnOutlets" destination="NEO-WT-WQE" collectionClass="NSMutableArray" id="Y8g-Za-7KY"/>
+                        <outletCollection property="soundBtnOutlets" destination="b92-oT-ZKs" collectionClass="NSMutableArray" id="WMa-Nl-u4x"/>
+                        <outletCollection property="soundBtnOutlets" destination="z9h-Fh-Azh" collectionClass="NSMutableArray" id="P3A-se-fQO"/>
+                        <outletCollection property="soundBtnOutlets" destination="3A3-mw-MfQ" collectionClass="NSMutableArray" id="qAE-9S-Plg"/>
+                        <outletCollection property="soundBtnOutlets" destination="Xvj-tF-qda" collectionClass="NSMutableArray" id="MKS-Z7-DLF"/>
+                        <outletCollection property="btnBackgroundImages" destination="tqB-xY-CCU" collectionClass="NSMutableArray" id="GuH-9M-uRO"/>
+                        <outletCollection property="btnBackgroundImages" destination="DXk-me-6F0" collectionClass="NSMutableArray" id="1l6-qw-1NG"/>
+                        <outletCollection property="btnBackgroundImages" destination="TV2-nD-tm9" collectionClass="NSMutableArray" id="Ewh-SE-iUH"/>
+                        <outletCollection property="btnBackgroundImages" destination="vcI-ko-Eos" collectionClass="NSMutableArray" id="efD-ld-7zd"/>
+                        <outletCollection property="btnBackgroundImages" destination="9Hg-az-ZwT" collectionClass="NSMutableArray" id="vvW-Hi-t26"/>
+                        <outletCollection property="btnBackgroundImages" destination="NA2-hk-8J4" collectionClass="NSMutableArray" id="Igc-ht-Eo2"/>
+                        <outletCollection property="btnBackgroundImages" destination="E09-I4-YEs" collectionClass="NSMutableArray" id="nIq-aH-vqU"/>
+                        <outletCollection property="btnBackgroundImages" destination="nv5-WG-gJH" collectionClass="NSMutableArray" id="zmg-Ag-VD7"/>
+                        <outletCollection property="btnBackgroundImages" destination="s4f-Tg-Nrm" collectionClass="NSMutableArray" id="vbB-tX-c7e"/>
+                        <outletCollection property="btnBackgroundImages" destination="fAl-IV-5Yh" collectionClass="NSMutableArray" id="vQE-mi-2RM"/>
+                        <outletCollection property="btnBackgroundImages" destination="bm4-Zc-feo" collectionClass="NSMutableArray" id="bHp-3v-JfI"/>
+                        <outletCollection property="btnBackgroundImages" destination="tLK-5Y-aom" collectionClass="NSMutableArray" id="ToI-vd-iyT"/>
+                        <outletCollection property="btnBackgroundImages" destination="4AP-S3-19s" collectionClass="NSMutableArray" id="i14-iD-tCF"/>
+                        <outletCollection property="btnBackgroundImages" destination="fYv-Sr-VX8" collectionClass="NSMutableArray" id="q2t-9a-TrP"/>
+                        <outletCollection property="btnBackgroundImages" destination="icf-jz-0Q4" collectionClass="NSMutableArray" id="3cL-ed-G9p"/>
+                        <outletCollection property="btnBackgroundImages" destination="v6z-wF-hNZ" collectionClass="NSMutableArray" id="CRw-rq-Fnm"/>
+                        <outletCollection property="btnBackgroundImages" destination="Qwu-dc-zKX" collectionClass="NSMutableArray" id="4ES-ul-WdJ"/>
+                        <outletCollection property="btnBackgroundImages" destination="odr-Xz-x2U" collectionClass="NSMutableArray" id="JQn-jB-aM9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahB-QR-Sng" userLabel="First Responder" sceneMemberID="firstResponder"/>
