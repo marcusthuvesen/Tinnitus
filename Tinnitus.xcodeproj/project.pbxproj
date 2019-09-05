@@ -26,6 +26,15 @@
 		2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */; };
 		2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */; };
 		2581C22F231EAC9500A99EE4 /* PlayBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22E231EAC9500A99EE4 /* PlayBar.swift */; };
+		2581C231231FB4C700A99EE4 /* Ext_FrequencyVC_ObserveVolumeChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C230231FB4C700A99EE4 /* Ext_FrequencyVC_ObserveVolumeChanges.swift */; };
+		2581C233231FB9E400A99EE4 /* SoundLibrary.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2581C232231FB9E400A99EE4 /* SoundLibrary.xcassets */; };
+		2581C237231FC26300A99EE4 /* waves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2581C239231FC26300A99EE4 /* waves.wav */; };
+		2581C23D231FC44300A99EE4 /* rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2581C23A231FC44000A99EE4 /* rain.wav */; };
+		2581C23E231FC44300A99EE4 /* thunder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2581C23B231FC44200A99EE4 /* thunder.wav */; };
+		2581C23F231FC44300A99EE4 /* fire.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2581C23C231FC44300A99EE4 /* fire.wav */; };
+		2581C241231FC6CF00A99EE4 /* cicadas.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2581C240231FC6CF00A99EE4 /* cicadas.wav */; };
+		2581C243231FC70500A99EE4 /* beachWaves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2581C242231FC70500A99EE4 /* beachWaves.wav */; };
+		2581C245232100D900A99EE4 /* SoundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C244232100D900A99EE4 /* SoundPresenter.swift */; };
 		2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586C565231941D200D960A5 /* FactsPresenter.swift */; };
 		2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2586C567231AA15600D960A5 /* Onboarding.storyboard */; };
 		258931832311226B00435B69 /* PopupCollectionView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258931822311226B00435B69 /* PopupCollectionView_UI.swift */; };
@@ -33,6 +42,7 @@
 		259B31FF2319265D00878567 /* FactsTextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259B31FE2319265D00878567 /* FactsTextInfo.swift */; };
 		25BFE61423191579000EB41C /* SpecificFact_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BFE61323191579000EB41C /* SpecificFact_UI.swift */; };
 		25C97755230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C97754230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift */; };
+		4426859D2600AECB25508639 /* Pods_Tinnitus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94DF8AA23A6A5DA3B423FC9 /* Pods_Tinnitus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +67,15 @@
 		2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPresenter.swift; sourceTree = "<group>"; };
 		2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
 		2581C22E231EAC9500A99EE4 /* PlayBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBar.swift; sourceTree = "<group>"; };
+		2581C230231FB4C700A99EE4 /* Ext_FrequencyVC_ObserveVolumeChanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_FrequencyVC_ObserveVolumeChanges.swift; sourceTree = "<group>"; };
+		2581C232231FB9E400A99EE4 /* SoundLibrary.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SoundLibrary.xcassets; sourceTree = "<group>"; };
+		2581C238231FC26300A99EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Base; path = Base.lproj/waves.wav; sourceTree = "<group>"; };
+		2581C23A231FC44000A99EE4 /* rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain.wav; sourceTree = "<group>"; };
+		2581C23B231FC44200A99EE4 /* thunder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thunder.wav; sourceTree = "<group>"; };
+		2581C23C231FC44300A99EE4 /* fire.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fire.wav; sourceTree = "<group>"; };
+		2581C240231FC6CF00A99EE4 /* cicadas.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cicadas.wav; sourceTree = "<group>"; };
+		2581C242231FC70500A99EE4 /* beachWaves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beachWaves.wav; sourceTree = "<group>"; };
+		2581C244232100D900A99EE4 /* SoundPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPresenter.swift; sourceTree = "<group>"; };
 		2586C565231941D200D960A5 /* FactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsPresenter.swift; sourceTree = "<group>"; };
 		2586C567231AA15600D960A5 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		258931822311226B00435B69 /* PopupCollectionView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCollectionView_UI.swift; sourceTree = "<group>"; };
@@ -64,6 +83,9 @@
 		259B31FE2319265D00878567 /* FactsTextInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsTextInfo.swift; sourceTree = "<group>"; };
 		25BFE61323191579000EB41C /* SpecificFact_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificFact_UI.swift; sourceTree = "<group>"; };
 		25C97754230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSlider_CollectionViewCell.swift; sourceTree = "<group>"; };
+		3BBB2BE7ECE93E3582BA6691 /* Pods-Tinnitus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinnitus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tinnitus/Pods-Tinnitus.release.xcconfig"; sourceTree = "<group>"; };
+		9DB205E5C39DE72DEE28B5CE /* Pods-Tinnitus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinnitus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tinnitus/Pods-Tinnitus.debug.xcconfig"; sourceTree = "<group>"; };
+		F94DF8AA23A6A5DA3B423FC9 /* Pods_Tinnitus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tinnitus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,17 +93,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4426859D2600AECB25508639 /* Pods_Tinnitus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BBC9641A4AE277DAECD284F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DB205E5C39DE72DEE28B5CE /* Pods-Tinnitus.debug.xcconfig */,
+				3BBB2BE7ECE93E3582BA6691 /* Pods-Tinnitus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2526D7AD22F9701C00D70005 = {
 			isa = PBXGroup;
 			children = (
 				2526D7B822F9701C00D70005 /* Tinnitus */,
 				2526D7B722F9701C00D70005 /* Products */,
+				0BBC9641A4AE277DAECD284F /* Pods */,
+				8D68ECF57F82A863F9E4C32B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,10 +130,12 @@
 		2526D7B822F9701C00D70005 /* Tinnitus */ = {
 			isa = PBXGroup;
 			children = (
+				2581C236231FC1FF00A99EE4 /* SoundFiles */,
 				2526D7C522F9702500D70005 /* Info.plist */,
 				254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */,
 				254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */,
 				2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */,
+				2526D7C022F9702500D70005 /* Assets.xcassets */,
 				2581C22E231EAC9500A99EE4 /* PlayBar.swift */,
 				2526D7CB22FB24EB00D70005 /* Models */,
 				2526D7CC22FB24F200D70005 /* Views */,
@@ -127,6 +163,7 @@
 				25C97754230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift */,
 				2526D7CE22FB2BC100D70005 /* Extension_Btn_UI.swift */,
 				2526D7BB22F9701C00D70005 /* FrequencyVC_UI.swift */,
+				2581C230231FB4C700A99EE4 /* Ext_FrequencyVC_ObserveVolumeChanges.swift */,
 				2526D7D022FB2F4700D70005 /* SoundVC_UI.swift */,
 				2526D7D4230B423300D70005 /* Settings_UI.swift */,
 				253F16D4230D79470070C68F /* Facts_UI.swift */,
@@ -141,14 +178,28 @@
 				2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */,
 				253AABFD2316E72A003CEE16 /* PremiumPopupPresenter.swift */,
 				2586C565231941D200D960A5 /* FactsPresenter.swift */,
+				2581C244232100D900A99EE4 /* SoundPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		2581C236231FC1FF00A99EE4 /* SoundFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2581C239231FC26300A99EE4 /* waves.wav */,
+				2581C23C231FC44300A99EE4 /* fire.wav */,
+				2581C23A231FC44000A99EE4 /* rain.wav */,
+				2581C242231FC70500A99EE4 /* beachWaves.wav */,
+				2581C23B231FC44200A99EE4 /* thunder.wav */,
+				2581C240231FC6CF00A99EE4 /* cicadas.wav */,
+			);
+			path = SoundFiles;
 			sourceTree = "<group>";
 		};
 		25C97752230F0A2E000D0607 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				2526D7C022F9702500D70005 /* Assets.xcassets */,
+				2581C232231FB9E400A99EE4 /* SoundLibrary.xcassets */,
 				2526D7B922F9701C00D70005 /* AppDelegate.swift */,
 				2526D7C222F9702500D70005 /* LaunchScreen.storyboard */,
 			);
@@ -167,6 +218,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		8D68ECF57F82A863F9E4C32B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F94DF8AA23A6A5DA3B423FC9 /* Pods_Tinnitus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2526D7C822F9702500D70005 /* Build configuration list for PBXNativeTarget "Tinnitus" */;
 			buildPhases = (
+				6C3D5B5D4272F703F975BE27 /* [CP] Check Pods Manifest.lock */,
 				2526D7B222F9701C00D70005 /* Sources */,
 				2526D7B322F9701C00D70005 /* Frameworks */,
 				2526D7B422F9701C00D70005 /* Resources */,
+				A993F4B8860A5607579C995C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,17 +286,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2581C23D231FC44300A99EE4 /* rain.wav in Resources */,
 				2526D7C422F9702500D70005 /* LaunchScreen.storyboard in Resources */,
+				2581C23E231FC44300A99EE4 /* thunder.wav in Resources */,
 				2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */,
+				2581C237231FC26300A99EE4 /* waves.wav in Resources */,
+				2581C243231FC70500A99EE4 /* beachWaves.wav in Resources */,
 				254EA0EA231AF4C6008E2D64 /* About.storyboard in Resources */,
+				2581C23F231FC44300A99EE4 /* fire.wav in Resources */,
 				2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */,
 				2526D7C122F9702500D70005 /* Assets.xcassets in Resources */,
 				2526D7BF22F9701C00D70005 /* Main.storyboard in Resources */,
 				2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */,
+				2581C233231FB9E400A99EE4 /* SoundLibrary.xcassets in Resources */,
+				2581C241231FC6CF00A99EE4 /* cicadas.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C3D5B5D4272F703F975BE27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tinnitus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A993F4B8860A5607579C995C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tinnitus/Pods-Tinnitus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftySound/SwiftySound.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftySound.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tinnitus/Pods-Tinnitus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2526D7B222F9701C00D70005 /* Sources */ = {
@@ -260,7 +375,9 @@
 				2581C22F231EAC9500A99EE4 /* PlayBar.swift in Sources */,
 				2526D7D5230B423500D70005 /* Settings_UI.swift in Sources */,
 				253AABFE2316E72A003CEE16 /* PremiumPopupPresenter.swift in Sources */,
+				2581C231231FB4C700A99EE4 /* Ext_FrequencyVC_ObserveVolumeChanges.swift in Sources */,
 				2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */,
+				2581C245232100D900A99EE4 /* SoundPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +398,14 @@
 				2526D7C322F9702500D70005 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2581C239231FC26300A99EE4 /* waves.wav */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2581C238231FC26300A99EE4 /* Base */,
+			);
+			name = waves.wav;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -404,6 +529,7 @@
 		};
 		2526D7C922F9702500D70005 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DB205E5C39DE72DEE28B5CE /* Pods-Tinnitus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -422,6 +548,7 @@
 		};
 		2526D7CA22F9702500D70005 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BBB2BE7ECE93E3582BA6691 /* Pods-Tinnitus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

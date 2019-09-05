@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
+import SwiftySound
 
-class SoundVC_UI: UIViewController {
+class SoundVC_UI: UIViewController, SoundDelegate {
+    
+    
     
     //Button Outlets
     @IBOutlet weak var firstBtnOutlet: UIButton!
@@ -61,7 +65,7 @@ class SoundVC_UI: UIViewController {
     @IBOutlet weak var sixteenthOutletBlurImage: UIImageView!
     @IBOutlet weak var seventeenthOutletBlurImage: UIImageView!
     @IBOutlet weak var eighteenthOutletBlurImage: UIImageView!
-  
+    
     @IBOutlet weak var soundScrollView: UIScrollView!
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var mechanicLabel: UILabel!
@@ -69,12 +73,13 @@ class SoundVC_UI: UIViewController {
     
     @IBOutlet weak var playBarContainerView: PlayBar!
     
+    var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSoundVC_UI()
-     
+        
     }
     
     
@@ -108,61 +113,81 @@ class SoundVC_UI: UIViewController {
         menuBtnThree.normalButtonUI()
     }
     
-    func buttonClickedChanged(senderOutlet : UIImageView, sender: UIControl){
+    
+    func soundBtnSelected() {
+        <#code#>
+    }
+    
+    func soundBtnUnselected() {
+        <#code#>
+    }
+    
+    func buttonClickedChanged(senderOutlet : UIImageView, sender: UIControl, soundName : String? = nil){
         soundVolumeView.isHidden = false
         sender.isSelected = !sender.isSelected
         if sender.isSelected{
             senderOutlet.normalButtonIsClickedUI()
         }else{
             senderOutlet.backgroundColor = UIView.CustomColors.blue
+            if soundName != nil{
+                //Sound.stop(file: soundName!)
+                Sound.stop(file: soundName!, fileExtension: "wav")
+            }
+            
         }
     }
     
-//    func checkIfNoBtnIsClicked(){
-//        //If True, hide Volume bar
-//        if firstBtnOutlet.isSelected{
-//            soundVolumeView.isHidden = true
-//        }
-//    }
+    //    func checkIfNoBtnIsClicked(){
+    //        //If True, hide Volume bar
+    //        if firstBtnOutlet.isSelected{
+    //            soundVolumeView.isHidden = true
+    //        }
+    //    }
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: firstOutletBlurImage, sender: sender)
+        Sound.play(file: "rain", fileExtension: "wav", numberOfLoops: -1)
+        buttonClickedChanged(senderOutlet: firstOutletBlurImage, sender: sender, soundName: "rain")
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: secondOutletBlurImage, sender: sender)
+        Sound.play(file: "beachWaves", fileExtension: "wav", numberOfLoops: -1)
+        buttonClickedChanged(senderOutlet: secondOutletBlurImage, sender: sender, soundName: "beachWaves")
     }
     @IBAction func thirdSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: thirdOutletBlurImage, sender: sender)
+        Sound.play(file: "thunder", fileExtension: "wav", numberOfLoops: -1)
+        buttonClickedChanged(senderOutlet: thirdOutletBlurImage, sender: sender, soundName: "thunder")
     }
     @IBAction func fourthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: fourthOutletBlurImage, sender: sender)
+        Sound.play(file: "waves", fileExtension: "wav", numberOfLoops: -1)
+        buttonClickedChanged(senderOutlet: fourthOutletBlurImage, sender: sender, soundName: "waves")
     }
     @IBAction func fifthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: fifthOutletBlurImage, sender: sender)
+        Sound.play(file: "fire", fileExtension: "wav", numberOfLoops: -1)
+        buttonClickedChanged(senderOutlet: fifthOutletBlurImage, sender: sender, soundName: "fire")
     }
     @IBAction func sixthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: sixthOutletBlurImage, sender: sender)
+        Sound.play(file: "cicadas", fileExtension: "wav", numberOfLoops: -1)
+        buttonClickedChanged(senderOutlet: sixthOutletBlurImage, sender: sender, soundName: "cicadas")
     }
     @IBAction func seventhSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: seventhOutletBlurImage, sender: sender)
+        buttonClickedChanged(senderOutlet: seventhOutletBlurImage, sender: sender, soundName: nil)
     }
     @IBAction func eigthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: eigthOutletBlurImage, sender: sender)
+        buttonClickedChanged(senderOutlet: eigthOutletBlurImage, sender: sender, soundName: nil)
     }
     @IBAction func ninthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: ninthOutletBlurImage, sender: sender)
+        buttonClickedChanged(senderOutlet: ninthOutletBlurImage, sender: sender, soundName: nil)
     }
     @IBAction func tenthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: tenthOutletBlurImage, sender: sender)
+        buttonClickedChanged(senderOutlet: tenthOutletBlurImage, sender: sender, soundName: nil)
     }
     @IBAction func eleventhSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: eleventhOutletBlurImage, sender: sender)
+        buttonClickedChanged(senderOutlet: eleventhOutletBlurImage, sender: sender, soundName: nil)
     }
     @IBAction func twelfthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: twelfthOutletBlurImage, sender: sender)
+        buttonClickedChanged(senderOutlet: twelfthOutletBlurImage, sender: sender, soundName: nil)
     }
     @IBAction func thirteenthSoundBtn(_ sender: UIButton) {
-        buttonClickedChanged(senderOutlet: thirteenthOutletBlurImage, sender: sender)
+        buttonClickedChanged(senderOutlet: thirteenthOutletBlurImage, sender: sender, soundName: nil)
     }
     
     //Send To Premium Popup
@@ -195,17 +220,17 @@ class SoundVC_UI: UIViewController {
     
     @IBAction func menuBtnOne(_ sender: Any) {
         self.soundScrollView.scrollToView(view: self.natureLabel, animated: true)
-
+        
     }
     
     @IBAction func menuBtnTwo(_ sender: Any) {
         self.soundScrollView.scrollToView(view: self.mechanicLabel, animated: true)
-
+        
     }
     
     @IBAction func menuBtnThree(_ sender: Any) {
         self.soundScrollView.scrollToView(view: self.favoriteLabel, animated: true)
-
+        
     }
     
 }

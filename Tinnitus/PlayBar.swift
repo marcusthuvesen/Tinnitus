@@ -5,7 +5,7 @@
 //  Created by Marcus Thuvesen on 2019-09-03.
 //  Copyright © 2019 Marcus Thuvesen. All rights reserved.
 //
-
+import SwiftySound
 import UIKit
 
 class PlayBar: UIView {
@@ -33,13 +33,18 @@ class PlayBar: UIView {
     }
     
     @IBAction func playBtnAction(_ sender: UIButton) {
-        print("Play")
-//        sender.isSelected = !sender.isSelected
-//        if sender.isSelected{
-//            toneOutPut.start()
-//        } else {
-//            toneOutPut.stop()
-//        }
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            print("Play")
+            
+            //toneOutPut.start()
+            playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+        } else {
+            print("Stop")
+            Sound.stopAll()
+            //toneOutPut.stop()
+            playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+        }
     }
     
     @IBAction func favoriteBtnAction(_ sender: Any) {

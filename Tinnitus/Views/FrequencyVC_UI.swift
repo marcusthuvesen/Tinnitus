@@ -13,6 +13,7 @@ import MediaPlayer
 class FrequencyVC_UI: UIViewController, FrequencyDelegate {
   
     
+    
     @IBOutlet weak var pinkBackgroundDesign: UIView!
     @IBOutlet weak var firstFreqOutlet: UIButton!
     @IBOutlet weak var secondFreqOutlet: UIButton!
@@ -27,24 +28,23 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
     @IBOutlet weak var volumeLabel: UILabel!
     
     var audioPlayer = AVAudioPlayer()
-    let audioSession = AVAudioSession.sharedInstance()
     let volumeView = MPVolumeView()
     let myUnit = ToneOutputUnit()
     var frequencyPresenter = FrequencyPresenter()
+    let audioSession = AVAudioSession.sharedInstance()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            try audioSession.setActive(true)
-            startObservingVolumeChanges()
-        } catch {
-        }
-        startObservingVolumeChanges()
+        observeVolumeChanges()
         setupFrequencyDelegate()
         setupFrequencyUI()
         setupVolumeSliderView()
         setupToneSound()
+    }
+    
+    deinit {
+        //Remove observer
     }
     
     func setupFrequencyDelegate(){
@@ -56,9 +56,7 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
         volumeContainerView.addSubview(volumeView)
     }
    
-    
     func setupToneSound(){
-        
         myUnit.setFrequency(freq: 0)
         myUnit.setToneVolume(vol: 0.5)
         myUnit.enableSpeaker()
@@ -74,28 +72,6 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
         fourthFreqOutlet.normalButtonUI()
         fifthFreqOutlet.normalButtonUI()
         sixthFreqOutlet.normalButtonUI()
-    }
-    private struct Observation {
-        static let VolumeKey = "outputVolume"
-        static var Context = 0
-        
-    }
-    func startObservingVolumeChanges() {
-        audioSession.addObserver(self, forKeyPath: Observation.VolumeKey, options: [.initial, .new], context: &Observation.Context)
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if context == &Observation.Context {
-            if keyPath == Observation.VolumeKey, let volume = (change?[NSKeyValueChangeKey.newKey] as? NSNumber)?.floatValue {
-                volumeLabel.text = "Volume: \(Int(volume*100))%"
-            }
-        } else {
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        }
-    }
-    
-    func stopObservingVolumeChanges() {
-        audioSession.removeObserver(self, forKeyPath: Observation.VolumeKey, context: &Observation.Context)
     }
     
     func buttonSelected(buttonOutlet : UIButton) {

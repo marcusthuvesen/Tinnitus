@@ -10,11 +10,11 @@ import Foundation
 import AudioUnit
 import AVFoundation
 
-final class ToneOutputUnit: NSObject {
+class ToneOutputUnit: NSObject {
     
     var auAudioUnit: AUAudioUnit! = nil     // placeholder for RemoteIO Audio Unit
     
-    var avActive     = false             // AVAudioSession active flag
+    var avActive = false             // AVAudioSession active flag
     var audioRunning = false             // RemoteIO Audio Unit running flag
     
     var sampleRate : Double = 44100.0    // typical audio sample rate
@@ -97,8 +97,6 @@ final class ToneOutputUnit: NSObject {
         } catch /* let error as NSError */ {
             print("error 2 \(error)")
         }
-        
-        
     }
     
     // helper functions
@@ -162,6 +160,10 @@ final class ToneOutputUnit: NSObject {
         if (!audioRunning) {
            try? auAudioUnit.startHardware()
             audioRunning = true
+            setFrequency(freq: 0)
+            setToneVolume(vol: 0.5)
+            enableSpeaker()
+            setToneTime(t: 20000)
         }
     }
 }

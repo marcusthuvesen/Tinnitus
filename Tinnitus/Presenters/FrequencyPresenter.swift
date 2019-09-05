@@ -8,17 +8,16 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 protocol FrequencyDelegate : NSObjectProtocol  {
     func buttonSelected(buttonOutlet : UIButton)
     func buttonUnselected(buttonOutlet : UIButton)
 }
-
-
 class FrequencyPresenter{
     
     weak private var frequencyDelegate : FrequencyDelegate?
-   
+    
     func setFrequencyViewDelegate(frequencyDelegate : FrequencyDelegate){
         self.frequencyDelegate = frequencyDelegate
     }
@@ -38,5 +37,6 @@ class FrequencyPresenter{
         }
         
     }
+    
     
 }
