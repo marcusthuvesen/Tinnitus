@@ -12,6 +12,8 @@ import UIKit
 protocol SoundDelegate : NSObjectProtocol{
     func soundBtnSelected(senderOutlet : UIImageView, soundName : String)
     func soundBtnUnselected(senderOutlet : UIImageView, soundName : String)
+    func changeSliderImage(sender : UIButton)
+    func removeSliderImage(senderOutlet : UIButton)
 }
 
 class SoundPresenter{
@@ -25,22 +27,26 @@ class SoundPresenter{
     
     func soundButtonClicked(senderOutlet : UIImageView, sender: UIButton){
         sender.isSelected = !sender.isSelected
-        print("sender tag in btnCLiked \(sender.tag)")
         let soundName = audioNames.provideAudioName(senderTag: sender.tag)
         
         if sender.isSelected{
-            
-            print(soundName)
+            self.soundDelegate?.changeSliderImage(sender : sender)
             self.soundDelegate?.soundBtnSelected(senderOutlet : senderOutlet, soundName : soundName)
         } else {
-            
-            print(soundName)
+            self.soundDelegate?.removeSliderImage(senderOutlet : sender)
             self.soundDelegate?.soundBtnUnselected(senderOutlet: senderOutlet, soundName: soundName)
         }
-        
     }
     
-    
+    func howManySoundsPlaying(soundBtnOutlets : [UIButton]) -> Int {
+        var amountOfActiveBtns = 0
+        for outlet in soundBtnOutlets{
+            if outlet.isSelected{
+                amountOfActiveBtns += 1
+            }
+        }
+        return amountOfActiveBtns
+    }
     
     
 }
