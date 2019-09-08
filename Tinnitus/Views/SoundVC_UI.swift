@@ -37,6 +37,11 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     var audioPlayer: AVAudioPlayer?
     let soundPresenter = SoundPresenter()
     
+    var previousThirdSender : UIButton?
+    var previousThirdSoundName : String?
+    var previousThirdOutlet : UIImageView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSoundVC_UI()
@@ -70,21 +75,39 @@ class SoundVC_UI: UIViewController, SoundDelegate {
         print(soundPresenter.howManySoundsPlaying(soundBtnOutlets: soundBtnOutlets))
         senderOutlet.backgroundColor = UIView.CustomColors.blue
         Sound.stop(file: soundName, fileExtension: "wav")
+        
     }
     
-    
-    func changeSliderImage(sender: UIButton) {
-        let howManySoundsActive = soundPresenter.howManySoundsPlaying(soundBtnOutlets: soundBtnOutlets)
-        switch howManySoundsActive {
+    func changeSliderImage(sender: UIButton, senderOutlet: UIImageView, soundName : String) {
+        let checkEmptySlider = checkNumberOfEmptySliders(senderOutlet: sender)
+        let amountOfSounds = soundPresenter.howManySoundsPlaying(soundBtnOutlets: soundBtnOutlets)
+        switch checkEmptySlider {
         case 1:
             firstSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
         case 2:
             secondSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
         case 3:
             thirdSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
+            previousThirdSender = sender
+            previousThirdOutlet = senderOutlet
+            previousThirdSoundName = soundName
         default:
-            firstSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
+
+            
+            if previousThirdOutlet != nil {
+                print("Är Här")
+                 soundBtnUnselected(senderOutlet: previousThirdOutlet!, soundName: previousThirdSoundName!)
+                previousThirdSender?.isSelected = false
+                removeSliderImage(senderOutlet: previousThirdSender!)
+            }
+            
+            thirdSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
+            
+            previousThirdSender = sender
+            previousThirdOutlet = senderOutlet
+            previousThirdSoundName = soundName
         }
+        
     }
     
     func removeSliderImage(senderOutlet : UIButton){
@@ -97,6 +120,22 @@ class SoundVC_UI: UIViewController, SoundDelegate {
             thirdSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
         }
     }
+    
+    func checkNumberOfEmptySliders(senderOutlet : UIButton) -> Int{
+        var firstEmptySpot = 0
+        
+        if firstSliderOutlet.currentThumbImage == defaultThumbImage{
+            firstEmptySpot = 1
+        }
+        else if secondSliderOutlet.currentThumbImage == defaultThumbImage{
+            firstEmptySpot = 2
+        }
+        else if thirdSliderOutlet.currentThumbImage == defaultThumbImage{
+            firstEmptySpot = 3
+        }
+        return firstEmptySpot
+    }
+    
     
     
     //    func checkIfNoBtnIsClicked(){
