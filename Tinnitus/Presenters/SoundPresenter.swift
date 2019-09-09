@@ -18,12 +18,21 @@ protocol SoundDelegate : NSObjectProtocol{
 
 class SoundPresenter{
     weak private var soundDelegate : SoundDelegate?
+    private var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
     private var audioNames = AudioFiles()
-    
+    private var firstSliderOutlet : UISlider?
+    private var secondSliderOutlet : UISlider?
+    private var thirdSliderOutlet : UISlider?
     
     func setSoundViewDelegate(soundDelegate : SoundDelegate){
         self.soundDelegate = soundDelegate
     }
+    
+//    init(firstSliderOutlet : UISlider, secondSliderOutlet : UISlider, thirdSliderOutlet : UISlider) {
+//        self.firstSliderOutlet = firstSliderOutlet
+//        self.secondSliderOutlet = secondSliderOutlet
+//        self.thirdSliderOutlet = thirdSliderOutlet
+//    }
     
     func soundButtonClicked(senderOutlet : UIImageView, sender: UIButton){
         sender.isSelected = !sender.isSelected
@@ -32,6 +41,7 @@ class SoundPresenter{
         if sender.isSelected{
             self.soundDelegate?.changeSliderImage(sender : sender, senderOutlet : senderOutlet, soundName : soundName)
             self.soundDelegate?.soundBtnSelected(senderOutlet : senderOutlet, soundName : soundName)
+            soundsCurrentlyPlaying.saveCurrentSound(soundName: soundName)
         } else {
             self.soundDelegate?.removeSliderImage(senderOutlet : sender)
             self.soundDelegate?.soundBtnUnselected(senderOutlet: senderOutlet, soundName: soundName)
@@ -47,6 +57,8 @@ class SoundPresenter{
         }
         return amountOfActiveBtns
     }
+    
+    
     
     
 }

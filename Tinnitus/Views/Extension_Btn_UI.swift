@@ -65,4 +65,8 @@ extension UIView {
         self.layer.masksToBounds = true
         self.backgroundColor = CustomColors.gold
     }
+    
+    
 }
+
+

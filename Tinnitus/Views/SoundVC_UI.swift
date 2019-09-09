@@ -36,10 +36,10 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     
     var audioPlayer: AVAudioPlayer?
     let soundPresenter = SoundPresenter()
-    
     var previousThirdSender : UIButton?
     var previousThirdSoundName : String?
     var previousThirdOutlet : UIImageView?
+    var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
     
     
     override func viewDidLoad() {
@@ -66,48 +66,63 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     
     func soundBtnSelected(senderOutlet : UIImageView, soundName : String) {
         senderOutlet.normalButtonIsClickedUI()
-        print(soundPresenter.howManySoundsPlaying(soundBtnOutlets: soundBtnOutlets))
         soundVolumeView.isHidden = false
         Sound.play(file: soundName, fileExtension: "wav", numberOfLoops: -1)
     }
     
     func soundBtnUnselected(senderOutlet : UIImageView, soundName : String) {
-        print(soundPresenter.howManySoundsPlaying(soundBtnOutlets: soundBtnOutlets))
         senderOutlet.backgroundColor = UIView.CustomColors.blue
         Sound.stop(file: soundName, fileExtension: "wav")
+        soundsCurrentlyPlaying.removeSound(soundName: soundName)
+    }
+    
+    func checkNumberOfEmptySliders() -> Int{
+        var firstEmptySpot = 0
         
+        if firstSliderOutlet?.currentThumbImage == defaultThumbImage{
+            firstEmptySpot = 1
+        }
+        else if secondSliderOutlet?.currentThumbImage == defaultThumbImage{
+            firstEmptySpot = 2
+        }
+        else if thirdSliderOutlet?.currentThumbImage == defaultThumbImage{
+            firstEmptySpot = 3
+        }
+        return firstEmptySpot
     }
     
     func changeSliderImage(sender: UIButton, senderOutlet: UIImageView, soundName : String) {
-        let checkEmptySlider = checkNumberOfEmptySliders(senderOutlet: sender)
-        let amountOfSounds = soundPresenter.howManySoundsPlaying(soundBtnOutlets: soundBtnOutlets)
+
+        let checkEmptySlider = checkNumberOfEmptySliders()
+        
+        var senderImage = sender.image(for: .normal)
+        //senderImage = senderImage?.resized(toWidth: CGFloat(50))
+        
         switch checkEmptySlider {
         case 1:
-            firstSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
+            firstSliderOutlet.setThumbImage(senderImage, for: .normal)
         case 2:
-            secondSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
+            secondSliderOutlet.setThumbImage(senderImage, for: .normal)
         case 3:
-            thirdSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
-            previousThirdSender = sender
-            previousThirdOutlet = senderOutlet
-            previousThirdSoundName = soundName
+            thirdSliderOutlet.setThumbImage(senderImage, for: .normal)
+            setPreviousThirdInputs(sender: sender, senderOutlet: senderOutlet, soundName: soundName)
         default:
 
-            
             if previousThirdOutlet != nil {
-                print("Är Här")
                  soundBtnUnselected(senderOutlet: previousThirdOutlet!, soundName: previousThirdSoundName!)
                 previousThirdSender?.isSelected = false
                 removeSliderImage(senderOutlet: previousThirdSender!)
             }
             
             thirdSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
-            
-            previousThirdSender = sender
-            previousThirdOutlet = senderOutlet
-            previousThirdSoundName = soundName
+            setPreviousThirdInputs(sender: sender, senderOutlet: senderOutlet, soundName: soundName)
         }
-        
+    }
+    
+    func setPreviousThirdInputs(sender: UIButton, senderOutlet: UIImageView, soundName : String ){
+        previousThirdSender = sender
+        previousThirdOutlet = senderOutlet
+        previousThirdSoundName = soundName
     }
     
     func removeSliderImage(senderOutlet : UIButton){
@@ -120,22 +135,6 @@ class SoundVC_UI: UIViewController, SoundDelegate {
             thirdSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
         }
     }
-    
-    func checkNumberOfEmptySliders(senderOutlet : UIButton) -> Int{
-        var firstEmptySpot = 0
-        
-        if firstSliderOutlet.currentThumbImage == defaultThumbImage{
-            firstEmptySpot = 1
-        }
-        else if secondSliderOutlet.currentThumbImage == defaultThumbImage{
-            firstEmptySpot = 2
-        }
-        else if thirdSliderOutlet.currentThumbImage == defaultThumbImage{
-            firstEmptySpot = 3
-        }
-        return firstEmptySpot
-    }
-    
     
     
     //    func checkIfNoBtnIsClicked(){
@@ -251,3 +250,12 @@ extension UIScrollView {
     
 }
 
+extension UIImage {
+    func resized(toWidth width: CGFloat) -> UIImage? {
+        let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
+        UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: canvasSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+}

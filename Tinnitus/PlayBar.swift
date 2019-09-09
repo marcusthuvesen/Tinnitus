@@ -16,6 +16,7 @@ class PlayBar: UIView {
     @IBOutlet weak var timerBtnOutlet: UIButton!
     @IBOutlet var playBarView: UIView!
     let toneOutPut = ToneOutputUnit()
+    let soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,13 +37,23 @@ class PlayBar: UIView {
         sender.isSelected = !sender.isSelected
         if sender.isSelected{
             print("Play")
-            
+            dump(SoundsCurrentlyPlaying.soundsArray)
+            for sound in SoundsCurrentlyPlaying.soundsArray{
+                
+                Sound.play(file: sound, fileExtension: "wav")
+            }
             //toneOutPut.start()
+            
             playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
         } else {
             print("Stop")
-            Sound.stopAll()
             //toneOutPut.stop()
+            for sound in SoundsCurrentlyPlaying.soundsArray{
+                
+                Sound.stop(file: sound, fileExtension: "wav")
+
+            }
+            //Sound.stopAll()
             playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
         }
     }

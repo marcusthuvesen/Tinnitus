@@ -36,6 +36,7 @@
 		2581C243231FC70500A99EE4 /* beachWaves.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2581C242231FC70500A99EE4 /* beachWaves.wav */; };
 		2581C245232100D900A99EE4 /* SoundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C244232100D900A99EE4 /* SoundPresenter.swift */; };
 		2581C24723210D5900A99EE4 /* AudioFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C24623210D5900A99EE4 /* AudioFiles.swift */; };
+		2581C2492326E11700A99EE4 /* SoundsCurrentlyPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C2482326E11700A99EE4 /* SoundsCurrentlyPlaying.swift */; };
 		2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586C565231941D200D960A5 /* FactsPresenter.swift */; };
 		2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2586C567231AA15600D960A5 /* Onboarding.storyboard */; };
 		258931832311226B00435B69 /* PopupCollectionView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258931822311226B00435B69 /* PopupCollectionView_UI.swift */; };
@@ -78,6 +79,7 @@
 		2581C242231FC70500A99EE4 /* beachWaves.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beachWaves.wav; sourceTree = "<group>"; };
 		2581C244232100D900A99EE4 /* SoundPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPresenter.swift; sourceTree = "<group>"; };
 		2581C24623210D5900A99EE4 /* AudioFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFiles.swift; sourceTree = "<group>"; };
+		2581C2482326E11700A99EE4 /* SoundsCurrentlyPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsCurrentlyPlaying.swift; sourceTree = "<group>"; };
 		2586C565231941D200D960A5 /* FactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsPresenter.swift; sourceTree = "<group>"; };
 		2586C567231AA15600D960A5 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		258931822311226B00435B69 /* PopupCollectionView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCollectionView_UI.swift; sourceTree = "<group>"; };
@@ -137,8 +139,9 @@
 				254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */,
 				254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */,
 				2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */,
-				2526D7C022F9702500D70005 /* Assets.xcassets */,
+				2581C2482326E11700A99EE4 /* SoundsCurrentlyPlaying.swift */,
 				2581C22E231EAC9500A99EE4 /* PlayBar.swift */,
+				2526D7C022F9702500D70005 /* Assets.xcassets */,
 				2526D7CB22FB24EB00D70005 /* Models */,
 				2526D7CC22FB24F200D70005 /* Views */,
 				2526D7CD22FB24F900D70005 /* Presenters */,
@@ -371,6 +374,7 @@
 				2581C229231DA9AD00A99EE4 /* ToneOutputUnit.swift in Sources */,
 				25C97755230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift in Sources */,
 				25BFE61423191579000EB41C /* SpecificFact_UI.swift in Sources */,
+				2581C2492326E11700A99EE4 /* SoundsCurrentlyPlaying.swift in Sources */,
 				258931852313D77F00435B69 /* CustomColors.swift in Sources */,
 				2581C24723210D5900A99EE4 /* AudioFiles.swift in Sources */,
 				2526D7CF22FB2BC100D70005 /* Extension_Btn_UI.swift in Sources */,
