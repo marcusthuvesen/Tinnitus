@@ -14,34 +14,41 @@ protocol SoundDelegate : NSObjectProtocol{
     func soundBtnUnselected(senderOutlet : UIImageView, soundName : String)
     func changeSliderImage(sender : UIButton, senderOutlet: UIImageView, soundName : String)
     func removeSliderImage(senderOutlet : UIButton)
+    func hideSliderContainer()
 }
 
-class SoundPresenter{
+class SoundPresenter {
     weak private var soundDelegate : SoundDelegate?
     private var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
+    private var playBar = PlayBar()
     private var audioNames = AudioFiles()
     private var firstSliderOutlet : UISlider?
     private var secondSliderOutlet : UISlider?
     private var thirdSliderOutlet : UISlider?
     
+    
     func setSoundViewDelegate(soundDelegate : SoundDelegate){
         self.soundDelegate = soundDelegate
     }
-    
-//    init(firstSliderOutlet : UISlider, secondSliderOutlet : UISlider, thirdSliderOutlet : UISlider) {
-//        self.firstSliderOutlet = firstSliderOutlet
-//        self.secondSliderOutlet = secondSliderOutlet
-//        self.thirdSliderOutlet = thirdSliderOutlet
-//    }
     
     func soundButtonClicked(senderOutlet : UIImageView, sender: UIButton){
         sender.isSelected = !sender.isSelected
         let soundName = audioNames.provideAudioName(senderTag: sender.tag)
         
         if sender.isSelected{
+            
             self.soundDelegate?.changeSliderImage(sender : sender, senderOutlet : senderOutlet, soundName : soundName)
             self.soundDelegate?.soundBtnSelected(senderOutlet : senderOutlet, soundName : soundName)
             soundsCurrentlyPlaying.saveCurrentSound(soundName: soundName)
+            
+            
+            if !playBar.playBtnOutlet.isSelected{
+                print("Change to selected")
+                //Programmatically sends an action to button
+                playBar.playBtnOutlet.sendActions(for: .touchUpInside)
+            }
+            
+            
         } else {
             self.soundDelegate?.removeSliderImage(senderOutlet : sender)
             self.soundDelegate?.soundBtnUnselected(senderOutlet: senderOutlet, soundName: soundName)
@@ -57,6 +64,8 @@ class SoundPresenter{
         }
         return amountOfActiveBtns
     }
+    
+    
     
     
     

@@ -15,8 +15,8 @@ class PlayBar: UIView {
     @IBOutlet weak var favoriteBtnOutlet: UIButton!
     @IBOutlet weak var timerBtnOutlet: UIButton!
     @IBOutlet var playBarView: UIView!
-    let toneOutPut = ToneOutputUnit()
-    let soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
+    private let soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
+    static var currentWindow = UIViewController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,32 +31,42 @@ class PlayBar: UIView {
     func commonInit() {
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
         playBarView.fixInView(self)
+        
+        playBtnOutlet.addTarget(self, action: #selector(self.playBtnAction(sender:)), for: .touchUpInside)
     }
     
-    @IBAction func playBtnAction(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            print("Play")
-            dump(SoundsCurrentlyPlaying.soundsArray)
-            for sound in SoundsCurrentlyPlaying.soundsArray{
-                
-                Sound.play(file: sound, fileExtension: "wav")
-            }
-            //toneOutPut.start()
-            
-            playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-        } else {
-            print("Stop")
-            //toneOutPut.stop()
-            for sound in SoundsCurrentlyPlaying.soundsArray{
-                
-                Sound.stop(file: sound, fileExtension: "wav")
-
-            }
-            //Sound.stopAll()
-            playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
-        }
+    @objc func playBtnAction(sender: UIButton){
+        print("In PlayBtnAction")
+        playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
     }
+    
+    
+//    @IBAction func playBtnAction(_ sender: UIButton) {
+//        sender.isSelected = !sender.isSelected
+//        print("sender selected: \(sender.isSelected)")
+//        changeBG()
+//        if sender.isSelected{
+//          print("sätter pauseImg")
+//            
+//            if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
+//                for sound in SoundsCurrentlyPlaying.soundsArray{
+//                    Sound.play(file: sound, fileExtension: "wav")
+//                }
+//            }
+//            else if PlayBar.currentWindow.isKind(of: FrequencyVC_UI.self){
+//                FrequencyVC_UI.toneOutPutUnit.start()
+//            }
+//            playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+//        } else {
+//           print("sätter PlayImg")
+//            for sound in SoundsCurrentlyPlaying.soundsArray{
+//                Sound.stop(file: sound, fileExtension: "wav")
+//            }
+//              FrequencyVC_UI.toneOutPutUnit.stop()
+//            
+//            playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+//        }
+//    }
     
     @IBAction func favoriteBtnAction(_ sender: Any) {
     }

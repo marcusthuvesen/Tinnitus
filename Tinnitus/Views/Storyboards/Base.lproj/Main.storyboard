@@ -573,7 +573,7 @@
                                 </constraints>
                             </scrollView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adp-Ir-B3F">
-                                <rect key="frame" x="0.0" y="1802" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="1862" width="414" height="60"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rnc-ob-leO">
                                         <rect key="frame" x="18" y="15" width="107.5" height="31"/>
@@ -639,7 +639,7 @@
                             <constraint firstItem="jsF-Iz-VtV" firstAttribute="width" secondItem="wVt-2H-FgH" secondAttribute="width" multiplier="1/4" id="urN-Me-5r0"/>
                             <constraint firstItem="YHO-3v-WPu" firstAttribute="leading" secondItem="PBa-0w-8Mo" secondAttribute="leading" id="wNs-Jr-7qh"/>
                             <constraint firstItem="2uX-O9-2Wf" firstAttribute="width" secondItem="wVt-2H-FgH" secondAttribute="width" id="wy4-Bn-Spw"/>
-                            <constraint firstItem="RJ2-Ze-KUn" firstAttribute="top" secondItem="Adp-Ir-B3F" secondAttribute="bottom" id="z0D-pw-Xq8"/>
+                            <constraint firstItem="RJ2-Ze-KUn" firstAttribute="top" secondItem="Adp-Ir-B3F" secondAttribute="bottom" constant="-60" id="z0D-pw-Xq8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PBa-0w-8Mo"/>
                     </view>

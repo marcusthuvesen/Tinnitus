@@ -14,7 +14,16 @@ class SoundsCurrentlyPlaying{
     
     func saveCurrentSound(soundName : String){
         print("appending \(soundName)")
-        SoundsCurrentlyPlaying.soundsArray.append(soundName)
+        var soundAlreadyExists = false
+        for sound in SoundsCurrentlyPlaying.soundsArray{
+            if soundName == sound{
+               soundAlreadyExists = true
+            }
+        }
+        if !soundAlreadyExists{
+             SoundsCurrentlyPlaying.soundsArray.append(soundName)
+        }
+        
     }
     
     func removeSound(soundName : String){
@@ -26,6 +35,16 @@ class SoundsCurrentlyPlaying{
             }
              counter += 1
         }
+    }
+    
+    func areSoundsPlaying() -> Bool{
+        let amountOfSoundsPlayed = SoundsCurrentlyPlaying.soundsArray.count
+        var soundsArePlaying = false
+        if amountOfSoundsPlayed > 0{
+            soundsArePlaying = true
+        }
+        print(amountOfSoundsPlayed)
+        return soundsArePlaying
     }
     
 }

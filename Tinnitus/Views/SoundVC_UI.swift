@@ -42,15 +42,46 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        PlayBar.currentWindow = self
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupSoundVC_UI()
         setupSoundDelegate()
         defaultThumbImage = firstSliderOutlet.currentThumbImage
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        print("SoundVC dissappear")
+    }
+    
     func setupSoundDelegate(){
         soundPresenter.setSoundViewDelegate(soundDelegate: self)
+    }
+    
+    func hideSliderContainer() {
+        if !soundsCurrentlyPlaying.areSoundsPlaying(){
+            let top = CGAffineTransform(translationX: 0, y: +60)
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+                self.soundVolumeView.transform = top
+            }, completion: {_ in
+                self.soundVolumeView.isHidden = true
+            })
+            
+        }
+    }
+    
+    func showSliderContainer(){
+        if soundVolumeView.isHidden{
+            soundVolumeView.isHidden = false
+            let top = CGAffineTransform(translationX: 0, y: -60)
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
+                self.soundVolumeView.transform = top
+            }, completion: nil)
+            
+        }
     }
     
     func setupSoundVC_UI(){
@@ -66,7 +97,7 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     
     func soundBtnSelected(senderOutlet : UIImageView, soundName : String) {
         senderOutlet.normalButtonIsClickedUI()
-        soundVolumeView.isHidden = false
+        showSliderContainer()
         Sound.play(file: soundName, fileExtension: "wav", numberOfLoops: -1)
     }
     
@@ -74,6 +105,7 @@ class SoundVC_UI: UIViewController, SoundDelegate {
         senderOutlet.backgroundColor = UIView.CustomColors.blue
         Sound.stop(file: soundName, fileExtension: "wav")
         soundsCurrentlyPlaying.removeSound(soundName: soundName)
+        hideSliderContainer()
     }
     
     func checkNumberOfEmptySliders() -> Int{
@@ -94,10 +126,8 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     func changeSliderImage(sender: UIButton, senderOutlet: UIImageView, soundName : String) {
 
         let checkEmptySlider = checkNumberOfEmptySliders()
-        
-        var senderImage = sender.image(for: .normal)
-        //senderImage = senderImage?.resized(toWidth: CGFloat(50))
-        
+        let senderImage = sender.image(for: .normal)
+    
         switch checkEmptySlider {
         case 1:
             firstSliderOutlet.setThumbImage(senderImage, for: .normal)
@@ -135,15 +165,7 @@ class SoundVC_UI: UIViewController, SoundDelegate {
             thirdSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
         }
     }
-    
-    
-    //    func checkIfNoBtnIsClicked(){
-    //        //If True, hide Volume bar
-    //        if firstBtnOutlet.isSelected{
-    //            soundVolumeView.isHidden = true
-    //        }
-    //    }
-    
+
     @IBAction func firstSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }

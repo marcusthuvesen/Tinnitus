@@ -15,7 +15,7 @@ class ToneOutputUnit: NSObject {
     var auAudioUnit: AUAudioUnit! = nil     // placeholder for RemoteIO Audio Unit
     
     var avActive = false             // AVAudioSession active flag
-    var audioRunning = false             // RemoteIO Audio Unit running flag
+    static var audioRunning = false             // RemoteIO Audio Unit running flag
     
     var sampleRate : Double = 44100.0    // typical audio sample rate
     
@@ -43,7 +43,7 @@ class ToneOutputUnit: NSObject {
     
     func enableSpeaker() {
         
-        if audioRunning {
+        if ToneOutputUnit.audioRunning {
             
             print("returned")
             return
@@ -92,7 +92,7 @@ class ToneOutputUnit: NSObject {
             
             try auAudioUnit.allocateRenderResources()  //  v2 AudioUnitInitialize()
             try auAudioUnit.startHardware()            //  v2 AudioOutputUnitStart()
-            audioRunning = true
+            ToneOutputUnit.audioRunning = true
             
         } catch /* let error as NSError */ {
             print("error 2 \(error)")
@@ -150,16 +150,18 @@ class ToneOutputUnit: NSObject {
     
     
     func stop() {
-        if (audioRunning) {
+        if (ToneOutputUnit.audioRunning) {
             auAudioUnit.stopHardware()
-            audioRunning = false
+            ToneOutputUnit.audioRunning = false
         }
     }
     
     func start() {
-        if (!audioRunning) {
+        
+        if (!ToneOutputUnit.audioRunning) {
+            print("In start IFSTATE")
            try? auAudioUnit.startHardware()
-            audioRunning = true
+            ToneOutputUnit.audioRunning = true
             setFrequency(freq: 0)
             setToneVolume(vol: 0.5)
             enableSpeaker()

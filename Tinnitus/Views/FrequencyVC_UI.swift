@@ -29,9 +29,14 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
     
     var audioPlayer = AVAudioPlayer()
     let volumeView = MPVolumeView()
-    let myUnit = ToneOutputUnit()
+    static var toneOutPutUnit = ToneOutputUnit()
     var frequencyPresenter = FrequencyPresenter()
     let audioSession = AVAudioSession.sharedInstance()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        PlayBar.currentWindow = self
+        print("currentVC \(PlayBar.currentWindow)")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +62,10 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
     }
    
     func setupToneSound(){
-        myUnit.setFrequency(freq: 0)
-        myUnit.setToneVolume(vol: 0.5)
-        myUnit.enableSpeaker()
-        myUnit.setToneTime(t: 20000)
+        FrequencyVC_UI.toneOutPutUnit.setFrequency(freq: 0)
+        FrequencyVC_UI.toneOutPutUnit.setToneVolume(vol: 0.5)
+        FrequencyVC_UI.toneOutPutUnit.enableSpeaker()
+        FrequencyVC_UI.toneOutPutUnit.setToneTime(t: 20000)
     }
     
     func setupFrequencyUI(){
@@ -83,10 +88,10 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
     }
     
     @IBAction func frequencyChanged(_ sender: UISlider) {
-        frequencyPresenter.frequencyAction(sender: sender, frequencyLabel: frequencyLabel, myUnit: myUnit)
+        frequencyPresenter.frequencyAction(sender: sender, frequencyLabel: frequencyLabel, toneOutPutUnit: FrequencyVC_UI.toneOutPutUnit)
     }
     @IBAction func firstSoundBtn(_ sender: UIButton) {
-        myUnit.stop()
+        FrequencyVC_UI.toneOutPutUnit.stop()
         frequencyPresenter.frequencyButtonSelected(sender: sender)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {

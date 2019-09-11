@@ -22,10 +22,10 @@ class FrequencyPresenter{
         self.frequencyDelegate = frequencyDelegate
     }
     
-    func frequencyAction(sender : UISlider, frequencyLabel : UILabel, myUnit : ToneOutputUnit){
+    func frequencyAction(sender : UISlider, frequencyLabel : UILabel, toneOutPutUnit : ToneOutputUnit){
         let frequencyValue = String(Int(sender.value * 10000))
         frequencyLabel.text = frequencyValue + " KHz"
-        myUnit.setFrequency(freq: Double(frequencyValue)!)
+        toneOutPutUnit.setFrequency(freq: Double(frequencyValue)!)
     }
     
     func frequencyButtonSelected(sender : UIButton){
