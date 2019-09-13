@@ -62,11 +62,15 @@ class SoundsCurrentlyPlaying{
     }
     
     func stopSound(stopFileName : String){
+        print(audioPlayers.count)
+        var counter = 0
         for player in audioPlayers{
             if player.fileName == stopFileName{
                 player.audioPlayer.stop()
+                audioPlayers.remove(at: counter)
                 removeSound(fileName: stopFileName)
             }
+            counter += 1
         }
     }
     
@@ -81,7 +85,9 @@ class SoundsCurrentlyPlaying{
     }
     
     func stopAll(){
-        
+        for player in audioPlayers{
+            player.audioPlayer.volume = 0
+        }
     }
     
     func areSoundsPlaying() -> Bool{

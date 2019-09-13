@@ -38,6 +38,7 @@ class PlayBar: UIView {
     @objc func playBtnAction(sender: UIButton){
         print("In PlayBtnAction")
         playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+        soundsCurrentlyPlaying.stopAll()
     }
     
     

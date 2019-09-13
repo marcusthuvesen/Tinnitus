@@ -152,7 +152,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
                 removeSliderImage(senderOutlet: previousThirdSender!)
             }
             
-            thirdSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
+            thirdSliderOutlet.setThumbImage(senderImage, for: .normal)
             thirdSliderSoundName = soundName
             thirdSliderOutlet.tag = sender.tag
             setPreviousThirdInputs(sender: sender, senderOutlet: senderOutlet, soundName: soundName)
