@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setupAudioSession()
+        UIApplication.shared.beginReceivingRemoteControlEvents()
         
         return true
+    }
+    
+    func setupAudioSession(){
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            //Update your button here for the pause command
+            print("pause")
+            SoundVC_UI.soundsCurrentlyPlaying.stopAll()
+            return .success
+        }
+        
+        commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
+            //Update your button here for the play command
+            print("play")
+            SoundVC_UI.soundsCurrentlyPlaying.playAll()
+            return .success
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

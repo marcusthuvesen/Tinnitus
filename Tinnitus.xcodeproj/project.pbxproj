@@ -39,6 +39,10 @@
 		2581C2492326E11700A99EE4 /* SoundsCurrentlyPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C2482326E11700A99EE4 /* SoundsCurrentlyPlaying.swift */; };
 		2581C24D2329675100A99EE4 /* NewFavoritePopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2581C24C2329675100A99EE4 /* NewFavoritePopup.storyboard */; };
 		2581C24F2329742B00A99EE4 /* NewFavoritePopup_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C24E2329742B00A99EE4 /* NewFavoritePopup_UI.swift */; };
+		2581C256232C26A800A99EE4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2581C255232C26A800A99EE4 /* NotificationCenter.framework */; };
+		2581C259232C26A800A99EE4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C258232C26A800A99EE4 /* TodayViewController.swift */; };
+		2581C25C232C26A800A99EE4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2581C25A232C26A800A99EE4 /* MainInterface.storyboard */; };
+		2581C260232C26A800A99EE4 /* Tinnitus Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2581C254232C26A800A99EE4 /* Tinnitus Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586C565231941D200D960A5 /* FactsPresenter.swift */; };
 		2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2586C567231AA15600D960A5 /* Onboarding.storyboard */; };
 		258931832311226B00435B69 /* PopupCollectionView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258931822311226B00435B69 /* PopupCollectionView_UI.swift */; };
@@ -48,6 +52,30 @@
 		25C97755230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C97754230F3C12000D0607 /* PopupSlider_CollectionViewCell.swift */; };
 		4426859D2600AECB25508639 /* Pods_Tinnitus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94DF8AA23A6A5DA3B423FC9 /* Pods_Tinnitus.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2581C25E232C26A800A99EE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2526D7AE22F9701C00D70005 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2581C253232C26A800A99EE4;
+			remoteInfo = "Tinnitus Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2581C264232C26A800A99EE4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2581C260232C26A800A99EE4 /* Tinnitus Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2526D7B622F9701C00D70005 /* Tinnitus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinnitus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +112,11 @@
 		2581C2482326E11700A99EE4 /* SoundsCurrentlyPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsCurrentlyPlaying.swift; sourceTree = "<group>"; };
 		2581C24C2329675100A99EE4 /* NewFavoritePopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewFavoritePopup.storyboard; sourceTree = "<group>"; };
 		2581C24E2329742B00A99EE4 /* NewFavoritePopup_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFavoritePopup_UI.swift; sourceTree = "<group>"; };
+		2581C254232C26A800A99EE4 /* Tinnitus Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tinnitus Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2581C255232C26A800A99EE4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		2581C258232C26A800A99EE4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		2581C25B232C26A800A99EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2581C25D232C26A800A99EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2586C565231941D200D960A5 /* FactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsPresenter.swift; sourceTree = "<group>"; };
 		2586C567231AA15600D960A5 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		258931822311226B00435B69 /* PopupCollectionView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCollectionView_UI.swift; sourceTree = "<group>"; };
@@ -105,6 +138,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2581C251232C26A800A99EE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2581C256232C26A800A99EE4 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -121,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				2526D7B822F9701C00D70005 /* Tinnitus */,
+				2581C257232C26A800A99EE4 /* Tinnitus Widget */,
 				2526D7B722F9701C00D70005 /* Products */,
 				0BBC9641A4AE277DAECD284F /* Pods */,
 				8D68ECF57F82A863F9E4C32B /* Frameworks */,
@@ -131,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				2526D7B622F9701C00D70005 /* Tinnitus.app */,
+				2581C254232C26A800A99EE4 /* Tinnitus Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +250,16 @@
 			path = SoundFiles;
 			sourceTree = "<group>";
 		};
+		2581C257232C26A800A99EE4 /* Tinnitus Widget */ = {
+			isa = PBXGroup;
+			children = (
+				2581C258232C26A800A99EE4 /* TodayViewController.swift */,
+				2581C25A232C26A800A99EE4 /* MainInterface.storyboard */,
+				2581C25D232C26A800A99EE4 /* Info.plist */,
+			);
+			path = "Tinnitus Widget";
+			sourceTree = "<group>";
+		};
 		25C97752230F0A2E000D0607 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				F94DF8AA23A6A5DA3B423FC9 /* Pods_Tinnitus.framework */,
+				2581C255232C26A800A99EE4 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,15 +304,34 @@
 				2526D7B322F9701C00D70005 /* Frameworks */,
 				2526D7B422F9701C00D70005 /* Resources */,
 				A993F4B8860A5607579C995C /* [CP] Embed Pods Frameworks */,
+				2581C264232C26A800A99EE4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2581C25F232C26A800A99EE4 /* PBXTargetDependency */,
 			);
 			name = Tinnitus;
 			productName = Tinnitus;
 			productReference = 2526D7B622F9701C00D70005 /* Tinnitus.app */;
 			productType = "com.apple.product-type.application";
+		};
+		2581C253232C26A800A99EE4 /* Tinnitus Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2581C261232C26A800A99EE4 /* Build configuration list for PBXNativeTarget "Tinnitus Widget" */;
+			buildPhases = (
+				2581C250232C26A800A99EE4 /* Sources */,
+				2581C251232C26A800A99EE4 /* Frameworks */,
+				2581C252232C26A800A99EE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tinnitus Widget";
+			productName = "Tinnitus Widget";
+			productReference = 2581C254232C26A800A99EE4 /* Tinnitus Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -278,6 +351,9 @@
 							};
 						};
 					};
+					2581C253232C26A800A99EE4 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 				};
 			};
 			buildConfigurationList = 2526D7B122F9701C00D70005 /* Build configuration list for PBXProject "Tinnitus" */;
@@ -294,6 +370,7 @@
 			projectRoot = "";
 			targets = (
 				2526D7B522F9701C00D70005 /* Tinnitus */,
+				2581C253232C26A800A99EE4 /* Tinnitus Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -318,6 +395,14 @@
 				2581C233231FB9E400A99EE4 /* SoundLibrary.xcassets in Resources */,
 				2581C241231FC6CF00A99EE4 /* cicadas.wav in Resources */,
 				2581C24D2329675100A99EE4 /* NewFavoritePopup.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2581C252232C26A800A99EE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2581C25C232C26A800A99EE4 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +487,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2581C250232C26A800A99EE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2581C259232C26A800A99EE4 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2581C25F232C26A800A99EE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2581C253232C26A800A99EE4 /* Tinnitus Widget */;
+			targetProxy = 2581C25E232C26A800A99EE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2526D7BD22F9701C00D70005 /* Main.storyboard */ = {
@@ -427,6 +528,14 @@
 				2581C238231FC26300A99EE4 /* Base */,
 			);
 			name = waves.wav;
+			sourceTree = "<group>";
+		};
+		2581C25A232C26A800A99EE4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2581C25B232C26A800A99EE4 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -552,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DB205E5C39DE72DEE28B5CE /* Pods-Tinnitus.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CTKXD59TF;
@@ -571,6 +681,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3BBB2BE7ECE93E3582BA6691 /* Pods-Tinnitus.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CTKXD59TF;
@@ -581,6 +692,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = se.marcusthuvesen.Tinnitus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2581C262232C26A800A99EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CTKXD59TF;
+				INFOPLIST_FILE = "Tinnitus Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "se.marcusthuvesen.Tinnitus.Tinnitus-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2581C263232C26A800A99EE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CTKXD59TF;
+				INFOPLIST_FILE = "Tinnitus Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "se.marcusthuvesen.Tinnitus.Tinnitus-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -603,6 +752,15 @@
 			buildConfigurations = (
 				2526D7C922F9702500D70005 /* Debug */,
 				2526D7CA22F9702500D70005 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2581C261232C26A800A99EE4 /* Build configuration list for PBXNativeTarget "Tinnitus Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2581C262232C26A800A99EE4 /* Debug */,
+				2581C263232C26A800A99EE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

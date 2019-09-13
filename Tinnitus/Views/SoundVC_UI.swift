@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 class SoundVC_UI: UIViewController, SoundDelegate{
     
@@ -38,7 +39,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     var previousThirdSender : UIButton?
     var previousThirdSoundName : String?
     var previousThirdOutlet : UIImageView?
-    var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
+    static var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
     var firstSliderSoundName : String?
     var secondSliderSoundName : String?
     var thirdSliderSoundName : String?
@@ -49,7 +50,6 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupSoundVC_UI()
         setupSoundDelegate()
         defaultThumbImage = firstSliderOutlet.currentThumbImage
@@ -64,7 +64,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     func hideSliderContainer() {
-        if !soundsCurrentlyPlaying.areSoundsPlaying(){
+        if !SoundVC_UI.soundsCurrentlyPlaying.areSoundsPlaying(){
             let top = CGAffineTransform(translationX: 0, y: +60)
             UIView.animate(withDuration: 0.4, delay: 0.0, options: [], animations: {
                 self.soundVolumeView.transform = top
@@ -100,12 +100,12 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     func soundBtnSelected(senderOutlet : UIImageView, soundName : String) {
         senderOutlet.normalButtonIsClickedUI()
         showSliderContainer()
-        soundsCurrentlyPlaying.playSound(fileName: soundName)
+        SoundVC_UI.soundsCurrentlyPlaying.playSound(fileName: soundName)
     }
     
     func soundBtnUnselected(senderOutlet : UIImageView, soundName : String) {
         senderOutlet.backgroundColor = UIView.CustomColors.blue
-        soundsCurrentlyPlaying.stopSound(stopFileName: soundName)
+        SoundVC_UI.soundsCurrentlyPlaying.stopSound(stopFileName: soundName)
         hideSliderContainer()
     }
     
@@ -242,15 +242,15 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     @IBAction func firstSliderAction(_ sender: UISlider) {
-        soundsCurrentlyPlaying.changeVolumeOnSound(soundName: firstSliderSoundName, newValue: sender.value)
+        SoundVC_UI.soundsCurrentlyPlaying.changeVolumeOnSound(soundName: firstSliderSoundName, newValue: sender.value)
     }
     
     @IBAction func secondSliderAction(_ sender: UISlider) {
-        soundsCurrentlyPlaying.changeVolumeOnSound(soundName: secondSliderSoundName, newValue: sender.value)
+        SoundVC_UI.soundsCurrentlyPlaying.changeVolumeOnSound(soundName: secondSliderSoundName, newValue: sender.value)
     }
     
     @IBAction func thirdSliderAction(_ sender: UISlider) {
-        soundsCurrentlyPlaying.changeVolumeOnSound(soundName: thirdSliderSoundName, newValue: sender.value)
+        SoundVC_UI.soundsCurrentlyPlaying.changeVolumeOnSound(soundName: thirdSliderSoundName, newValue: sender.value)
     }
     
     func sendToPopup(){

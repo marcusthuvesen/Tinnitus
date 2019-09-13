@@ -86,7 +86,16 @@ class SoundsCurrentlyPlaying{
     
     func stopAll(){
         for player in audioPlayers{
-            player.audioPlayer.volume = 0
+            player.audioPlayer.stop()
+        }
+    }
+    
+    func playAll(){
+        let playArray = SoundsCurrentlyPlaying.soundsArray
+        for player in audioPlayers{
+            if playArray.contains(player.fileName) {
+                player.audioPlayer.play()
+            }
         }
     }
     
