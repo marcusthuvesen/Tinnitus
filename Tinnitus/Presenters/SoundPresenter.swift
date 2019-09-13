@@ -20,7 +20,7 @@ protocol SoundDelegate : NSObjectProtocol{
 class SoundPresenter {
     weak private var soundDelegate : SoundDelegate?
     private var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
-    private var playBar = PlayBar()
+    //private var playBar = PlayBar()
     private var audioNames = AudioFiles()
     private var firstSliderOutlet : UISlider?
     private var secondSliderOutlet : UISlider?
@@ -43,10 +43,10 @@ class SoundPresenter {
             soundsCurrentlyPlaying.saveCurrentSound(soundName: soundName)
             
             
-            if !playBar.playBtnOutlet.isSelected{
+            if !SoundVC_UI.playBar.playBtnOutlet.isSelected{
                 print("Change to selected")
                 //Programmatically sends an action to button
-                playBar.playBtnOutlet.sendActions(for: .touchUpInside)
+                SoundVC_UI.playBar.playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
             }
             
             

@@ -14,7 +14,6 @@ class PlayBar: UIView {
     @IBOutlet weak var favoriteBtnOutlet: UIButton!
     @IBOutlet weak var timerBtnOutlet: UIButton!
     @IBOutlet var playBarView: UIView!
-    private let soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
     static var currentWindow = UIViewController()
     
     
@@ -36,9 +35,25 @@ class PlayBar: UIView {
     }
     
     @objc func playBtnAction(sender: UIButton){
-        print("In PlayBtnAction")
-        playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-        soundsCurrentlyPlaying.stopAll()
+        print("In PlayBtnAction \(sender.isSelected)")
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected{
+            playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+            
+            if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
+                SoundVC_UI.soundsCurrentlyPlaying.playAll()
+            } else{
+                FrequencyVC_UI.toneOutPutUnit.start()
+            }
+            
+        } else {
+            playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+            SoundVC_UI.soundsCurrentlyPlaying.stopAll()
+            FrequencyVC_UI.toneOutPutUnit.stop()
+        }
+        
+        
     }
     
     

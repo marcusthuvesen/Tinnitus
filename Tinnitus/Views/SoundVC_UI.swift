@@ -35,7 +35,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     var defaultThumbImage : UIImage?
     
     let soundPresenter = SoundPresenter()
-    let playBar = PlayBar()
+    static var playBar = PlayBar()
     var previousThirdSender : UIButton?
     var previousThirdSoundName : String?
     var previousThirdOutlet : UIImageView?
@@ -47,6 +47,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         PlayBar.currentWindow = self
+        FrequencyVC_UI.toneOutPutUnit.stop()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

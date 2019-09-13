@@ -36,6 +36,7 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
     override func viewWillAppear(_ animated: Bool) {
         PlayBar.currentWindow = self
         print("currentVC \(PlayBar.currentWindow)")
+        SoundVC_UI.soundsCurrentlyPlaying.stopAll()
     }
     
     override func viewDidLoad() {
