@@ -8,9 +8,8 @@
 
 import UIKit
 import AVFoundation
-import SwiftySound
 
-class SoundVC_UI: UIViewController, SoundDelegate {
+class SoundVC_UI: UIViewController, SoundDelegate{
     
     //Button Outlets
     @IBOutlet var soundBtnOutlets: [UIButton]!
@@ -34,12 +33,15 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     @IBOutlet weak var playBarContainerView: PlayBar!
     var defaultThumbImage : UIImage?
     
-    var audioPlayer: AVAudioPlayer?
     let soundPresenter = SoundPresenter()
+    let playBar = PlayBar()
     var previousThirdSender : UIButton?
     var previousThirdSoundName : String?
     var previousThirdOutlet : UIImageView?
     var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
+    var firstSliderSoundName : String?
+    var secondSliderSoundName : String?
+    var thirdSliderSoundName : String?
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +49,7 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupSoundVC_UI()
         setupSoundDelegate()
         defaultThumbImage = firstSliderOutlet.currentThumbImage
@@ -98,13 +100,12 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     func soundBtnSelected(senderOutlet : UIImageView, soundName : String) {
         senderOutlet.normalButtonIsClickedUI()
         showSliderContainer()
-        Sound.play(file: soundName, fileExtension: "wav", numberOfLoops: -1)
+        soundsCurrentlyPlaying.playSound(fileName: soundName)
     }
     
     func soundBtnUnselected(senderOutlet : UIImageView, soundName : String) {
         senderOutlet.backgroundColor = UIView.CustomColors.blue
-        Sound.stop(file: soundName, fileExtension: "wav")
-        soundsCurrentlyPlaying.removeSound(soundName: soundName)
+        soundsCurrentlyPlaying.stopSound(stopFileName: soundName)
         hideSliderContainer()
     }
     
@@ -124,27 +125,31 @@ class SoundVC_UI: UIViewController, SoundDelegate {
     }
     
     func changeSliderImage(sender: UIButton, senderOutlet: UIImageView, soundName : String) {
-
+        
         let checkEmptySlider = checkNumberOfEmptySliders()
         let senderImage = sender.image(for: .normal)
-    
+        
         switch checkEmptySlider {
         case 1:
             firstSliderOutlet.setThumbImage(senderImage, for: .normal)
+            firstSliderSoundName = soundName
         case 2:
             secondSliderOutlet.setThumbImage(senderImage, for: .normal)
+            secondSliderSoundName = soundName
         case 3:
             thirdSliderOutlet.setThumbImage(senderImage, for: .normal)
+            thirdSliderSoundName = soundName
             setPreviousThirdInputs(sender: sender, senderOutlet: senderOutlet, soundName: soundName)
         default:
-
+            
             if previousThirdOutlet != nil {
-                 soundBtnUnselected(senderOutlet: previousThirdOutlet!, soundName: previousThirdSoundName!)
+                soundBtnUnselected(senderOutlet: previousThirdOutlet!, soundName: previousThirdSoundName!)
                 previousThirdSender?.isSelected = false
                 removeSliderImage(senderOutlet: previousThirdSender!)
             }
             
             thirdSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
+            thirdSliderSoundName = soundName
             setPreviousThirdInputs(sender: sender, senderOutlet: senderOutlet, soundName: soundName)
         }
     }
@@ -159,13 +164,18 @@ class SoundVC_UI: UIViewController, SoundDelegate {
         
         if firstSliderOutlet.currentThumbImage == senderOutlet.currentImage{
             firstSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
+            firstSliderSoundName = nil
         }else if secondSliderOutlet.currentThumbImage == senderOutlet.currentImage{
             secondSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
+            secondSliderSoundName = nil
         }else if thirdSliderOutlet.currentThumbImage == senderOutlet.currentImage{
             thirdSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
+            thirdSliderSoundName = nil
         }
     }
-
+   
+    
+    
     @IBAction func firstSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
     }
@@ -223,10 +233,28 @@ class SoundVC_UI: UIViewController, SoundDelegate {
         sendToPopup()
     }
     
+    @IBAction func firstSliderAction(_ sender: UISlider) {
+        soundsCurrentlyPlaying.changeVolumeOnSound(soundName: firstSliderSoundName, newValue: sender.value)
+    }
+    
+    @IBAction func secondSliderAction(_ sender: UISlider) {
+        soundsCurrentlyPlaying.changeVolumeOnSound(soundName: secondSliderSoundName, newValue: sender.value)
+    }
+    
+    @IBAction func thirdSliderAction(_ sender: UISlider) {
+        soundsCurrentlyPlaying.changeVolumeOnSound(soundName: thirdSliderSoundName, newValue: sender.value)
+    }
+    
     func sendToPopup(){
         let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopup_UI") as! PremiumPopup_UI
         popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         tabBarController?.present(popOverVC, animated: true)
+    }
+    
+    public func sendToFavoritePopup(){
+        let popOverFavoriteVC = UIStoryboard(name: "NewFavoritePopup", bundle: nil).instantiateViewController(withIdentifier: "NewFavoritePopup") as! NewFavoritePopup_UI
+        popOverFavoriteVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        tabBarController?.present(popOverFavoriteVC, animated: true)
     }
     
     @IBAction func menuBtnOne(_ sender: Any) {

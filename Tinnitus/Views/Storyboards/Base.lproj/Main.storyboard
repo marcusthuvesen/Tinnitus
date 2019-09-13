@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-3v-WPu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1873"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1873.0000000000002"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eux-lA-iJy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
@@ -575,26 +575,35 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adp-Ir-B3F">
                                 <rect key="frame" x="0.0" y="1862" width="414" height="60"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rnc-ob-leO">
+                                    <slider opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rnc-ob-leO">
                                         <rect key="frame" x="18" y="15" width="107.5" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="eGi-zT-1yK"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="firstSliderAction:" destination="cjl-3Q-Pon" eventType="valueChanged" id="vLt-Dn-Nx5"/>
+                                        </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x2w-6S-FEz">
+                                    <slider opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x2w-6S-FEz">
                                         <rect key="frame" x="153.5" y="15" width="107.5" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="YAm-E3-vvP"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="secondSliderAction:" destination="cjl-3Q-Pon" eventType="valueChanged" id="eaC-fP-muH"/>
+                                        </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jsF-Iz-VtV">
+                                    <slider opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="jsF-Iz-VtV">
                                         <rect key="frame" x="288.5" y="15" width="107.5" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="zxa-XV-WXk"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="thirdSliderAction:" destination="cjl-3Q-Pon" eventType="valueChanged" id="Bhc-Q8-zEq"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.018766748896066991" green="0.056721579506363876" blue="0.21490493764902288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

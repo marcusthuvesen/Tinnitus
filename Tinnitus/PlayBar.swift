@@ -5,7 +5,6 @@
 //  Created by Marcus Thuvesen on 2019-09-03.
 //  Copyright © 2019 Marcus Thuvesen. All rights reserved.
 //
-import SwiftySound
 import UIKit
 
 class PlayBar: UIView {
@@ -17,6 +16,7 @@ class PlayBar: UIView {
     @IBOutlet var playBarView: UIView!
     private let soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
     static var currentWindow = UIViewController()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,6 +39,8 @@ class PlayBar: UIView {
         print("In PlayBtnAction")
         playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
     }
+    
+    
     
     
 //    @IBAction func playBtnAction(_ sender: UIButton) {
@@ -69,10 +71,12 @@ class PlayBar: UIView {
 //    }
     
     @IBAction func favoriteBtnAction(_ sender: Any) {
+        let soundVC = SoundVC_UI()
+        soundVC.sendToFavoritePopup()
     }
+
+    @IBAction func timerBtnAction(_ sender: Any) {}
     
-    @IBAction func timerBtnAction(_ sender: Any) {
-    }
 }
 
 extension UIView
