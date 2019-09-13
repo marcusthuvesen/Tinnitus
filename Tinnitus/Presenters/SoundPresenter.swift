@@ -33,6 +33,7 @@ class SoundPresenter {
     
     func soundButtonClicked(senderOutlet : UIImageView, sender: UIButton){
         sender.isSelected = !sender.isSelected
+        print("soundbtnclicked \(sender.tag)")
         let soundName = audioNames.provideAudioName(senderTag: sender.tag)
         
         if sender.isSelected{

@@ -13,33 +13,33 @@ struct AudioFiles {
     
     func provideAudioName(senderTag : Int) -> String{
         var soundName = ""
-
+        print("provideAudioName \(senderTag)")
         switch senderTag {
-        case 0:
-            soundName = "rain"
         case 1:
-            soundName = "beachWaves"
-        case 2:
-            soundName = "thunder"
-        case 3:
-            soundName = "waves"
-        case 4:
-            soundName = "fire"
-        case 5:
-            soundName = "cicadas"
-        case 6:
             soundName = "rain"
+        case 2:
+            soundName = "beachWaves"
+        case 3:
+            soundName = "thunder"
+        case 4:
+            soundName = "waves"
+        case 5:
+            soundName = "fire"
+        case 6:
+            soundName = "cicadas"
         case 7:
             soundName = "rain"
         case 8:
             soundName = "rain"
         case 9:
-           soundName = "rain"
+            soundName = "rain"
         case 10:
            soundName = "rain"
         case 11:
            soundName = "rain"
         case 12:
+           soundName = "rain"
+        case 13:
            soundName = "rain"
         default:
            soundName = "rain"

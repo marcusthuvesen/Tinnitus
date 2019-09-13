@@ -80,6 +80,10 @@ class SoundsCurrentlyPlaying{
         }
     }
     
+    func stopAll(){
+        
+    }
+    
     func areSoundsPlaying() -> Bool{
         let amountOfSoundsPlayed = SoundsCurrentlyPlaying.soundsArray.count
         var soundsArePlaying = false

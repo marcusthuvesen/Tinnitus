@@ -125,19 +125,23 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     func changeSliderImage(sender: UIButton, senderOutlet: UIImageView, soundName : String) {
-        
+        print("changeSlider \(sender.tag)")
         let checkEmptySlider = checkNumberOfEmptySliders()
-        let senderImage = sender.image(for: .normal)
-        
+        var senderImage = sender.image(for: .normal)
+        senderImage = senderImage?.resize(toWidth: 40)
+        senderImage = senderImage?.imageWithColor(color: UIView.CustomColors.pink)
         switch checkEmptySlider {
         case 1:
             firstSliderOutlet.setThumbImage(senderImage, for: .normal)
+            firstSliderOutlet.tag = sender.tag
             firstSliderSoundName = soundName
         case 2:
             secondSliderOutlet.setThumbImage(senderImage, for: .normal)
+            secondSliderOutlet.tag = sender.tag
             secondSliderSoundName = soundName
         case 3:
             thirdSliderOutlet.setThumbImage(senderImage, for: .normal)
+            thirdSliderOutlet.tag = sender.tag
             thirdSliderSoundName = soundName
             setPreviousThirdInputs(sender: sender, senderOutlet: senderOutlet, soundName: soundName)
         default:
@@ -150,6 +154,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
             
             thirdSliderOutlet.setThumbImage(sender.image(for: .normal), for: .normal)
             thirdSliderSoundName = soundName
+            thirdSliderOutlet.tag = sender.tag
             setPreviousThirdInputs(sender: sender, senderOutlet: senderOutlet, soundName: soundName)
         }
     }
@@ -161,59 +166,62 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     func removeSliderImage(senderOutlet : UIButton){
-        
-        if firstSliderOutlet.currentThumbImage == senderOutlet.currentImage{
+        print("remove \(senderOutlet.tag)")
+        if firstSliderOutlet.tag == senderOutlet.tag{
             firstSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
             firstSliderSoundName = nil
-        }else if secondSliderOutlet.currentThumbImage == senderOutlet.currentImage{
+            firstSliderOutlet.tag = 0
+        }else if secondSliderOutlet.tag == senderOutlet.tag{
             secondSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
             secondSliderSoundName = nil
-        }else if thirdSliderOutlet.currentThumbImage == senderOutlet.currentImage{
+            secondSliderOutlet.tag = 0
+        }else if thirdSliderOutlet.tag == senderOutlet.tag{
             thirdSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
             thirdSliderSoundName = nil
+            thirdSliderOutlet.tag = 0
         }
     }
    
     
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func thirdSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func fourthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func fifthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func sixthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func seventhSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func eigthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func ninthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func tenthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func eleventhSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func twelfthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func thirteenthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     
     //Send To Premium Popup
@@ -301,11 +309,21 @@ extension UIScrollView {
 }
 
 extension UIImage {
-    func resized(toWidth width: CGFloat) -> UIImage? {
+    func resize(toWidth width: CGFloat) -> UIImage? {
         let canvasSize = CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))
         UIGraphicsBeginImageContextWithOptions(canvasSize, false, scale)
         defer { UIGraphicsEndImageContext() }
         draw(in: CGRect(origin: .zero, size: canvasSize))
         return UIGraphicsGetImageFromCurrentImageContext()
+    }
+
+    func imageWithColor(color: UIColor) -> UIImage? {
+        var image = withRenderingMode(.alwaysTemplate)
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        color.set()
+        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        image = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return image
     }
 }
