@@ -63,7 +63,8 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
     }
    
     func setupToneSound(){
-        FrequencyVC_UI.toneOutPutUnit.setFrequency(freq: 0)
+        FrequencyVC_UI.toneOutPutUnit.setFrequency(freq: Double(frequencySlider.value*10000))
+        FrequencyVC_UI.toneOutPutUnit.currentFrequency = Double(frequencySlider.value*10000)
         FrequencyVC_UI.toneOutPutUnit.setToneVolume(vol: 0.5)
         FrequencyVC_UI.toneOutPutUnit.enableSpeaker()
         FrequencyVC_UI.toneOutPutUnit.setToneTime(t: 20000)

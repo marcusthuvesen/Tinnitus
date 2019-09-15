@@ -26,6 +26,7 @@ class FrequencyPresenter{
         let frequencyValue = String(Int(sender.value * 10000))
         frequencyLabel.text = frequencyValue + " KHz"
         toneOutPutUnit.setFrequency(freq: Double(frequencyValue)!)
+        toneOutPutUnit.currentFrequency = Double(frequencyValue)!
     }
     
     func frequencyButtonSelected(sender : UIButton){

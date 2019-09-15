@@ -26,7 +26,7 @@ class ToneOutputUnit: NSObject {
     
     private var phY =     0.0       // save phase of sine wave to prevent clicking
     private var interrupted = false     // for restart from audio interruption notification
-    
+    var currentFrequency : Double = 0
     
     
     func setFrequency(freq : Double) {  // audio frequencies below 500 Hz may be
@@ -44,10 +44,7 @@ class ToneOutputUnit: NSObject {
     func enableSpeaker() {
         
         if ToneOutputUnit.audioRunning {
-            
-            print("returned")
             return
-            
         }           // return if RemoteIO is already running
         
         
@@ -159,10 +156,9 @@ class ToneOutputUnit: NSObject {
     func start() {
         
         if (!ToneOutputUnit.audioRunning) {
-            print("In start IFSTATE")
            try? auAudioUnit.startHardware()
             ToneOutputUnit.audioRunning = true
-            setFrequency(freq: 0)
+            FrequencyVC_UI.toneOutPutUnit.setFrequency(freq: currentFrequency)
             setToneVolume(vol: 0.5)
             enableSpeaker()
             setToneTime(t: 20000)

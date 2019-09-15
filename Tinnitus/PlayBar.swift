@@ -35,7 +35,6 @@ class PlayBar: UIView {
     }
     
     @objc func playBtnAction(sender: UIButton){
-        print("In PlayBtnAction \(sender.isSelected)")
         sender.isSelected = !sender.isSelected
         
         if sender.isSelected{

@@ -31,13 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Update your button here for the pause command
             print("pause")
             SoundVC_UI.soundsCurrentlyPlaying.stopAll()
+            FrequencyVC_UI.toneOutPutUnit.stop()
             return .success
         }
         
         commandCenter.playCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
             //Update your button here for the play command
             print("play")
-            SoundVC_UI.soundsCurrentlyPlaying.playAll()
+            if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
+                SoundVC_UI.soundsCurrentlyPlaying.playAll()
+            }else{
+                FrequencyVC_UI.toneOutPutUnit.start()
+            }
+            
             return .success
         }
     }

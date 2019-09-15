@@ -16,7 +16,6 @@ class SoundsCurrentlyPlaying{
     var audioPlayers : [(audioPlayer : AVAudioPlayer, fileName : String)] = []
     
     func saveCurrentSound(soundName : String){
-        print("appending \(soundName)")
         var soundAlreadyExists = false
         for sound in SoundsCurrentlyPlaying.soundsArray{
             if soundName == sound{
@@ -62,7 +61,6 @@ class SoundsCurrentlyPlaying{
     }
     
     func stopSound(stopFileName : String){
-        print(audioPlayers.count)
         var counter = 0
         for player in audioPlayers{
             if player.fileName == stopFileName{
@@ -105,7 +103,6 @@ class SoundsCurrentlyPlaying{
         if amountOfSoundsPlayed > 0{
             soundsArePlaying = true
         }
-        print(amountOfSoundsPlayed)
         return soundsArePlaying
     }
     
