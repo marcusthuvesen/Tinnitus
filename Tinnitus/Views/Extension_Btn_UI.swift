@@ -14,6 +14,8 @@ extension UIView {
         self.tintColor = CustomColors.gold
     }
     
+    
+    
     func normalButtonUI(){
         self.layer.cornerRadius = 20
         self.layer.masksToBounds = true
@@ -65,7 +67,12 @@ extension UIView {
         self.layer.masksToBounds = true
         self.backgroundColor = CustomColors.gold
     }
-    
+    func sleepTimerShortcutBtnUI(){
+        self.layer.cornerRadius = self.frame.height/2
+        self.layer.masksToBounds = true
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
+    }
     
 }
 

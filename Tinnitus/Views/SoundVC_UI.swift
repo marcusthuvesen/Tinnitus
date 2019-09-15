@@ -54,10 +54,17 @@ class SoundVC_UI: UIViewController, SoundDelegate{
         setupSoundVC_UI()
         setupSoundDelegate()
         defaultThumbImage = firstSliderOutlet.currentThumbImage
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         print("SoundVC dissappear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let popOverVC = UIStoryboard(name: "SleepTimerPopup", bundle: nil).instantiateViewController(withIdentifier: "SleepTimerPopup_UI") as! SleepTimerPopup_UI
+        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        tabBarController?.present(popOverVC, animated: true)
     }
     
     func setupSoundDelegate(){

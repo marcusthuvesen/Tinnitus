@@ -43,6 +43,8 @@
 		2581C259232C26A800A99EE4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C258232C26A800A99EE4 /* TodayViewController.swift */; };
 		2581C25C232C26A800A99EE4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2581C25A232C26A800A99EE4 /* MainInterface.storyboard */; };
 		2581C260232C26A800A99EE4 /* Tinnitus Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2581C254232C26A800A99EE4 /* Tinnitus Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2581C27E232EB79200A99EE4 /* SleepTimerPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2581C27D232EB79200A99EE4 /* SleepTimerPopup.storyboard */; };
+		2581C280232EBEE500A99EE4 /* SleepTimerPopup_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C27F232EBEE500A99EE4 /* SleepTimerPopup_UI.swift */; };
 		2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586C565231941D200D960A5 /* FactsPresenter.swift */; };
 		2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2586C567231AA15600D960A5 /* Onboarding.storyboard */; };
 		258931832311226B00435B69 /* PopupCollectionView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258931822311226B00435B69 /* PopupCollectionView_UI.swift */; };
@@ -117,6 +119,8 @@
 		2581C258232C26A800A99EE4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		2581C25B232C26A800A99EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		2581C25D232C26A800A99EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2581C27D232EB79200A99EE4 /* SleepTimerPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SleepTimerPopup.storyboard; sourceTree = "<group>"; };
+		2581C27F232EBEE500A99EE4 /* SleepTimerPopup_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerPopup_UI.swift; sourceTree = "<group>"; };
 		2586C565231941D200D960A5 /* FactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsPresenter.swift; sourceTree = "<group>"; };
 		2586C567231AA15600D960A5 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		258931822311226B00435B69 /* PopupCollectionView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCollectionView_UI.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				25C97753230F1247000D0607 /* Storyboards */,
+				2581C27F232EBEE500A99EE4 /* SleepTimerPopup_UI.swift */,
 				2526D7D8230CAAAF00D70005 /* PremiumPopup_UI.swift */,
 				2581C24E2329742B00A99EE4 /* NewFavoritePopup_UI.swift */,
 				258931822311226B00435B69 /* PopupCollectionView_UI.swift */,
@@ -275,6 +280,7 @@
 			children = (
 				2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */,
 				2581C24C2329675100A99EE4 /* NewFavoritePopup.storyboard */,
+				2581C27D232EB79200A99EE4 /* SleepTimerPopup.storyboard */,
 				2526D7BD22F9701C00D70005 /* Main.storyboard */,
 				2586C567231AA15600D960A5 /* Onboarding.storyboard */,
 				254EA0E9231AF4C6008E2D64 /* About.storyboard */,
@@ -395,6 +401,7 @@
 				2581C233231FB9E400A99EE4 /* SoundLibrary.xcassets in Resources */,
 				2581C241231FC6CF00A99EE4 /* cicadas.wav in Resources */,
 				2581C24D2329675100A99EE4 /* NewFavoritePopup.storyboard in Resources */,
+				2581C27E232EB79200A99EE4 /* SleepTimerPopup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2526D7D122FB2F4700D70005 /* SoundVC_UI.swift in Sources */,
+				2581C280232EBEE500A99EE4 /* SleepTimerPopup_UI.swift in Sources */,
 				254EA0E8231AAFFA008E2D64 /* AppStoreReviewManager.swift in Sources */,
 				258931832311226B00435B69 /* PopupCollectionView_UI.swift in Sources */,
 				259B31FF2319265D00878567 /* FactsTextInfo.swift in Sources */,
