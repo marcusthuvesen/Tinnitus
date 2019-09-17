@@ -14,7 +14,21 @@ extension UIView {
         self.tintColor = CustomColors.gold
     }
     
+    func normalTimerButtonUI(){
+        self.layer.cornerRadius = self.frame.height/2
+        self.layer.masksToBounds = true
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.backgroundColor = CustomColors.blue.cgColor
+    }
     
+    func normalTimerButtonSelected(){
+        self.layer.cornerRadius = self.frame.height/2
+        self.layer.masksToBounds = true
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
+        self.backgroundColor = CustomColors.transparentPink
+    }
     
     func normalButtonUI(){
         self.layer.cornerRadius = 20

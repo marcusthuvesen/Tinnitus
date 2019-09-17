@@ -45,6 +45,7 @@
 		2581C260232C26A800A99EE4 /* Tinnitus Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2581C254232C26A800A99EE4 /* Tinnitus Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2581C27E232EB79200A99EE4 /* SleepTimerPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2581C27D232EB79200A99EE4 /* SleepTimerPopup.storyboard */; };
 		2581C280232EBEE500A99EE4 /* SleepTimerPopup_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C27F232EBEE500A99EE4 /* SleepTimerPopup_UI.swift */; };
+		2581C282232F800800A99EE4 /* SleepTimerPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C281232F800800A99EE4 /* SleepTimerPopupPresenter.swift */; };
 		2586C566231941D300D960A5 /* FactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2586C565231941D200D960A5 /* FactsPresenter.swift */; };
 		2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2586C567231AA15600D960A5 /* Onboarding.storyboard */; };
 		258931832311226B00435B69 /* PopupCollectionView_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 258931822311226B00435B69 /* PopupCollectionView_UI.swift */; };
@@ -121,6 +122,7 @@
 		2581C25D232C26A800A99EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2581C27D232EB79200A99EE4 /* SleepTimerPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SleepTimerPopup.storyboard; sourceTree = "<group>"; };
 		2581C27F232EBEE500A99EE4 /* SleepTimerPopup_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerPopup_UI.swift; sourceTree = "<group>"; };
+		2581C281232F800800A99EE4 /* SleepTimerPopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimerPopupPresenter.swift; sourceTree = "<group>"; };
 		2586C565231941D200D960A5 /* FactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsPresenter.swift; sourceTree = "<group>"; };
 		2586C567231AA15600D960A5 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		258931822311226B00435B69 /* PopupCollectionView_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCollectionView_UI.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 		2526D7CD22FB24F900D70005 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				2581C281232F800800A99EE4 /* SleepTimerPopupPresenter.swift */,
 				2581C244232100D900A99EE4 /* SoundPresenter.swift */,
 				2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */,
 				253AABFD2316E72A003CEE16 /* PremiumPopupPresenter.swift */,
@@ -474,6 +477,7 @@
 				259B31FF2319265D00878567 /* FactsTextInfo.swift in Sources */,
 				2526D7BC22F9701C00D70005 /* FrequencyVC_UI.swift in Sources */,
 				2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */,
+				2581C282232F800800A99EE4 /* SleepTimerPopupPresenter.swift in Sources */,
 				254EA0EC231AF82A008E2D64 /* ShareOnSocialMedia.swift in Sources */,
 				2581C24F2329742B00A99EE4 /* NewFavoritePopup_UI.swift in Sources */,
 				2526D7BA22F9701C00D70005 /* AppDelegate.swift in Sources */,

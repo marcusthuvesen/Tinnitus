@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SleepTimerPopup_UI: UIViewController {
-
+class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate {
+    
     @IBOutlet var shortcutOutlets: [UIButton]!
     @IBOutlet weak var timerDoneOutlet: UIButton!
     @IBOutlet weak var timePickerOutlet: UIDatePicker!
@@ -18,10 +18,13 @@ class SleepTimerPopup_UI: UIViewController {
     @IBOutlet weak var stopWatchBackgroundView: UIView!
     @IBOutlet weak var stopWatchImage: UIView!
     
+    let sleepTimerPopupDelegate = SleepTimerPopupPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSleepTimerUI()
+        setupSleepTimerDelegate()
     }
     
     func setupSleepTimerUI(){
@@ -33,8 +36,16 @@ class SleepTimerPopup_UI: UIViewController {
         sleepTimerContainerView.normalButtonUI()
         stopWatchBackgroundView.layer.cornerRadius = stopWatchBackgroundView.frame.height / 2
         stopWatchImage.tintColor = UIView.CustomColors.gold
-        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat =  "HH:mm"
+        if let date = dateFormatter.date(from: "00:00") {
+            timePickerOutlet.date = date
+        }
+    }
     
+    func setupSleepTimerDelegate(){
+        sleepTimerPopupDelegate.setSleepTimerViewDelegate(sleepTimerDelegate : self)
+        
     }
     
     
@@ -45,24 +56,22 @@ class SleepTimerPopup_UI: UIViewController {
     @IBAction func timerDoneBtn(_ sender: UIButton) {
     }
     @IBAction func sleepTimeChanged(_ sender: UIDatePicker) {
-        let date = timePickerOutlet.date
-        let components = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
-        let hour = components.hour!
-        let minute = components.minute!
-        let second = components.second!
-
-        print("\(hour): \(minute)")
-        sleepTimeLabel.isHidden = false
-        if hour == 0{
-            sleepTimeLabel.text = "00:\(minute)"
-        }
-        else if hour < 10{
-            sleepTimeLabel.text = "0\(hour): \(minute)"
-        }
-        else{
-            sleepTimeLabel.text = "\(hour): \(minute)"
-        }
+        sleepTimerPopupDelegate.timePickerChanged(datePicker : timePickerOutlet, sleepTimeLabel: sleepTimeLabel)
+    }
+    
+    func shortcutBtnSelectedUI(sender: UIButton) {
+        sender.normalTimerButtonSelected()
         
     }
+    
+    func shortcutBtnUnselectedUI(sender: UIButton) {
+        sender.normalTimerButtonUI()
+        sender.isSelected = false
+    }
+    
+    @IBAction func shortcutBtns(_ sender: UIButton) {
+        sleepTimerPopupDelegate.shortcutBtnSelected(sender: sender, sleepTimeLabel : sleepTimeLabel)
+    }
+    
 
 }
