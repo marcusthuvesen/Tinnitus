@@ -17,6 +17,7 @@ protocol SleepTimerPopupDelegate : NSObjectProtocol{
 class SleepTimerPopupPresenter{
     
     weak private var sleepTimerDelegate : SleepTimerPopupDelegate?
+    private var sleepTimer = SleepTimer()
     private var latestOutlet : UIButton?
     
     func setSleepTimerViewDelegate(sleepTimerDelegate : SleepTimerPopupDelegate){
@@ -45,8 +46,6 @@ class SleepTimerPopupPresenter{
         } else {
             self.sleepTimerDelegate?.shortcutBtnUnselectedUI(sender : sender)
         }
-        
-        
     }
     
     func unselectLatestOutlet(sender : UIButton){
@@ -57,16 +56,15 @@ class SleepTimerPopupPresenter{
     }
     
     func timePickerChanged(datePicker : UIDatePicker, sleepTimeLabel : UILabel){
-        print("Inne nu")
-        changeCountDownTimer(datePicker: datePicker, sleepTimeLabel: sleepTimeLabel)
-        
+        print("Inne i timepicker nu")
+        let time = changeCountDownTimer(datePicker: datePicker, sleepTimeLabel: sleepTimeLabel)
+        sleepTimer.startTimer(hour: time.0, minutes: time.1)
         if latestOutlet != nil {
             unselectLatestOutlet(sender: latestOutlet!)
         }
-       
     }
     
-    func changeCountDownTimer(datePicker : UIDatePicker, sleepTimeLabel : UILabel){
+    func changeCountDownTimer(datePicker : UIDatePicker, sleepTimeLabel : UILabel) -> (Int, Int) {
         let date = datePicker.date
         let components = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
         let hour = components.hour!
@@ -78,7 +76,7 @@ class SleepTimerPopupPresenter{
         var stringMinute = ""
         if minute < 10 {
             stringMinute = String(minute)
-            stringMinute = "0+\(minute)"
+            stringMinute = "0\(minute)"
         }else{
             stringMinute = String(minute)
         }
@@ -91,6 +89,7 @@ class SleepTimerPopupPresenter{
         else{
             sleepTimeLabel.text = "\(hour):" + stringMinute + ":00"
         }
+        return (hour, minute)
     }
     
     

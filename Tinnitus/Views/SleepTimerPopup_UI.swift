@@ -38,7 +38,7 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate {
         stopWatchImage.tintColor = UIView.CustomColors.gold
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "HH:mm"
-        if let date = dateFormatter.date(from: "00:00") {
+        if let date = dateFormatter.date(from: "00:00"){
             timePickerOutlet.date = date
         }
     }
