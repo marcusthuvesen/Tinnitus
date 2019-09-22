@@ -8,8 +8,11 @@
 
 import UIKit
 
-class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate {
-    
+
+
+class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate{
+   
+
     @IBOutlet var shortcutOutlets: [UIButton]!
     @IBOutlet weak var timerDoneOutlet: UIButton!
     @IBOutlet weak var timePickerOutlet: UIDatePicker!
@@ -19,6 +22,7 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate {
     @IBOutlet weak var stopWatchImage: UIView!
     
     let sleepTimerPopupDelegate = SleepTimerPopupPresenter()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +32,7 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate {
     }
     
     func setupSleepTimerUI(){
-        for outlet in shortcutOutlets{
-            outlet.sleepTimerShortcutBtnUI()
-        }
+        for outlet in shortcutOutlets{ outlet.sleepTimerShortcutBtnUI() }
         timerDoneOutlet.premiumPopupContinueUI()
         timePickerOutlet.setValue(UIColor.white, forKeyPath: "textColor")
         sleepTimerContainerView.normalButtonUI()
@@ -43,25 +45,39 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate {
         }
     }
     
-    func setupSleepTimerDelegate(){
-        sleepTimerPopupDelegate.setSleepTimerViewDelegate(sleepTimerDelegate : self)
-        
+    func showTimeLabel() {
+        sleepTimeLabel.isHidden = false
+        print("show label")
     }
     
+    
+    func setupSleepTimerDelegate(){
+        sleepTimerPopupDelegate.setSleepTimerViewDelegate(sleepTimerDelegate : self)
+    }
+    
+    func updateTimerLabelUI(sleepLabelText: String) {
+        sleepTimeLabel.text = sleepLabelText
+    }
+    
+    func updateTimeEverySecond(sleepText : String) {
+       sleepTimeLabel.text = sleepText
+    }
     
     @IBAction func dismissTimerPopup(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func timerDoneBtn(_ sender: UIButton) {
+        sleepTimerPopupDelegate.doneBtnSelected(sender: sender)
+        self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func sleepTimeChanged(_ sender: UIDatePicker) {
         sleepTimerPopupDelegate.timePickerChanged(datePicker : timePickerOutlet, sleepTimeLabel: sleepTimeLabel)
     }
     
     func shortcutBtnSelectedUI(sender: UIButton) {
         sender.normalTimerButtonSelected()
-        
     }
     
     func shortcutBtnUnselectedUI(sender: UIButton) {

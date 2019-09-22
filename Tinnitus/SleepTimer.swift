@@ -8,16 +8,25 @@
 
 import Foundation
 
+
+
 class SleepTimer{
     var counter = 0
-    
+    static var sleepTimerIsActive = false
     private var sleepTimer : Timer?
+    var sleepTimerPopupPresenter : SleepTimerPopupPresenter?
+    
+    init(sleepTimerPopupPresenter : SleepTimerPopupPresenter) {
+        self.sleepTimerPopupPresenter = sleepTimerPopupPresenter
+    }
     
     func startTimer(hour : Int, minutes : Int){
         stopTimer()
+        SleepTimer.sleepTimerIsActive = true
         counter = reformatToSeconds(hour: hour, minutes: minutes)
-        sleepTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-        
+        if sleepTimer == nil {
+            sleepTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        }
     }
     
     func reformatToSeconds(hour : Int, minutes : Int) -> Int{
@@ -28,9 +37,18 @@ class SleepTimer{
         return seconds
     }
     
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
     func stopTimer(){
-        sleepTimer?.invalidate()
-        sleepTimer = nil
+        print("Invalidating timer")
+        if sleepTimer != nil{
+            sleepTimer!.invalidate()
+            sleepTimer = nil
+        }
+        SleepTimer.sleepTimerIsActive = false
+        counter = 0
     }
 
     @objc func updateCounter() {
@@ -38,12 +56,22 @@ class SleepTimer{
         if counter > 0 {
             print("\(counter) seconds until pause")
             counter -= 1
+            
         } else {
             print("\(counter) seconds until pause")
             SoundVC_UI.soundsCurrentlyPlaying.stopAll()
             FrequencyVC_UI.toneOutPutUnit.stop()
             stopTimer()
         }
+        let (hour, minute, second) = secondsToHoursMinutesSeconds(seconds: counter)
+//        self.sleepTimerDelegate?.updateTimeEverySecond(hour: hour, minute: minute, second: second)
+//        test()
+
+        let timeDict = ["hour": hour, "minute" : minute, "second" : second]
+
+        NotificationCenter.default.post(name: Notification.Name("TimeUpdate"), object: timeDict)
+        sleepTimerPopupPresenter?.runUpdateTimeEverySecond(hour: hour, minute: minute, second: second)
     }
+   
     
 }

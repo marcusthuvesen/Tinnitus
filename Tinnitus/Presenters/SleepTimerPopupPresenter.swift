@@ -12,16 +12,42 @@ import UIKit
 protocol SleepTimerPopupDelegate : NSObjectProtocol{
     func shortcutBtnSelectedUI(sender : UIButton)
     func shortcutBtnUnselectedUI(sender : UIButton)
+    func updateTimerLabelUI(sleepLabelText : String)
+    func updateTimeEverySecond(sleepText : String)
+    func showTimeLabel()
 }
 
 class SleepTimerPopupPresenter{
     
     weak private var sleepTimerDelegate : SleepTimerPopupDelegate?
-    private var sleepTimer = SleepTimer()
+    private var sleepTimer : SleepTimer?
     private var latestOutlet : UIButton?
+    private var setTime : (Int, Int)
+    static var test = 9
+    
+    init(){
+        setTime = (0, 0)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.timeChanged),
+            name: Notification.Name("TimeUpdate"),
+            object: nil)
+    }
+    
+    @objc private func timeChanged(notification: NSNotification){
+        //do stuff using the userInfo property of the notification object
+        
+        if let dict = notification.object as? NSDictionary{
+            let hour = dict["hour"] as! Int
+            let minute = dict["minute"] as! Int
+            let second  = dict["second"] as! Int
+            runUpdateTimeEverySecond(hour: hour, minute: minute, second: second)
+        }
+    }
     
     func setSleepTimerViewDelegate(sleepTimerDelegate : SleepTimerPopupDelegate){
         self.sleepTimerDelegate = sleepTimerDelegate
+        sleepTimer = SleepTimer(sleepTimerPopupPresenter: self)
     }
     
     func shortcutBtnSelected(sender : UIButton, sleepTimeLabel : UILabel){
@@ -29,23 +55,62 @@ class SleepTimerPopupPresenter{
         if sender.isSelected{
             self.sleepTimerDelegate?.shortcutBtnSelectedUI(sender : sender)
             unselectLatestOutlet(sender: sender)
-            sleepTimeLabel.isHidden = false
+            sleepTimerDelegate?.showTimeLabel()
             switch sender.tag {
             case 0:
-                print("här inne")
-                sleepTimeLabel.text = "00:15:00"
+                sleepTimeLabel.text = "00:00:15"
+                setTime = (0,15)
             case 1:
-                sleepTimeLabel.text = "00:30:00"
+                sleepTimeLabel.text = "00:00:30"
+                setTime = (0,30)
             case 2:
-                sleepTimeLabel.text = "00:45:00"
+                sleepTimeLabel.text = "00:00:45"
+                setTime = (0,45)
             case 3:
-                sleepTimeLabel.text = "00:60:00"
+                sleepTimeLabel.text = "00:00:60"
+                setTime = (0,60)
             default:
                 sleepTimeLabel.text = "00:00:00"
             }
         } else {
             self.sleepTimerDelegate?.shortcutBtnUnselectedUI(sender : sender)
         }
+    }
+    
+    func doneBtnSelected(sender : UIButton){
+        sender.isSelected = !sender.isSelected
+        let hour = setTime.0
+        let minute = setTime.1
+        sleepTimer?.startTimer(hour: hour, minutes: minute)
+    }
+    
+    func runUpdateTimeEverySecond(hour: Int, minute: Int, second: Int){
+        var stringMinute = ""
+        var stringSecond = ""
+        sleepTimerDelegate?.showTimeLabel()
+        var sleepTimeLabelText = ""
+        if minute < 10 {
+            stringMinute = String(minute)
+            stringMinute = "0\(minute)"
+        }else{
+            stringMinute = String(minute)
+        }
+        if second < 10 {
+            stringSecond = String(second)
+            stringSecond = "0\(second)"
+        }else{
+            stringSecond = String(second)
+        }
+        if hour == 0{
+            sleepTimeLabelText = "00:" + stringMinute + ":\(stringSecond)"
+        }
+        else if hour < 10{
+            sleepTimeLabelText = "0\(hour):" + stringMinute + ":\(stringSecond)"
+        }
+        else{
+            sleepTimeLabelText = "\(hour):" + stringMinute + ":\(stringSecond)"
+        }
+        self.sleepTimerDelegate?.updateTimeEverySecond(sleepText : sleepTimeLabelText)
     }
     
     func unselectLatestOutlet(sender : UIButton){
@@ -57,8 +122,8 @@ class SleepTimerPopupPresenter{
     
     func timePickerChanged(datePicker : UIDatePicker, sleepTimeLabel : UILabel){
         print("Inne i timepicker nu")
-        let time = changeCountDownTimer(datePicker: datePicker, sleepTimeLabel: sleepTimeLabel)
-        sleepTimer.startTimer(hour: time.0, minutes: time.1)
+        setTime = changeCountDownTimer(datePicker: datePicker, sleepTimeLabel: sleepTimeLabel)
+        
         if latestOutlet != nil {
             unselectLatestOutlet(sender: latestOutlet!)
         }
@@ -69,10 +134,7 @@ class SleepTimerPopupPresenter{
         let components = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
         let hour = components.hour!
         let minute = components.minute!
-        let second = components.second!
-        
-        
-        sleepTimeLabel.isHidden = false
+
         var stringMinute = ""
         if minute < 10 {
             stringMinute = String(minute)
@@ -91,6 +153,6 @@ class SleepTimerPopupPresenter{
         }
         return (hour, minute)
     }
-    
+
     
 }
