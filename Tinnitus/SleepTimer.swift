@@ -12,8 +12,7 @@ import Foundation
 
 class SleepTimer{
     var counter = 0
-    static var sleepTimerIsActive = false
-    private var sleepTimer : Timer?
+    private weak var sleepTimer : Timer?
     var sleepTimerPopupPresenter : SleepTimerPopupPresenter?
     
     init(sleepTimerPopupPresenter : SleepTimerPopupPresenter) {
@@ -22,7 +21,6 @@ class SleepTimer{
     
     func startTimer(hour : Int, minutes : Int){
         stopTimer()
-        SleepTimer.sleepTimerIsActive = true
         counter = reformatToSeconds(hour: hour, minutes: minutes)
         if sleepTimer == nil {
             sleepTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
@@ -42,12 +40,12 @@ class SleepTimer{
     }
     
     func stopTimer(){
-        print("Invalidating timer")
+        
         if sleepTimer != nil{
+            print("Invalidating timer")
             sleepTimer!.invalidate()
             sleepTimer = nil
         }
-        SleepTimer.sleepTimerIsActive = false
         counter = 0
     }
 

@@ -15,18 +15,28 @@ protocol SleepTimerPopupDelegate : NSObjectProtocol{
     func updateTimerLabelUI(sleepLabelText : String)
     func updateTimeEverySecond(sleepText : String)
     func showTimeLabel()
+    func hideTimeLabel()
+    func doneBtnText(btnText : String)
+    func dismissSleepTimerPopup()
 }
 
 class SleepTimerPopupPresenter{
     
     weak private var sleepTimerDelegate : SleepTimerPopupDelegate?
-    private var sleepTimer : SleepTimer?
+    static var sleepTimer = SleepTimer(sleepTimerPopupPresenter: SleepTimerPopupPresenter())
+    static var doneBtnIsSelected = false
     private var latestOutlet : UIButton?
     private var setTime : (Int, Int)
-    static var test = 9
     
     init(){
         setTime = (0, 0)
+        if SleepTimerPopupPresenter.doneBtnIsSelected{
+            print("Stop")
+            sleepTimerDelegate?.doneBtnText(btnText: "Pause")
+        }else{
+            print("Done")
+            sleepTimerDelegate?.doneBtnText(btnText: "Done")
+        }
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(self.timeChanged),
@@ -34,9 +44,11 @@ class SleepTimerPopupPresenter{
             object: nil)
     }
     
+    
     @objc private func timeChanged(notification: NSNotification){
         //do stuff using the userInfo property of the notification object
-        
+        sleepTimerDelegate?.doneBtnText(btnText: "Stop")
+        SleepTimerPopupPresenter.doneBtnIsSelected = true
         if let dict = notification.object as? NSDictionary{
             let hour = dict["hour"] as! Int
             let minute = dict["minute"] as! Int
@@ -47,7 +59,7 @@ class SleepTimerPopupPresenter{
     
     func setSleepTimerViewDelegate(sleepTimerDelegate : SleepTimerPopupDelegate){
         self.sleepTimerDelegate = sleepTimerDelegate
-        sleepTimer = SleepTimer(sleepTimerPopupPresenter: self)
+        //SleepTimerPopupPresenter.sleepTimer = SleepTimer(sleepTimerPopupPresenter: self)
     }
     
     func shortcutBtnSelected(sender : UIButton, sleepTimeLabel : UILabel){
@@ -78,10 +90,19 @@ class SleepTimerPopupPresenter{
     }
     
     func doneBtnSelected(sender : UIButton){
-        sender.isSelected = !sender.isSelected
-        let hour = setTime.0
-        let minute = setTime.1
-        sleepTimer?.startTimer(hour: hour, minutes: minute)
+        SleepTimerPopupPresenter.doneBtnIsSelected = !SleepTimerPopupPresenter.doneBtnIsSelected
+        if SleepTimerPopupPresenter.doneBtnIsSelected{
+            sender.setTitle("Stop", for: .normal)
+            let hour = setTime.0
+            let minute = setTime.1
+            SleepTimerPopupPresenter.sleepTimer.startTimer(hour: hour, minutes: minute)
+            sleepTimerDelegate?.dismissSleepTimerPopup()
+        } else {
+            sender.setTitle("Done", for: .normal)
+            SleepTimerPopupPresenter.sleepTimer.stopTimer()
+            sleepTimerDelegate?.hideTimeLabel()
+        }
+        
     }
     
     func runUpdateTimeEverySecond(hour: Int, minute: Int, second: Int){
@@ -121,9 +142,8 @@ class SleepTimerPopupPresenter{
     }
     
     func timePickerChanged(datePicker : UIDatePicker, sleepTimeLabel : UILabel){
-        print("Inne i timepicker nu")
+        sleepTimerDelegate?.showTimeLabel()
         setTime = changeCountDownTimer(datePicker: datePicker, sleepTimeLabel: sleepTimeLabel)
-        
         if latestOutlet != nil {
             unselectLatestOutlet(sender: latestOutlet!)
         }

@@ -22,7 +22,7 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate{
     @IBOutlet weak var stopWatchImage: UIView!
     
     let sleepTimerPopupDelegate = SleepTimerPopupPresenter()
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +47,15 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate{
     
     func showTimeLabel() {
         sleepTimeLabel.isHidden = false
-        print("show label")
     }
     
+    func hideTimeLabel() {
+        sleepTimeLabel.isHidden = true
+    }
+    
+    func doneBtnText(btnText: String) {
+        timerDoneOutlet.setTitle(btnText, for: .normal)
+    }
     
     func setupSleepTimerDelegate(){
         sleepTimerPopupDelegate.setSleepTimerViewDelegate(sleepTimerDelegate : self)
@@ -69,7 +75,10 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate{
     
     @IBAction func timerDoneBtn(_ sender: UIButton) {
         sleepTimerPopupDelegate.doneBtnSelected(sender: sender)
-        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func dismissSleepTimerPopup(){
+          self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func sleepTimeChanged(_ sender: UIDatePicker) {
