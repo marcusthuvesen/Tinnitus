@@ -287,12 +287,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="493"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRZ-0X-N5Z">
-                                                <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                                <rect key="frame" x="5" y="8" width="40" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="4TB-NM-oHb"/>
-                                                    <constraint firstAttribute="width" constant="30" id="gdc-j2-ZBS"/>
+                                                    <constraint firstAttribute="height" constant="40" id="4TB-NM-oHb"/>
+                                                    <constraint firstAttribute="width" constant="40" id="gdc-j2-ZBS"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -378,7 +378,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="xdN-Sh-Okw" secondAttribute="trailing" id="4ER-e8-8zy"/>
-                                            <constraint firstItem="cRZ-0X-N5Z" firstAttribute="leading" secondItem="O4e-Na-dSR" secondAttribute="leading" constant="8" id="ZHh-pa-pOD"/>
+                                            <constraint firstItem="cRZ-0X-N5Z" firstAttribute="leading" secondItem="O4e-Na-dSR" secondAttribute="leading" constant="5" id="ZHh-pa-pOD"/>
                                             <constraint firstItem="PDU-E7-AHv" firstAttribute="top" secondItem="O4e-Na-dSR" secondAttribute="top" constant="65" id="bsQ-gb-5MB"/>
                                             <constraint firstItem="pCf-dx-Mbz" firstAttribute="top" secondItem="xdN-Sh-Okw" secondAttribute="bottom" constant="5" id="e95-ba-S57"/>
                                             <constraint firstAttribute="bottom" secondItem="pCf-dx-Mbz" secondAttribute="bottom" constant="20" id="gGf-g9-Ihx"/>

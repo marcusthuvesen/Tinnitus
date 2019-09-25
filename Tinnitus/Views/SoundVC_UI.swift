@@ -43,7 +43,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     var firstSliderSoundName : String?
     var secondSliderSoundName : String?
     var thirdSliderSoundName : String?
-    
+    static let soundVC = SoundVC_UI()
     
     override func viewWillAppear(_ animated: Bool) {
         PlayBar.currentWindow = self
@@ -54,18 +54,13 @@ class SoundVC_UI: UIViewController, SoundDelegate{
         setupSoundVC_UI()
         setupSoundDelegate()
         defaultThumbImage = firstSliderOutlet.currentThumbImage
-        
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         print("SoundVC dissappear")
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        let popOverVC = UIStoryboard(name: "SleepTimerPopup", bundle: nil).instantiateViewController(withIdentifier: "SleepTimerPopup_UI") as! SleepTimerPopup_UI
-        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        tabBarController?.present(popOverVC, animated: true)
-    }
+   
     
     func setupSoundDelegate(){
         soundPresenter.setSoundViewDelegate(soundDelegate: self)
@@ -190,16 +185,19 @@ class SoundVC_UI: UIViewController, SoundDelegate{
         }
     }
    
-    
-    
-    @IBAction func firstSoundBtn(_ sender: UIButton) {
+    func showSleepTimerPopup(){
         let popOverVC = UIStoryboard(name: "SleepTimerPopup", bundle: nil).instantiateViewController(withIdentifier: "SleepTimerPopup_UI") as! SleepTimerPopup_UI
         popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         tabBarController?.present(popOverVC, animated: true)
+    }
+    
+    @IBAction func firstSoundBtn(_ sender: UIButton) {
+        showSleepTimerPopup()
         //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
+        sendToFavoritePopup()
+        //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func thirdSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
@@ -338,3 +336,4 @@ extension UIImage {
         return image
     }
 }
+

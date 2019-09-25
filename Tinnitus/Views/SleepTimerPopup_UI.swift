@@ -23,12 +23,17 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate{
     
     let sleepTimerPopupDelegate = SleepTimerPopupPresenter()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupSleepTimerUI()
         setupSleepTimerDelegate()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    func setupSleepTimerDelegate(){
+        print("setting up presenter")
+        sleepTimerPopupDelegate.setSleepTimerViewDelegate(sleepTimerDelegate : self)
     }
     
     func setupSleepTimerUI(){
@@ -45,6 +50,8 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate{
         }
     }
     
+   
+    
     func showTimeLabel() {
         sleepTimeLabel.isHidden = false
     }
@@ -57,9 +64,7 @@ class SleepTimerPopup_UI: UIViewController, SleepTimerPopupDelegate{
         timerDoneOutlet.setTitle(btnText, for: .normal)
     }
     
-    func setupSleepTimerDelegate(){
-        sleepTimerPopupDelegate.setSleepTimerViewDelegate(sleepTimerDelegate : self)
-    }
+    
     
     func updateTimerLabelUI(sleepLabelText: String) {
         sleepTimeLabel.text = sleepLabelText

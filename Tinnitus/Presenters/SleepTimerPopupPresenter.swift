@@ -34,7 +34,7 @@ class SleepTimerPopupPresenter{
             print("Stop")
             sleepTimerDelegate?.doneBtnText(btnText: "Pause")
         }else{
-            print("Done")
+            print("Done now")
             sleepTimerDelegate?.doneBtnText(btnText: "Done")
         }
         NotificationCenter.default.addObserver(

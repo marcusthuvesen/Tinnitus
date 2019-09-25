@@ -14,7 +14,7 @@
         <scene sceneID="Jgj-J8-2gD">
             <objects>
                 <viewController restorationIdentifier="SleepTimerPopup_UI" storyboardIdentifier="SleepTimerPopup_UI" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="IvP-SH-xaZ" customClass="SleepTimerPopup_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="m9z-Xw-H5Y">
+                    <view key="view" contentMode="scaleToFill" id="m9z-Xw-H5Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -24,17 +24,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M44-jh-OWP">
-                                <rect key="frame" x="20" y="114" width="374" height="400"/>
+                                <rect key="frame" x="20" y="114" width="374" height="668"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYF-Jo-xZi">
-                                        <rect key="frame" x="60" y="320" width="254" height="60"/>
+                                        <rect key="frame" x="60" y="588" width="254" height="60"/>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.76862745099999996" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="dIx-Rh-ItD"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="vjJ-Td-J1k"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <state key="normal" title="Done">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -114,7 +114,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Vg-b7-dM0">
-                                        <rect key="frame" x="0.0" y="170" width="374" height="130"/>
+                                        <rect key="frame" x="0.0" y="170" width="374" height="398"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <date key="date" timeIntervalSinceReferenceDate="590264761.20347404">
@@ -132,7 +132,6 @@
                                 <constraints>
                                     <constraint firstItem="Yui-xM-0Hd" firstAttribute="leading" secondItem="M44-jh-OWP" secondAttribute="leading" constant="20" id="19d-lx-gLB"/>
                                     <constraint firstItem="jP8-iP-RrH" firstAttribute="centerX" secondItem="M44-jh-OWP" secondAttribute="centerX" id="2xb-kQ-Gmh"/>
-                                    <constraint firstAttribute="height" constant="400" id="4WO-V0-eos"/>
                                     <constraint firstItem="cPe-ty-L5k" firstAttribute="top" secondItem="M44-jh-OWP" secondAttribute="top" constant="8" id="8dE-pf-r8h"/>
                                     <constraint firstItem="6Vg-b7-dM0" firstAttribute="top" secondItem="Yui-xM-0Hd" secondAttribute="bottom" constant="10" id="C1H-bc-Kec"/>
                                     <constraint firstItem="jP8-iP-RrH" firstAttribute="top" secondItem="M44-jh-OWP" secondAttribute="top" constant="70" id="D1e-ok-YnW"/>

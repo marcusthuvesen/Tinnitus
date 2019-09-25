@@ -59,6 +59,7 @@ class PremiumPopup_UI: UIViewController, UIPageViewControllerDelegate, PremiumPo
         popupCollectionView.dataSource = self.popupCollectionView_UI
         popupCollectionView.delegate = self.popupCollectionView_UI
         premiumPopupPresenter.setViewDelegate(premiumPopupDelegate: self)
+        
     }
     
     func setupPremiumPopupUI(){
@@ -95,7 +96,6 @@ class PremiumPopup_UI: UIViewController, UIPageViewControllerDelegate, PremiumPo
     func changePremiumTintColors(firstLabel : UILabel, secondLabel : UILabel, thirdLabel : UILabel, isClicked : Bool){
         var newTintColor : UIColor
         newTintColor = isClicked == true ? UIView.CustomColors.gold : .black
-        
         firstLabel.tintColor = newTintColor
         secondLabel.tintColor = newTintColor
         thirdLabel.tintColor = newTintColor

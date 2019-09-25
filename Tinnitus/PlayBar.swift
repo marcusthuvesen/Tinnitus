@@ -15,7 +15,7 @@ class PlayBar: UIView {
     @IBOutlet weak var timerBtnOutlet: UIButton!
     @IBOutlet var playBarView: UIView!
     static var currentWindow = UIViewController()
-    
+    var soundVC : SoundVC_UI?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +32,7 @@ class PlayBar: UIView {
         playBarView.fixInView(self)
         
         playBtnOutlet.addTarget(self, action: #selector(self.playBtnAction(sender:)), for: .touchUpInside)
+        soundVC = SoundVC_UI()
     }
     
     @objc func playBtnAction(sender: UIButton){
@@ -51,47 +52,35 @@ class PlayBar: UIView {
             SoundVC_UI.soundsCurrentlyPlaying.stopAll()
             FrequencyVC_UI.toneOutPutUnit.stop()
         }
-        
-        
     }
-    
-    
-    
-    
-//    @IBAction func playBtnAction(_ sender: UIButton) {
-//        sender.isSelected = !sender.isSelected
-//        print("sender selected: \(sender.isSelected)")
-//        changeBG()
-//        if sender.isSelected{
-//          print("sätter pauseImg")
-//            
-//            if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
-//                for sound in SoundsCurrentlyPlaying.soundsArray{
-//                    Sound.play(file: sound, fileExtension: "wav")
-//                }
-//            }
-//            else if PlayBar.currentWindow.isKind(of: FrequencyVC_UI.self){
-//                FrequencyVC_UI.toneOutPutUnit.start()
-//            }
-//            playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-//        } else {
-//           print("sätter PlayImg")
-//            for sound in SoundsCurrentlyPlaying.soundsArray{
-//                Sound.stop(file: sound, fileExtension: "wav")
-//            }
-//              FrequencyVC_UI.toneOutPutUnit.stop()
-//            
-//            playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
-//        }
-//    }
     
     @IBAction func favoriteBtnAction(_ sender: Any) {
-        let soundVC = SoundVC_UI()
-        soundVC.sendToFavoritePopup()
+        let vc = UIStoryboard(name: "NewFavoritePopup", bundle: nil).instantiateViewController(withIdentifier: "NewFavoritePopup") as! NewFavoritePopup_UI
+        vc.modalPresentationStyle = .overCurrentContext
+        let currentController = self.getCurrentViewController()
+        currentController?.present(vc, animated: true, completion: nil)
     }
 
-    @IBAction func timerBtnAction(_ sender: Any) {}
+    @IBAction func timerBtnAction(_ sender: Any) {
+        //self.playbarDelegate?.presentSleepTimerVC()
+        let vc = UIStoryboard(name: "SleepTimerPopup", bundle: nil).instantiateViewController(withIdentifier: "SleepTimerPopup_UI") as! SleepTimerPopup_UI
+        vc.modalPresentationStyle = .overCurrentContext
+        let currentController = self.getCurrentViewController()
+        currentController?.present(vc, animated: true, completion: nil)
+  
+    }
     
+    func getCurrentViewController() -> UIViewController? {
+        
+        if let rootController = UIApplication.shared.keyWindow?.rootViewController {
+            var currentController: UIViewController! = rootController
+            while( currentController.presentedViewController != nil ) {
+                currentController = currentController.presentedViewController
+            }
+            return currentController
+        }
+        return nil
+    }
 }
 
 extension UIView
