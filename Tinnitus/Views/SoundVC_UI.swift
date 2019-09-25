@@ -35,7 +35,6 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     var defaultThumbImage : UIImage?
     
     let soundPresenter = SoundPresenter()
-    static var playBar = PlayBar()
     var previousThirdSender : UIButton?
     var previousThirdSoundName : String?
     var previousThirdOutlet : UIImageView?
@@ -192,12 +191,10 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
-        showSleepTimerPopup()
-        //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
-        sendToFavoritePopup()
-        //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
+        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
     @IBAction func thirdSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)

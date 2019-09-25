@@ -42,18 +42,12 @@ class SoundPresenter {
             self.soundDelegate?.soundBtnSelected(senderOutlet : senderOutlet, soundName : soundName)
             soundsCurrentlyPlaying.saveCurrentSound(soundName: soundName)
             
-            
-            if !SoundVC_UI.playBar.playBtnOutlet.isSelected{
-                print("Change to selected")
-                //Programmatically sends an action to button
-                SoundVC_UI.playBar.playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-            }
-            
-            
         } else {
             self.soundDelegate?.removeSliderImage(senderOutlet : sender)
             self.soundDelegate?.soundBtnUnselected(senderOutlet: senderOutlet, soundName: soundName)
         }
+        
+        
     }
     
     func howManySoundsPlaying(soundBtnOutlets : [UIButton]) -> Int {

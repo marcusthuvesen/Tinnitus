@@ -15,7 +15,6 @@ class PlayBar: UIView {
     @IBOutlet weak var timerBtnOutlet: UIButton!
     @IBOutlet var playBarView: UIView!
     static var currentWindow = UIViewController()
-    var soundVC : SoundVC_UI?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,7 +31,25 @@ class PlayBar: UIView {
         playBarView.fixInView(self)
         
         playBtnOutlet.addTarget(self, action: #selector(self.playBtnAction(sender:)), for: .touchUpInside)
-        soundVC = SoundVC_UI()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.changePlayBtnImage),
+            name: Notification.Name("ChangePlayImage"),
+            object: nil)
+    }
+    
+    @objc func changePlayBtnImage(notification: NSNotification){
+        print("received notification")
+        if let dict = notification.object as? NSDictionary{
+            let play = dict["play"] as? Bool ?? false
+            if play{
+                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+            } else {
+                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+            }
+        }
+       
+        
     }
     
     @objc func playBtnAction(sender: UIButton){
@@ -62,7 +79,6 @@ class PlayBar: UIView {
     }
 
     @IBAction func timerBtnAction(_ sender: Any) {
-        //self.playbarDelegate?.presentSleepTimerVC()
         let vc = UIStoryboard(name: "SleepTimerPopup", bundle: nil).instantiateViewController(withIdentifier: "SleepTimerPopup_UI") as! SleepTimerPopup_UI
         vc.modalPresentationStyle = .overCurrentContext
         let currentController = self.getCurrentViewController()
@@ -71,7 +87,6 @@ class PlayBar: UIView {
     }
     
     func getCurrentViewController() -> UIViewController? {
-        
         if let rootController = UIApplication.shared.keyWindow?.rootViewController {
             var currentController: UIViewController! = rootController
             while( currentController.presentedViewController != nil ) {
