@@ -39,6 +39,10 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
         SoundVC_UI.soundsCurrentlyPlaying.stopAll()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: ["play" : false])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

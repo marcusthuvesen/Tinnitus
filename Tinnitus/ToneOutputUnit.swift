@@ -150,6 +150,7 @@ class ToneOutputUnit: NSObject {
         if (ToneOutputUnit.audioRunning) {
             auAudioUnit.stopHardware()
             ToneOutputUnit.audioRunning = false
+            
         }
     }
     

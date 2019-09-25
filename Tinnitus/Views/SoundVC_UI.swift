@@ -57,7 +57,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        print("SoundVC dissappear")
+        NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: ["play" : false])
     }
    
     

@@ -27,6 +27,7 @@ class FrequencyPresenter{
         frequencyLabel.text = frequencyValue + " KHz"
         toneOutPutUnit.setFrequency(freq: Double(frequencyValue)!)
         toneOutPutUnit.currentFrequency = Double(frequencyValue)!
+        NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: ["play" : true])
     }
     
     func frequencyButtonSelected(sender : UIButton){

@@ -8,13 +8,14 @@
 import UIKit
 
 class PlayBar: UIView {
-
+    
     let kCONTENT_XIB_NAME = "PlayBarView"
     @IBOutlet weak var playBtnOutlet: UIButton!
     @IBOutlet weak var favoriteBtnOutlet: UIButton!
     @IBOutlet weak var timerBtnOutlet: UIButton!
     @IBOutlet var playBarView: UIView!
     static var currentWindow = UIViewController()
+    var playBtnManuallySelected : Bool?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,34 +42,59 @@ class PlayBar: UIView {
     @objc func changePlayBtnImage(notification: NSNotification){
         print("received notification")
         if let dict = notification.object as? NSDictionary{
-            let play = dict["play"] as? Bool ?? false
-            if play{
-                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-            } else {
-                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
-            }
+            playBtnManuallySelected = dict["play"] as? Bool ?? false
+            playBtnAction(sender: playBtnOutlet)
         }
-       
-        
     }
     
     @objc func playBtnAction(sender: UIButton){
-        sender.isSelected = !sender.isSelected
-        
-        if sender.isSelected{
-            playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-            
-            if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
-                SoundVC_UI.soundsCurrentlyPlaying.playAll()
-            } else{
+        if let manuallySelectedPlay = playBtnManuallySelected{
+            if manuallySelectedPlay && PlayBar.currentWindow.isKind(of: FrequencyVC_UI.self){
+                print("received manually")
+                sender.isSelected = true
                 FrequencyVC_UI.toneOutPutUnit.start()
+                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+                
             }
-            
-        } else {
-            playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
-            SoundVC_UI.soundsCurrentlyPlaying.stopAll()
-            FrequencyVC_UI.toneOutPutUnit.stop()
+            else if manuallySelectedPlay && PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
+                print("received manually")
+                sender.isSelected = true
+                SoundVC_UI.soundsCurrentlyPlaying.playAll()
+                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+            }
+            else if !manuallySelectedPlay && PlayBar.currentWindow.isKind(of: FrequencyVC_UI.self){
+                print("received manually false")
+                sender.isSelected = false
+                FrequencyVC_UI.toneOutPutUnit.stop()
+                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+            }
+            else if !manuallySelectedPlay && PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
+                print("received manually false")
+                sender.isSelected = false
+                SoundVC_UI.soundsCurrentlyPlaying.stopAll()
+                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+            }
         }
+        else{
+            sender.isSelected = !sender.isSelected
+            
+            if sender.isSelected{
+                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+                
+                if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
+                    SoundVC_UI.soundsCurrentlyPlaying.playAll()
+                } else{
+                    FrequencyVC_UI.toneOutPutUnit.start()
+                }
+                
+            } else {
+                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+                SoundVC_UI.soundsCurrentlyPlaying.stopAll()
+                FrequencyVC_UI.toneOutPutUnit.stop()
+            }
+        }
+        
+        playBtnManuallySelected = nil
     }
     
     @IBAction func favoriteBtnAction(_ sender: Any) {
@@ -77,13 +103,13 @@ class PlayBar: UIView {
         let currentController = self.getCurrentViewController()
         currentController?.present(vc, animated: true, completion: nil)
     }
-
+    
     @IBAction func timerBtnAction(_ sender: Any) {
         let vc = UIStoryboard(name: "SleepTimerPopup", bundle: nil).instantiateViewController(withIdentifier: "SleepTimerPopup_UI") as! SleepTimerPopup_UI
         vc.modalPresentationStyle = .overCurrentContext
         let currentController = self.getCurrentViewController()
         currentController?.present(vc, animated: true, completion: nil)
-  
+        
     }
     
     func getCurrentViewController() -> UIViewController? {
