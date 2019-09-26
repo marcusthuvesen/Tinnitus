@@ -36,11 +36,12 @@ class FrequencyVC_UI: UIViewController, FrequencyDelegate {
     override func viewWillAppear(_ animated: Bool) {
         PlayBar.currentWindow = self
         print("currentVC \(PlayBar.currentWindow)")
+        NotificationCenter.default.post(name: Notification.Name("TriggerPlayBtn"), object: ["play" : false])
         SoundVC_UI.soundsCurrentlyPlaying.stopAll()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: ["play" : false])
+        NotificationCenter.default.post(name: Notification.Name("TriggerPlayBtn"), object: ["play" : false])
     }
     
     override func viewDidLoad() {

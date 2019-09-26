@@ -1019,16 +1019,27 @@
                                     <constraint firstAttribute="trailing" secondItem="Xh5-2a-BgU" secondAttribute="trailing" id="zdr-Nb-VfR"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiQ-4R-LVy" customClass="PlayBar" customModule="Tinnitus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="758" width="414" height="55"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="6TY-dM-gSG"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Qel-Wl-BvT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.015686274510000001" green="0.039215686270000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.95294117649999999" green="0.32549019610000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l4x-rP-3a7" firstAttribute="top" secondItem="xtj-Xs-96K" secondAttribute="top" id="0JZ-Gt-t67"/>
                             <constraint firstItem="l4x-rP-3a7" firstAttribute="leading" secondItem="BJh-1x-OXK" secondAttribute="leading" id="8G6-Sr-qeP"/>
+                            <constraint firstItem="YiQ-4R-LVy" firstAttribute="trailing" secondItem="BJh-1x-OXK" secondAttribute="trailing" id="IUz-5B-c0Z"/>
                             <constraint firstItem="BJh-1x-OXK" firstAttribute="bottom" secondItem="41y-Aa-GKP" secondAttribute="bottom" id="IpF-fx-V38"/>
+                            <constraint firstItem="YiQ-4R-LVy" firstAttribute="leading" secondItem="BJh-1x-OXK" secondAttribute="leading" id="Jx8-7o-0Pq"/>
                             <constraint firstItem="BJh-1x-OXK" firstAttribute="trailing" secondItem="41y-Aa-GKP" secondAttribute="trailing" id="YrL-dv-KMS"/>
                             <constraint firstItem="41y-Aa-GKP" firstAttribute="top" secondItem="l4x-rP-3a7" secondAttribute="bottom" id="ciE-xw-Wht"/>
                             <constraint firstItem="l4x-rP-3a7" firstAttribute="trailing" secondItem="BJh-1x-OXK" secondAttribute="trailing" id="dBr-KL-REL"/>
+                            <constraint firstItem="BJh-1x-OXK" firstAttribute="bottom" secondItem="YiQ-4R-LVy" secondAttribute="bottom" id="khU-C7-5Y8"/>
                             <constraint firstItem="41y-Aa-GKP" firstAttribute="leading" secondItem="BJh-1x-OXK" secondAttribute="leading" id="y4X-Sf-TXQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BJh-1x-OXK"/>
@@ -1410,6 +1421,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYx-mN-CWu" customClass="PlayBar" customModule="Tinnitus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="758" width="414" height="55"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="S7D-vg-Cgk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.015686274510000001" green="0.039215686270000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.95294117649999999" green="0.32549019610000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1418,6 +1436,9 @@
                             <constraint firstItem="DCM-cs-xSH" firstAttribute="trailing" secondItem="Afc-uJ-Db1" secondAttribute="trailing" id="Ha0-7U-Bsd"/>
                             <constraint firstAttribute="bottom" secondItem="Afc-uJ-Db1" secondAttribute="bottom" id="K4P-BM-bf7"/>
                             <constraint firstItem="Ohq-k8-OZK" firstAttribute="leading" secondItem="DCM-cs-xSH" secondAttribute="leading" id="Nbj-Ak-AAg"/>
+                            <constraint firstItem="jYx-mN-CWu" firstAttribute="leading" secondItem="DCM-cs-xSH" secondAttribute="leading" id="Omp-9p-RbL"/>
+                            <constraint firstItem="jYx-mN-CWu" firstAttribute="trailing" secondItem="DCM-cs-xSH" secondAttribute="trailing" id="Y5F-Wa-ASq"/>
+                            <constraint firstItem="DCM-cs-xSH" firstAttribute="bottom" secondItem="jYx-mN-CWu" secondAttribute="bottom" id="meL-Wb-KQN"/>
                             <constraint firstItem="Ohq-k8-OZK" firstAttribute="top" secondItem="CPP-uu-UJ9" secondAttribute="top" id="nlD-s2-VST"/>
                             <constraint firstItem="Afc-uJ-Db1" firstAttribute="leading" secondItem="DCM-cs-xSH" secondAttribute="leading" id="oWg-ov-qgy"/>
                             <constraint firstItem="Afc-uJ-Db1" firstAttribute="top" secondItem="Ohq-k8-OZK" secondAttribute="bottom" id="tiH-s5-r9d"/>
@@ -1428,6 +1449,7 @@
                     <connections>
                         <outlet property="firstFactBtnOutlet" destination="xgn-Bf-Wfq" id="F1U-9Z-3Zn"/>
                         <outlet property="fourthFactBtnOutlet" destination="JTw-G2-BpK" id="YD1-Gn-6BE"/>
+                        <outlet property="playBarContainerView" destination="jYx-mN-CWu" id="2Aq-9K-U20"/>
                         <outlet property="secondFactBtnOutlet" destination="CYc-Oc-mac" id="hx5-nJ-3jC"/>
                         <outlet property="thirdFactBtnOutlet" destination="B4i-Dj-pJY" id="rfw-IG-mqb"/>
                     </connections>
@@ -1559,14 +1581,24 @@
                                     <constraint firstAttribute="bottom" secondItem="bbT-QE-Hf2" secondAttribute="bottom" id="qde-0q-6cz"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57H-Pk-Mqh" customClass="PlayBar" customModule="Tinnitus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="807" width="414" height="55"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="P4P-sE-l2t"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.015686274509803921" green="0.039215686274509803" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="57H-Pk-Mqh" firstAttribute="leading" secondItem="I59-cc-r5C" secondAttribute="leading" id="5hP-6k-SL4"/>
                             <constraint firstItem="DiD-BN-sGB" firstAttribute="leading" secondItem="I59-cc-r5C" secondAttribute="leading" id="9K3-1D-n8G"/>
+                            <constraint firstItem="I59-cc-r5C" firstAttribute="bottom" secondItem="57H-Pk-Mqh" secondAttribute="bottom" id="IKq-Xg-nek"/>
                             <constraint firstItem="DiD-BN-sGB" firstAttribute="top" secondItem="pb5-wf-LWH" secondAttribute="top" id="Q4F-af-Baq"/>
                             <constraint firstAttribute="trailing" secondItem="DiD-BN-sGB" secondAttribute="trailing" id="SHh-Bo-C6b"/>
                             <constraint firstItem="I59-cc-r5C" firstAttribute="bottom" secondItem="sVL-Ij-88W" secondAttribute="bottom" id="UA6-Je-d9e"/>
                             <constraint firstItem="sVL-Ij-88W" firstAttribute="trailing" secondItem="I59-cc-r5C" secondAttribute="trailing" id="WM6-RF-rIP"/>
+                            <constraint firstItem="57H-Pk-Mqh" firstAttribute="trailing" secondItem="I59-cc-r5C" secondAttribute="trailing" id="sH8-jo-z6I"/>
                             <constraint firstItem="sVL-Ij-88W" firstAttribute="leading" secondItem="I59-cc-r5C" secondAttribute="leading" id="wOI-fi-0iz"/>
                             <constraint firstItem="sVL-Ij-88W" firstAttribute="top" secondItem="DiD-BN-sGB" secondAttribute="bottom" id="zpx-kt-W9O"/>
                         </constraints>

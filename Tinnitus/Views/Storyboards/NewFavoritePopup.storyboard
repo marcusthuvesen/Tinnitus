@@ -13,7 +13,7 @@
         <!--New Favorite PopupUI-->
         <scene sceneID="Sfp-af-ZuQ">
             <objects>
-                <viewController storyboardIdentifier="NewFavoritePopup" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KPN-OB-ILE" customClass="NewFavoritePopup_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewFavoritePopup" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KPN-OB-ILE" customClass="NewFavoritePopup_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOA-wb-3uF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

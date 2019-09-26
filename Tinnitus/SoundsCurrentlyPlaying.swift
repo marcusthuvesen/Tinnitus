@@ -48,9 +48,6 @@ class SoundsCurrentlyPlaying{
         } catch let error {
             print(error.localizedDescription)
         }
-        
-        NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: ["play" : true])
-        
     }
     
     func removeSound(fileName : String){
@@ -73,9 +70,6 @@ class SoundsCurrentlyPlaying{
                 removeSound(fileName: stopFileName)
             }
             counter += 1
-        }
-        if !areSoundsPlaying(){
-           NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: ["play" : false])
         }
     }
     

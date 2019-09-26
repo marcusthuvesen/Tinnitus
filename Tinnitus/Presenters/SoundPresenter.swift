@@ -20,7 +20,6 @@ protocol SoundDelegate : NSObjectProtocol{
 class SoundPresenter {
     weak private var soundDelegate : SoundDelegate?
     private var soundsCurrentlyPlaying = SoundsCurrentlyPlaying()
-    //private var playBar = PlayBar()
     private var audioNames = AudioFiles()
     private var firstSliderOutlet : UISlider?
     private var secondSliderOutlet : UISlider?
@@ -33,21 +32,21 @@ class SoundPresenter {
     
     func soundButtonClicked(senderOutlet : UIImageView, sender: UIButton){
         sender.isSelected = !sender.isSelected
-        print("soundbtnclicked \(sender.tag)")
         let soundName = audioNames.provideAudioName(senderTag: sender.tag)
         
         if sender.isSelected{
-            
             self.soundDelegate?.changeSliderImage(sender : sender, senderOutlet : senderOutlet, soundName : soundName)
             self.soundDelegate?.soundBtnSelected(senderOutlet : senderOutlet, soundName : soundName)
             soundsCurrentlyPlaying.saveCurrentSound(soundName: soundName)
+            NotificationCenter.default.post(name: Notification.Name("TriggerPlayBtn"), object: ["play" : true])
             
         } else {
             self.soundDelegate?.removeSliderImage(senderOutlet : sender)
             self.soundDelegate?.soundBtnUnselected(senderOutlet: senderOutlet, soundName: soundName)
+            if !soundsCurrentlyPlaying.areSoundsPlaying(){
+                NotificationCenter.default.post(name: Notification.Name("TriggerPlayBtn"), object: ["play" : false])
+            }
         }
-        
-        
     }
     
     func howManySoundsPlaying(soundBtnOutlets : [UIButton]) -> Int {

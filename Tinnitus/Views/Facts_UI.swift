@@ -10,12 +10,11 @@ import UIKit
 
 class Facts_UI: UIViewController, FactsDelegate {
    
-    
-    
     @IBOutlet weak var firstFactBtnOutlet: UIButton!
     @IBOutlet weak var secondFactBtnOutlet: UIButton!
     @IBOutlet weak var thirdFactBtnOutlet: UIButton!
     @IBOutlet weak var fourthFactBtnOutlet: UIButton!
+    @IBOutlet weak var playBarContainerView: PlayBar!
     
     let factsPresenter = FactsPresenter()
 
@@ -25,6 +24,9 @@ class Facts_UI: UIViewController, FactsDelegate {
         setupFactUI()
         setupFactsDelegate()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        factsPresenter.setPlayButtonUI()
+    }
     
     func setupFactUI(){
 //        firstFactBtnOutlet.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
@@ -32,6 +34,7 @@ class Facts_UI: UIViewController, FactsDelegate {
     
     func setupFactsDelegate(){
         factsPresenter.setFactsViewDelegate(factsDelegate : self)
+        
     }
     
     func displayText(specificTitleText: String, specificTextViewText : String) {

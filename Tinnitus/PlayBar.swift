@@ -15,86 +15,117 @@ class PlayBar: UIView {
     @IBOutlet weak var timerBtnOutlet: UIButton!
     @IBOutlet var playBarView: UIView!
     static var currentWindow = UIViewController()
-    var playBtnManuallySelected : Bool?
+    static var currentlyPlaying = false
+    static var playBtnManuallySelected : Bool?
+    static var observerAlreadySetup = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        print("In override init")
+        
+        //commonInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
+        if !PlayBar.observerAlreadySetup{
+            
+            print("In common init")
+            setupObservers()
+            PlayBar.observerAlreadySetup = true
+              playBtnOutlet.addTarget(self, action: #selector(self.playBtnAction(sender:)), for: .touchUpInside)
+        }
+    }
+    
+    func setupObservers(){
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.triggerPlayBtn),
+            name: Notification.Name("TriggerPlayBtn"),
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.changePlayImage),
+            name: Notification.Name("ChangePlayImage"),
+            object: nil)
     }
     
     func commonInit() {
         Bundle.main.loadNibNamed(kCONTENT_XIB_NAME, owner: self, options: nil)
         playBarView.fixInView(self)
-        
-        playBtnOutlet.addTarget(self, action: #selector(self.playBtnAction(sender:)), for: .touchUpInside)
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(self.changePlayBtnImage),
-            name: Notification.Name("ChangePlayImage"),
-            object: nil)
     }
     
-    @objc func changePlayBtnImage(notification: NSNotification){
-        print("received notification")
+    @objc func triggerPlayBtn(notification: NSNotification){
+        print("received notification in trigger \(PlayBar.currentlyPlaying)")
         if let dict = notification.object as? NSDictionary{
-            playBtnManuallySelected = dict["play"] as? Bool ?? false
+            PlayBar.playBtnManuallySelected = dict["play"] as? Bool ?? false
             playBtnAction(sender: playBtnOutlet)
         }
     }
     
+    @objc func changePlayImage(notification: NSNotification){
+        print("received notification playimage \(PlayBar.currentlyPlaying)")
+        if PlayBar.currentlyPlaying{
+            setButtonToSelected(sender: playBtnOutlet)
+        } else{
+            setButtonToUnSelected(sender: playBtnOutlet)
+        }
+    }
+    
+    func setButtonToSelected(sender : UIButton){
+        print("setting image to true")
+        sender.isSelected = true
+        PlayBar.currentlyPlaying = true
+        playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+    }
+    func setButtonToUnSelected(sender : UIButton){
+        sender.isSelected = false
+        PlayBar.currentlyPlaying = false
+        playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+    }
+    
     @objc func playBtnAction(sender: UIButton){
-        if let manuallySelectedPlay = playBtnManuallySelected{
+        
+        if let manuallySelectedPlay = PlayBar.playBtnManuallySelected{
+            
+            //IF TRUE
             if manuallySelectedPlay && PlayBar.currentWindow.isKind(of: FrequencyVC_UI.self){
-                print("received manually")
-                sender.isSelected = true
+                setButtonToSelected(sender: sender)
                 FrequencyVC_UI.toneOutPutUnit.start()
-                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-                
             }
             else if manuallySelectedPlay && PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
-                print("received manually")
-                sender.isSelected = true
+                setButtonToSelected(sender: sender)
                 SoundVC_UI.soundsCurrentlyPlaying.playAll()
-                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
             }
-            else if !manuallySelectedPlay && PlayBar.currentWindow.isKind(of: FrequencyVC_UI.self){
-                print("received manually false")
-                sender.isSelected = false
+                //IF FALSE
+            else if !manuallySelectedPlay{
+                setButtonToUnSelected(sender: sender)
                 FrequencyVC_UI.toneOutPutUnit.stop()
-                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
-            }
-            else if !manuallySelectedPlay && PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
-                print("received manually false")
-                sender.isSelected = false
                 SoundVC_UI.soundsCurrentlyPlaying.stopAll()
-                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
             }
-        }
-        else{
-            sender.isSelected = !sender.isSelected
             
-            if sender.isSelected{
-                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
-                
-                if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
-                    SoundVC_UI.soundsCurrentlyPlaying.playAll()
-                } else{
-                    FrequencyVC_UI.toneOutPutUnit.start()
-                }
-                
-            } else {
-                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
-                SoundVC_UI.soundsCurrentlyPlaying.stopAll()
-                FrequencyVC_UI.toneOutPutUnit.stop()
-            }
         }
-        
-        playBtnManuallySelected = nil
+        //        else{
+        //            sender.isSelected = !sender.isSelected
+        //            currentlyPlaying = sender.isSelected
+        //            if sender.isSelected{
+        //                playBtnOutlet.setImage(UIImage(named: "pause"), for: .normal)
+        //
+        //                if PlayBar.currentWindow.isKind(of: SoundVC_UI.self){
+        //                    SoundVC_UI.soundsCurrentlyPlaying.playAll()
+        //                } else{
+        //                    FrequencyVC_UI.toneOutPutUnit.start()
+        //                }
+        //
+        //            } else {
+        //                playBtnOutlet.setImage(UIImage(named: "play"), for: .normal)
+        //                SoundVC_UI.soundsCurrentlyPlaying.stopAll()
+        //                FrequencyVC_UI.toneOutPutUnit.stop()
+        //            }
+        //        }
+        print("is currentlyplaying \(PlayBar.currentlyPlaying)")
+        PlayBar.playBtnManuallySelected = nil
     }
     
     @IBAction func favoriteBtnAction(_ sender: Any) {

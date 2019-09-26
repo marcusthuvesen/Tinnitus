@@ -13,7 +13,7 @@
         <!--Premium PopupUI-->
         <scene sceneID="iUW-tk-6El">
             <objects>
-                <viewController storyboardIdentifier="PremiumPopup_UI" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="59c-xY-qYI" customClass="PremiumPopup_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PremiumPopup_UI" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="59c-xY-qYI" customClass="PremiumPopup_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zdq-hb-2N3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

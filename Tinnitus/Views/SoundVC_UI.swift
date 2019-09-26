@@ -46,7 +46,6 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         PlayBar.currentWindow = self
-        FrequencyVC_UI.toneOutPutUnit.stop()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,12 +53,8 @@ class SoundVC_UI: UIViewController, SoundDelegate{
         setupSoundDelegate()
         defaultThumbImage = firstSliderOutlet.currentThumbImage
         hideKeyboardWhenTappedAround()
+        
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: ["play" : false])
-    }
-   
     
     func setupSoundDelegate(){
         soundPresenter.setSoundViewDelegate(soundDelegate: self)
@@ -127,7 +122,6 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     func changeSliderImage(sender: UIButton, senderOutlet: UIImageView, soundName : String) {
-        print("changeSlider \(sender.tag)")
         let checkEmptySlider = checkNumberOfEmptySliders()
         var senderImage = sender.image(for: .normal)
         senderImage = senderImage?.resize(toWidth: 40)
@@ -168,7 +162,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     func removeSliderImage(senderOutlet : UIButton){
-        print("remove \(senderOutlet.tag)")
+        
         if firstSliderOutlet.tag == senderOutlet.tag{
             firstSliderOutlet.setThumbImage(defaultThumbImage, for: .normal)
             firstSliderSoundName = nil

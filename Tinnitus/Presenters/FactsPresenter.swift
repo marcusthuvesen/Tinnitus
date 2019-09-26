@@ -16,7 +16,12 @@ class FactsPresenter{
     
     weak private var factsDelegate : FactsDelegate?
     private var provideFactText = ProvideFactText()
-   
+    
+    func setPlayButtonUI(){
+        print("check image")
+        NotificationCenter.default.post(name: Notification.Name("ChangePlayImage"), object: nil)
+    }
+    
     func setFactsViewDelegate(factsDelegate : FactsDelegate){
         self.factsDelegate = factsDelegate
     }
