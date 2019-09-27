@@ -13,19 +13,26 @@ class AskForFeedbackUI: UIViewController {
     @IBOutlet weak var sendToRateOutlet: UIButton!
     @IBOutlet weak var askForFeedbackContainer: UIView!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var feedbackTitle: UILabel!
+    @IBOutlet weak var feedbackTextView: UITextView!
+    @IBOutlet weak var feedbackTextViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var askForFeedbackContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak var hiddenFeedbackOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         setupAskForFeedbackUI()
+        hideKeyboardWhenTappedAround()
     }
     
     func setupAskForFeedbackUI(){
+    hiddenFeedbackOutlet.premiumPopupContinueUI()
         leaveFeedbackOutlet.premiumPopupContinueUI()
         sendToRateOutlet.premiumPopupContinueUI()
         askForFeedbackContainer.normalButtonUI()
         avatarImage.goldBackground()
+        feedbackTextView.normalButtonUI()
         
     }
     
@@ -36,6 +43,19 @@ class AskForFeedbackUI: UIViewController {
         AppStoreReviewManager.requestReviewIfAppropriate()
     }
     @IBAction func leaveFeedbackBtn(_ sender: Any) {
+        feedbackTitle.text = "We love feedback!"
+        askForFeedbackContainerHeight.constant = CGFloat(420)
+        hiddenFeedbackOutlet.isHidden = false
+        leaveFeedbackOutlet.isHidden = true
+        sendToRateOutlet.isHidden = true
+        
+        feedbackTextViewHeight.constant = CGFloat(200)
+        UIView.animate(withDuration: 1) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    @IBAction func hiddenFeedbackBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

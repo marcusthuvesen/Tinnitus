@@ -7,28 +7,59 @@
 //
 
 import UIKit
+import MessageUI
 
-class Settings_UI: UIViewController {
+class Settings_UI: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var settingsPremiumOutlet: UIButton!
     let shareOnSocialMedia = ShareOnSocialMedia()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
        setupSettingsUI()
     }
     
     func setupSettingsUI(){
         settingsPremiumOutlet.premiumButtonUI()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+    }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["marcus.thuvesen@gmail.com"])
+            mail.setMessageBody("<p>What can i help you with? :)</p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            print("message couldn't be sent")
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 
+    @IBAction func aboutBtn(_ sender: UIButton) {
+     //   let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "About_UI") as! About_UI
+    //    tabBarController?.present(popOverVC, animated: true)
+    }
+    
     @IBAction func settingsPremiumBtn(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopup_UI") as! PremiumPopup_UI
-        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        popOverVC.modalPresentationStyle = .overCurrentContext
         tabBarController?.present(popOverVC, animated: true)
     }
     
+    @IBAction func supportBtn(_ sender: UIButton) {
+        sendEmail()
+    }
     
     @IBAction func rateUsBtn(_ sender: UIButton) {
         AppStoreReviewManager.requestReviewIfAppropriate()

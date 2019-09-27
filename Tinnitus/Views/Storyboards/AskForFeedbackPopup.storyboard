@@ -61,6 +61,27 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Aby-4L-Wg9">
+                                        <rect key="frame" x="20" y="110" width="334" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="kv2-iJ-Xel"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2q-Ge-bHN">
+                                        <rect key="frame" x="60" y="145" width="254" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="Dne-HH-qnG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Leave feedback"/>
+                                        <connections>
+                                            <action selector="hiddenFeedbackBtn:" destination="Nhg-YW-G0o" eventType="touchUpInside" id="RyG-MH-FUJ"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEw-ol-yg9">
                                         <rect key="frame" x="204.5" y="145" width="149.5" height="55"/>
                                         <color key="backgroundColor" red="0.97254901959999995" green="0.76862745099999996" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,16 +99,23 @@
                                 <color key="backgroundColor" red="0.018766748900000001" green="0.056721579510000002" blue="0.21490493760000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="1eg-Mi-3Ou" secondAttribute="bottom" constant="20" id="1yI-3j-HTJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="z2q-Ge-bHN" secondAttribute="trailing" constant="60" id="BNY-fM-Km4"/>
                                     <constraint firstAttribute="bottom" secondItem="VEw-ol-yg9" secondAttribute="bottom" constant="20" id="Fer-Fk-Vcu"/>
                                     <constraint firstItem="xYe-Sc-9dn" firstAttribute="top" secondItem="3aD-kq-rtr" secondAttribute="top" constant="70" id="Igy-IH-t9Z"/>
+                                    <constraint firstItem="z2q-Ge-bHN" firstAttribute="leading" secondItem="3aD-kq-rtr" secondAttribute="leading" constant="60" id="JP4-qw-5og"/>
                                     <constraint firstItem="1eg-Mi-3Ou" firstAttribute="leading" secondItem="3aD-kq-rtr" secondAttribute="leading" constant="20" id="N95-X9-Qy6"/>
                                     <constraint firstItem="afv-98-1f8" firstAttribute="leading" secondItem="3aD-kq-rtr" secondAttribute="leading" constant="5" id="Vho-4F-z67"/>
+                                    <constraint firstItem="1eg-Mi-3Ou" firstAttribute="top" secondItem="Aby-4L-Wg9" secondAttribute="bottom" constant="34" id="YCJ-PA-5ht"/>
                                     <constraint firstItem="VEw-ol-yg9" firstAttribute="width" secondItem="3aD-kq-rtr" secondAttribute="width" multiplier="4/10" id="aYY-hb-DQ2"/>
                                     <constraint firstItem="xYe-Sc-9dn" firstAttribute="leading" secondItem="3aD-kq-rtr" secondAttribute="leading" id="fh8-d9-F7d"/>
                                     <constraint firstAttribute="trailing" secondItem="xYe-Sc-9dn" secondAttribute="trailing" id="i5o-dI-jdv"/>
+                                    <constraint firstItem="Aby-4L-Wg9" firstAttribute="leading" secondItem="3aD-kq-rtr" secondAttribute="leading" constant="20" id="icL-mn-Gee"/>
                                     <constraint firstItem="afv-98-1f8" firstAttribute="top" secondItem="3aD-kq-rtr" secondAttribute="top" constant="8" id="oQt-Kg-EBb"/>
+                                    <constraint firstItem="Aby-4L-Wg9" firstAttribute="top" secondItem="xYe-Sc-9dn" secondAttribute="bottom" constant="10" id="qGk-6j-g5a"/>
                                     <constraint firstAttribute="trailing" secondItem="VEw-ol-yg9" secondAttribute="trailing" constant="20" id="sGS-3A-aNh"/>
+                                    <constraint firstAttribute="bottom" secondItem="z2q-Ge-bHN" secondAttribute="bottom" constant="20" id="xGI-6o-n1Y"/>
                                     <constraint firstAttribute="height" constant="220" id="y51-4h-rYq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aby-4L-Wg9" secondAttribute="trailing" constant="20" id="ynG-r4-fW4"/>
                                     <constraint firstItem="1eg-Mi-3Ou" firstAttribute="width" secondItem="3aD-kq-rtr" secondAttribute="width" multiplier="4/10" id="z9c-Xb-Hav"/>
                                 </constraints>
                             </view>
@@ -118,7 +146,12 @@
                     </view>
                     <connections>
                         <outlet property="askForFeedbackContainer" destination="3aD-kq-rtr" id="yxp-qX-3FN"/>
+                        <outlet property="askForFeedbackContainerHeight" destination="y51-4h-rYq" id="GFv-3s-idz"/>
                         <outlet property="avatarImage" destination="ApY-FL-rmo" id="c4Y-WT-iwf"/>
+                        <outlet property="feedbackTextView" destination="Aby-4L-Wg9" id="09m-3c-DMf"/>
+                        <outlet property="feedbackTextViewHeight" destination="kv2-iJ-Xel" id="IwY-JL-f9U"/>
+                        <outlet property="feedbackTitle" destination="xYe-Sc-9dn" id="SWq-Lb-Ipd"/>
+                        <outlet property="hiddenFeedbackOutlet" destination="z2q-Ge-bHN" id="sNw-NI-YkG"/>
                         <outlet property="leaveFeedbackOutlet" destination="1eg-Mi-3Ou" id="ccf-LL-DzF"/>
                         <outlet property="sendToRateOutlet" destination="VEw-ol-yg9" id="dng-pT-78i"/>
                     </connections>

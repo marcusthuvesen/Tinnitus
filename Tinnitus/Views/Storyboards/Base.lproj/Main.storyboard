@@ -711,12 +711,12 @@
             </objects>
             <point key="canvasLocation" x="1046" y="-759"/>
         </scene>
-        <!--Settings-->
+        <!--SettingsUI-->
         <scene sceneID="seQ-iW-mRr">
             <objects>
                 <viewController modalPresentationStyle="overCurrentContext" id="gAk-hL-rgk" customClass="Settings_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xtj-Xs-96K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-rP-3a7">
@@ -748,7 +748,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41y-Aa-GKP">
-                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xh5-2a-BgU">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
@@ -786,6 +786,10 @@
                                                                 <state key="normal" title="About">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="aboutBtn:" destination="gAk-hL-rgk" eventType="touchUpInside" id="VmU-9d-r4Y"/>
+                                                                    <segue destination="Cjg-zd-Ts4" kind="show" id="xSd-Cx-OkR"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -816,6 +820,9 @@
                                                                 <state key="normal" title="Support">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="supportBtn:" destination="gAk-hL-rgk" eventType="touchUpInside" id="io9-Oc-zH6"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1020,7 +1027,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YiQ-4R-LVy" customClass="PlayBar" customModule="Tinnitus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="758" width="414" height="55"/>
+                                <rect key="frame" x="0.0" y="807" width="414" height="55"/>
                                 <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="6TY-dM-gSG"/>
@@ -1044,14 +1051,83 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BJh-1x-OXK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-work-tool (1)" id="LMo-MR-a1k"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Q6j-Ce-Awj"/>
                     <connections>
                         <outlet property="settingsPremiumOutlet" destination="lD2-4W-uEQ" id="nvS-6Y-5bC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ob-lt-a3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044.9275362318842" y="2020.9821428571427"/>
+            <point key="canvasLocation" x="1955.072463768116" y="2020.9821428571427"/>
+        </scene>
+        <!--AboutUI-->
+        <scene sceneID="mne-vs-jOH">
+            <objects>
+                <viewController storyboardIdentifier="About_UI" id="Cjg-zd-Ts4" customClass="About_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2gx-Kc-9ja">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tR-sR-5R8" customClass="PlayBar" customModule="Tinnitus" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="807" width="414" height="55"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="pmr-yf-ybH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0g-g7-FH0">
+                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xX-tm-Mxz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-la-VaF">
+                                        <rect key="frame" x="0.0" y="94" width="414" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="RD2-UT-fiw"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TinAid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAV-Mm-pON">
+                                        <rect key="frame" x="165" y="35" width="84.5" height="48"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qIc-la-VaF" secondAttribute="bottom" id="Ais-iw-Cy2"/>
+                                    <constraint firstItem="qIc-la-VaF" firstAttribute="leading" secondItem="4xX-tm-Mxz" secondAttribute="leading" id="KrR-ox-rCB"/>
+                                    <constraint firstAttribute="height" constant="95" id="OFy-Se-4Fr"/>
+                                    <constraint firstItem="RAV-Mm-pON" firstAttribute="centerX" secondItem="4xX-tm-Mxz" secondAttribute="centerX" id="R4I-28-GDH"/>
+                                    <constraint firstAttribute="trailing" secondItem="qIc-la-VaF" secondAttribute="trailing" id="brQ-ua-Vpo"/>
+                                    <constraint firstItem="RAV-Mm-pON" firstAttribute="top" secondItem="4xX-tm-Mxz" secondAttribute="top" constant="35" id="ePS-cC-eq4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.015686274509803921" green="0.039215686274509803" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m0g-g7-FH0" firstAttribute="top" secondItem="4xX-tm-Mxz" secondAttribute="bottom" id="0xx-wc-1Lj"/>
+                            <constraint firstItem="m0g-g7-FH0" firstAttribute="trailing" secondItem="zhe-qe-MaI" secondAttribute="trailing" id="2lb-W6-sM2"/>
+                            <constraint firstItem="4xX-tm-Mxz" firstAttribute="leading" secondItem="zhe-qe-MaI" secondAttribute="leading" id="3bc-3o-7P4"/>
+                            <constraint firstItem="m0g-g7-FH0" firstAttribute="leading" secondItem="zhe-qe-MaI" secondAttribute="leading" id="8In-4s-alc"/>
+                            <constraint firstItem="zhe-qe-MaI" firstAttribute="bottom" secondItem="m0g-g7-FH0" secondAttribute="bottom" id="VYC-ky-HAH"/>
+                            <constraint firstItem="4xX-tm-Mxz" firstAttribute="top" secondItem="2gx-Kc-9ja" secondAttribute="top" id="Vfx-nO-Rv4"/>
+                            <constraint firstItem="0tR-sR-5R8" firstAttribute="leading" secondItem="zhe-qe-MaI" secondAttribute="leading" id="bRo-z5-CZ2"/>
+                            <constraint firstAttribute="trailing" secondItem="4xX-tm-Mxz" secondAttribute="trailing" id="kqt-E1-D3o"/>
+                            <constraint firstItem="0tR-sR-5R8" firstAttribute="trailing" secondItem="zhe-qe-MaI" secondAttribute="trailing" id="pBO-xw-tza"/>
+                            <constraint firstItem="0tR-sR-5R8" firstAttribute="bottom" secondItem="zhe-qe-MaI" secondAttribute="bottom" id="rPm-S4-AUF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zhe-qe-MaI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIJ-qx-Ln9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844.9275362318845" y="2009.5982142857142"/>
         </scene>
         <!--Cure-->
         <scene sceneID="tne-QT-ifu">
@@ -1344,12 +1420,12 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="462.72321428571428"/>
         </scene>
-        <!--Facts-->
+        <!--FactsUI-->
         <scene sceneID="qX1-eW-3f6">
             <objects>
                 <viewController id="XhM-Ma-LGD" customClass="Facts_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CPP-uu-UJ9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-k8-OZK">
@@ -1381,10 +1457,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Afc-uJ-Db1">
-                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="801"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgn-Bf-Wfq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="179.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="The cause of tinnitus" backgroundImage="background1"/>
@@ -1393,7 +1469,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYc-Oc-mac">
-                                        <rect key="frame" x="0.0" y="179.5" width="414" height="179.5"/>
+                                        <rect key="frame" x="0.0" y="200.5" width="414" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="To live with tinnitus" backgroundImage="background5"/>
@@ -1402,7 +1478,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4i-Dj-pJY">
-                                        <rect key="frame" x="0.0" y="359" width="414" height="179.5"/>
+                                        <rect key="frame" x="0.0" y="400.5" width="414" height="200.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Can it be cured?" backgroundImage="background6"/>
@@ -1411,7 +1487,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTw-G2-BpK">
-                                        <rect key="frame" x="0.0" y="538.5" width="414" height="179.5"/>
+                                        <rect key="frame" x="0.0" y="601" width="414" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Prevent more tinnitus" backgroundImage="background7"/>
@@ -1422,7 +1498,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYx-mN-CWu" customClass="PlayBar" customModule="Tinnitus" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="758" width="414" height="55"/>
+                                <rect key="frame" x="0.0" y="807" width="414" height="55"/>
                                 <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="S7D-vg-Cgk"/>
@@ -1445,20 +1521,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DCM-cs-xSH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Facts" image="knowledge" id="oKA-Ef-lc8"/>
+                    <navigationItem key="navigationItem" id="Ho1-8Z-E88">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1bA-6w-vdN"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstFactBtnOutlet" destination="xgn-Bf-Wfq" id="F1U-9Z-3Zn"/>
                         <outlet property="fourthFactBtnOutlet" destination="JTw-G2-BpK" id="YD1-Gn-6BE"/>
                         <outlet property="playBarContainerView" destination="jYx-mN-CWu" id="2Aq-9K-U20"/>
                         <outlet property="secondFactBtnOutlet" destination="CYc-Oc-mac" id="hx5-nJ-3jC"/>
                         <outlet property="thirdFactBtnOutlet" destination="B4i-Dj-pJY" id="rfw-IG-mqb"/>
+                        <segue destination="Fkx-Ty-2fH" kind="show" id="aUW-QW-3uh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixp-j2-Lu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem largeTitleDisplayMode="always" id="Ok5-rt-XrJ"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="1285"/>
+            <point key="canvasLocation" x="1955.072463768116" y="1284.375"/>
         </scene>
-        <!--Title-->
+        <!--Specific FactUI-->
         <scene sceneID="Ily-tG-CL0">
             <objects>
                 <viewController storyboardIdentifier="SpecificFact_UI" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fkx-Ty-2fH" customClass="SpecificFact_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
@@ -1483,28 +1563,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddC-j4-TU2">
-                                        <rect key="frame" x="8" y="56" width="70" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="DpB-ag-IUI"/>
-                                            <constraint firstAttribute="height" constant="30" id="hPc-iP-KLC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Back"/>
-                                        <connections>
-                                            <action selector="dismissVCBtn:" destination="Fkx-Ty-2fH" eventType="touchUpInside" id="c1Y-ah-XTK"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.023529411760000001" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="8Mz-Zz-s80"/>
                                     <constraint firstAttribute="trailing" secondItem="ijg-Os-KCf" secondAttribute="trailing" id="EsF-AZ-kgJ"/>
                                     <constraint firstAttribute="bottom" secondItem="ijg-Os-KCf" secondAttribute="bottom" id="Jgq-BO-rgc"/>
-                                    <constraint firstItem="ddC-j4-TU2" firstAttribute="leading" secondItem="DiD-BN-sGB" secondAttribute="leading" constant="8" id="UsQ-h9-0gp"/>
                                     <constraint firstItem="dt9-n9-jUw" firstAttribute="top" secondItem="DiD-BN-sGB" secondAttribute="top" constant="35" id="fVk-7B-BtC"/>
                                     <constraint firstItem="ijg-Os-KCf" firstAttribute="leading" secondItem="DiD-BN-sGB" secondAttribute="leading" id="iG0-AA-Ejo"/>
-                                    <constraint firstItem="ijg-Os-KCf" firstAttribute="top" secondItem="ddC-j4-TU2" secondAttribute="bottom" constant="8" id="nIc-YC-Kto"/>
                                     <constraint firstItem="dt9-n9-jUw" firstAttribute="centerX" secondItem="DiD-BN-sGB" secondAttribute="centerX" id="ni4-t8-Au5"/>
                                 </constraints>
                             </view>
@@ -1604,7 +1670,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I59-cc-r5C"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="IKr-yo-e17"/>
+                    <navigationItem key="navigationItem" id="IKr-yo-e17"/>
                     <connections>
                         <outlet property="specificFactTextView" destination="NmM-py-p6h" id="dqm-IP-EBf"/>
                         <outlet property="specificFactTitleLabel" destination="F7V-Ws-M2M" id="89V-lw-WoI"/>
@@ -1612,7 +1678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28n-jp-n4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915.9420289855075" y="1285.0446428571429"/>
+            <point key="canvasLocation" x="2826.0869565217395" y="1285.0446428571429"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kPf-eo-tP0">
@@ -1637,13 +1703,62 @@
                     <connections>
                         <segue destination="cjl-3Q-Pon" kind="relationship" relationship="viewControllers" id="kUF-CZ-VX9"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="1zr-Pa-2JS"/>
-                        <segue destination="XhM-Ma-LGD" kind="relationship" relationship="viewControllers" id="yQA-QT-l2X"/>
-                        <segue destination="gAk-hL-rgk" kind="relationship" relationship="viewControllers" id="tKP-s9-WGE"/>
+                        <segue destination="1cG-IW-YFU" kind="relationship" relationship="viewControllers" id="yQA-QT-l2X"/>
+                        <segue destination="hQw-hs-dpn" kind="relationship" relationship="viewControllers" id="tKP-s9-WGE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9M3-ZJ-bWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-929" y="508"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="qIu-9H-kWx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hQw-hs-dpn" customClass="SettingsNavigationController_UI" customModule="Tinnitus" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-work-tool (1)" id="LMo-MR-a1k"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="896"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="xxW-Rj-e8e">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gAk-hL-rgk" kind="relationship" relationship="rootViewController" id="eet-PH-1xQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbN-bt-xKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="2020.9821428571427"/>
+        </scene>
+        <!--Facts-->
+        <scene sceneID="iGP-oJ-IJJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1cG-IW-YFU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Facts" image="knowledge" id="oKA-Ef-lc8"/>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="dAd-eo-Ydh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XhM-Ma-LGD" kind="relationship" relationship="rootViewController" id="09W-AR-yb1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8uP-hv-LdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="1284.375"/>
         </scene>
     </scenes>
     <resources>

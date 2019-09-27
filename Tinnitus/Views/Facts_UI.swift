@@ -30,6 +30,10 @@ class Facts_UI: UIViewController, FactsDelegate {
     
     func setupFactUI(){
 //        firstFactBtnOutlet.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
     }
     
     func setupFactsDelegate(){
@@ -64,5 +68,15 @@ class Facts_UI: UIViewController, FactsDelegate {
         specificFactVC.factTextViewText = specificTextViewText
         tabBarController?.present(specificFactVC, animated: true)
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        
+//        // Create a variable that you want to send
+//        var newProgramVar = Program(category: "Some", name: "Text")
+//        
+//        // Create a new variable to store the instance of PlayerTableViewController
+//        let destinationVC = segue.destinationViewController as PlayerTableViewController
+//        destinationVC.programVar = newProgramVar
+//    }
     
 }

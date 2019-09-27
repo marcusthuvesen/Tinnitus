@@ -25,9 +25,5 @@ class SpecificFact_UI: UIViewController {
         specificFactTitleLabel.text = factTitleText
         specificFactTextView.text = factTextViewText
     }
-
-    @IBAction func dismissVCBtn(_ sender: Any) {
-        self.dismiss(animated: true, completion:    nil)
-    }
     
 }

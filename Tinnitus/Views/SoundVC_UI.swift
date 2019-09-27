@@ -185,7 +185,10 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
+        //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
+        let popOverVC = UIStoryboard(name: "AskForFeedbackPopup", bundle: nil).instantiateViewController(withIdentifier: "AskForFeedbackUI") as! AskForFeedbackUI
+        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        tabBarController?.present(popOverVC, animated: true)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
