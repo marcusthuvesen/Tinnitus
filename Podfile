@@ -8,5 +8,12 @@ target 'Tinnitus' do
   # Pods for Tinnitus
 
 	pod 'SwiftySound'
+	pod 'Firebase/Analytics'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
+        pod 'Firebase/Core'
+        pod 'Firebase/Messaging'
+        pod 'Firebase/Database'
+        pod 'Firebase/Crash'
 
 end

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class AskForFeedbackUI: UIViewController {
+class AskForFeedbackUI: UIViewController, AskForFeedbackDelegate{
+    
     @IBOutlet weak var leaveFeedbackOutlet: UIButton!
     @IBOutlet weak var sendToRateOutlet: UIButton!
     @IBOutlet weak var askForFeedbackContainer: UIView!
@@ -19,11 +20,14 @@ class AskForFeedbackUI: UIViewController {
     @IBOutlet weak var askForFeedbackContainerHeight: NSLayoutConstraint!
     @IBOutlet weak var hiddenFeedbackOutlet: UIButton!
     
+    let askForFeedbackPresenter = AskForFeedbackPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupAskForFeedbackUI()
         hideKeyboardWhenTappedAround()
+        setupAskForFeedbackDelegates()
     }
     
     func setupAskForFeedbackUI(){
@@ -33,7 +37,10 @@ class AskForFeedbackUI: UIViewController {
         askForFeedbackContainer.normalButtonUI()
         avatarImage.goldBackground()
         feedbackTextView.normalButtonUI()
-        
+    }
+    
+    func setupAskForFeedbackDelegates(){
+        askForFeedbackPresenter.setFeedbackViewDelegate(askForFeedbackDelegate: self)
     }
     
     @IBAction func dismissPopupBtn(_ sender: Any) {
@@ -55,6 +62,8 @@ class AskForFeedbackUI: UIViewController {
         }
     }
     @IBAction func hiddenFeedbackBtn(_ sender: Any) {
+        let feedbackText = feedbackTextView.text ?? "test"
+        askForFeedbackPresenter.sendFeedbackToFirebase(feedbackText: feedbackText)
         dismiss(animated: true, completion: nil)
     }
     

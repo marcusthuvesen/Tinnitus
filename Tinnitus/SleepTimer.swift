@@ -71,5 +71,4 @@ class SleepTimer{
         sleepTimerPopupPresenter?.runUpdateTimeEverySecond(hour: hour, minute: minute, second: second)
     }
    
-    
 }

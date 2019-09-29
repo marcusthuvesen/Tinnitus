@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import MediaPlayer
+import Firebase
 
 class SoundVC_UI: UIViewController, SoundDelegate{
     
