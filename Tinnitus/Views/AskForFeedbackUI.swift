@@ -62,7 +62,7 @@ class AskForFeedbackUI: UIViewController, AskForFeedbackDelegate{
         }
     }
     @IBAction func hiddenFeedbackBtn(_ sender: Any) {
-        let feedbackText = feedbackTextView.text ?? "test"
+        let feedbackText = feedbackTextView.text ?? ""
         askForFeedbackPresenter.sendFeedbackToFirebase(feedbackText: feedbackText)
         dismiss(animated: true, completion: nil)
     }

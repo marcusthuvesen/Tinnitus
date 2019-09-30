@@ -1457,10 +1457,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Afc-uJ-Db1">
-                                <rect key="frame" x="0.0" y="95" width="414" height="801"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="712"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgn-Bf-Wfq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="178"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="The cause of tinnitus" backgroundImage="background1"/>
@@ -1469,7 +1469,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYc-Oc-mac">
-                                        <rect key="frame" x="0.0" y="200.5" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="178" width="414" height="178"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="To live with tinnitus" backgroundImage="background5"/>
@@ -1478,7 +1478,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4i-Dj-pJY">
-                                        <rect key="frame" x="0.0" y="400.5" width="414" height="200.5"/>
+                                        <rect key="frame" x="0.0" y="356" width="414" height="178"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Can it be cured?" backgroundImage="background6"/>
@@ -1487,7 +1487,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTw-G2-BpK">
-                                        <rect key="frame" x="0.0" y="601" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="534" width="414" height="178"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <state key="normal" title="Prevent more tinnitus" backgroundImage="background7"/>
@@ -1510,13 +1510,13 @@
                         <constraints>
                             <constraint firstItem="Ohq-k8-OZK" firstAttribute="trailing" secondItem="DCM-cs-xSH" secondAttribute="trailing" id="Gqw-ar-eFB"/>
                             <constraint firstItem="DCM-cs-xSH" firstAttribute="trailing" secondItem="Afc-uJ-Db1" secondAttribute="trailing" id="Ha0-7U-Bsd"/>
-                            <constraint firstAttribute="bottom" secondItem="Afc-uJ-Db1" secondAttribute="bottom" id="K4P-BM-bf7"/>
                             <constraint firstItem="Ohq-k8-OZK" firstAttribute="leading" secondItem="DCM-cs-xSH" secondAttribute="leading" id="Nbj-Ak-AAg"/>
                             <constraint firstItem="jYx-mN-CWu" firstAttribute="leading" secondItem="DCM-cs-xSH" secondAttribute="leading" id="Omp-9p-RbL"/>
                             <constraint firstItem="jYx-mN-CWu" firstAttribute="trailing" secondItem="DCM-cs-xSH" secondAttribute="trailing" id="Y5F-Wa-ASq"/>
                             <constraint firstItem="DCM-cs-xSH" firstAttribute="bottom" secondItem="jYx-mN-CWu" secondAttribute="bottom" id="meL-Wb-KQN"/>
                             <constraint firstItem="Ohq-k8-OZK" firstAttribute="top" secondItem="CPP-uu-UJ9" secondAttribute="top" id="nlD-s2-VST"/>
                             <constraint firstItem="Afc-uJ-Db1" firstAttribute="leading" secondItem="DCM-cs-xSH" secondAttribute="leading" id="oWg-ov-qgy"/>
+                            <constraint firstItem="jYx-mN-CWu" firstAttribute="top" secondItem="Afc-uJ-Db1" secondAttribute="bottom" id="qPn-cb-His"/>
                             <constraint firstItem="Afc-uJ-Db1" firstAttribute="top" secondItem="Ohq-k8-OZK" secondAttribute="bottom" id="tiH-s5-r9d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DCM-cs-xSH"/>
@@ -1530,7 +1530,7 @@
                         <outlet property="playBarContainerView" destination="jYx-mN-CWu" id="2Aq-9K-U20"/>
                         <outlet property="secondFactBtnOutlet" destination="CYc-Oc-mac" id="hx5-nJ-3jC"/>
                         <outlet property="thirdFactBtnOutlet" destination="B4i-Dj-pJY" id="rfw-IG-mqb"/>
-                        <segue destination="Fkx-Ty-2fH" kind="show" id="aUW-QW-3uh"/>
+                        <segue destination="Fkx-Ty-2fH" kind="show" identifier="SpecificFact_UI_Segue" id="aUW-QW-3uh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixp-j2-Lu2" userLabel="First Responder" sceneMemberID="firstResponder"/>

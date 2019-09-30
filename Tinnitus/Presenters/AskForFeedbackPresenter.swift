@@ -21,9 +21,11 @@ class AskForFeedbackPresenter{
     }
     
     func sendFeedbackToFirebase(feedbackText : String){
-
-        let db = FirebasePath.databaseRef.child("Feedback").childByAutoId()
-        db.child("Feedback").setValue(feedbackText)
+        if feedbackText != ""{
+            let db = FirebasePath.databaseRef.child("Feedback").childByAutoId()
+            db.child("Feedback").setValue(feedbackText)
+        }
+        
     }
 
 }

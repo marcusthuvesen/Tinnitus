@@ -17,6 +17,8 @@ class Facts_UI: UIViewController, FactsDelegate {
     @IBOutlet weak var playBarContainerView: PlayBar!
     
     let factsPresenter = FactsPresenter()
+    var specificFactTitleText = ""
+    var specificFactText = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,7 @@ class Facts_UI: UIViewController, FactsDelegate {
     }
     
     func displayText(specificTitleText: String, specificTextViewText : String) {
-        pushToVC(specificFactTitleText: specificTitleText, specificTextViewText: specificTextViewText)
+        pushToVC(specificTitleText: specificTitleText, specificTextViewText: specificTextViewText)
     }
     
     
@@ -61,22 +63,21 @@ class Facts_UI: UIViewController, FactsDelegate {
         factsPresenter.factButtonSelected(buttonPressed: "Fourth")
     }
     
-    func pushToVC(specificFactTitleText : String, specificTextViewText : String){
-        let specificFactVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SpecificFact_UI") as! SpecificFact_UI
-        specificFactVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        specificFactVC.factTitleText = specificFactTitleText
-        specificFactVC.factTextViewText = specificTextViewText
-        tabBarController?.present(specificFactVC, animated: true)
+    func pushToVC(specificTitleText : String, specificTextViewText : String){
+        
+        specificFactTitleText = specificTitleText
+        specificFactText = specificTextViewText
+        self.performSegue(withIdentifier: "SpecificFact_UI_Segue", sender: self)
+
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        
-//        // Create a variable that you want to send
-//        var newProgramVar = Program(category: "Some", name: "Text")
-//        
-//        // Create a new variable to store the instance of PlayerTableViewController
-//        let destinationVC = segue.destinationViewController as PlayerTableViewController
-//        destinationVC.programVar = newProgramVar
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SpecificFact_UI_Segue" {
+            if let specificFactVC = segue.destination as? SpecificFact_UI {
+                specificFactVC.factTitleText = specificFactTitleText
+                specificFactVC.factTextViewText = specificFactText
+            }
+        }
+    }
     
 }
