@@ -50,6 +50,11 @@ class Settings_UI: UIViewController, MFMailComposeViewControllerDelegate {
      //   let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "About_UI") as! About_UI
     //    tabBarController?.present(popOverVC, animated: true)
     }
+    @IBAction func sendFeedbackBtn(_ sender: Any) {
+        let popOverVC = UIStoryboard(name: "AskForFeedbackPopup", bundle: nil).instantiateViewController(withIdentifier: "AskForFeedbackUI") as! AskForFeedbackUI
+        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        tabBarController?.present(popOverVC, animated: true)
+    }
     
     @IBAction func settingsPremiumBtn(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopup_UI") as! PremiumPopup_UI

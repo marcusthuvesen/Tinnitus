@@ -26,6 +26,7 @@
 		2529F191233F69F80086A5A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2529F190233F69F70086A5A2 /* GoogleService-Info.plist */; };
 		2529F193234120B60086A5A2 /* AskForFeedbackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2529F192234120B60086A5A2 /* AskForFeedbackPresenter.swift */; };
 		2529F1952341268D0086A5A2 /* FirebasePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2529F1942341268D0086A5A2 /* FirebasePath.swift */; };
+		2529F19723428B8D0086A5A2 /* PresentPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2529F19623428B8D0086A5A2 /* PresentPopup.swift */; };
 		253AABFE2316E72A003CEE16 /* PremiumPopupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253AABFD2316E72A003CEE16 /* PremiumPopupPresenter.swift */; };
 		253F16D5230D79470070C68F /* Facts_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253F16D4230D79470070C68F /* Facts_UI.swift */; };
 		254EA0E8231AAFFA008E2D64 /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */; };
@@ -102,18 +103,19 @@
 		2526D7D6230CA5E100D70005 /* PremiumPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PremiumPopup.storyboard; sourceTree = "<group>"; };
 		2526D7D8230CAAAF00D70005 /* PremiumPopup_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPopup_UI.swift; sourceTree = "<group>"; };
 		2529F184233167BD0086A5A2 /* SleepTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimer.swift; sourceTree = "<group>"; };
-		2529F186233B9B300086A5A2 /* HideKeyBoardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyBoardOnTap.swift; sourceTree = "<group>"; };
+		2529F186233B9B300086A5A2 /* HideKeyBoardOnTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HideKeyBoardOnTap.swift; path = ../HideKeyBoardOnTap.swift; sourceTree = "<group>"; };
 		2529F188233D39F60086A5A2 /* AskForFeedbackPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AskForFeedbackPopup.storyboard; sourceTree = "<group>"; };
 		2529F18A233D3E4D0086A5A2 /* AskForFeedbackUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForFeedbackUI.swift; sourceTree = "<group>"; };
 		2529F18C233E07C40086A5A2 /* About_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About_UI.swift; sourceTree = "<group>"; };
 		2529F18E233E17030086A5A2 /* SettingsNavigationController_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController_UI.swift; sourceTree = "<group>"; };
 		2529F190233F69F70086A5A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2529F192234120B60086A5A2 /* AskForFeedbackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForFeedbackPresenter.swift; sourceTree = "<group>"; };
-		2529F1942341268D0086A5A2 /* FirebasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePath.swift; sourceTree = "<group>"; };
+		2529F1942341268D0086A5A2 /* FirebasePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebasePath.swift; path = ../FirebasePath.swift; sourceTree = "<group>"; };
+		2529F19623428B8D0086A5A2 /* PresentPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PresentPopup.swift; path = ../PresentPopup.swift; sourceTree = "<group>"; };
 		253AABFD2316E72A003CEE16 /* PremiumPopupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPopupPresenter.swift; sourceTree = "<group>"; };
 		253F16D4230D79470070C68F /* Facts_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facts_UI.swift; sourceTree = "<group>"; };
-		254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
-		254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareOnSocialMedia.swift; sourceTree = "<group>"; };
+		254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppStoreReviewManager.swift; path = ../AppStoreReviewManager.swift; sourceTree = "<group>"; };
+		254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareOnSocialMedia.swift; path = ../ShareOnSocialMedia.swift; sourceTree = "<group>"; };
 		2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
 		2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPresenter.swift; sourceTree = "<group>"; };
 		2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
@@ -205,20 +207,16 @@
 			children = (
 				2581C236231FC1FF00A99EE4 /* SoundFiles */,
 				2526D7C522F9702500D70005 /* Info.plist */,
-				254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */,
 				2529F190233F69F70086A5A2 /* GoogleService-Info.plist */,
 				2529F184233167BD0086A5A2 /* SleepTimer.swift */,
-				254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */,
 				2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */,
 				2581C2482326E11700A99EE4 /* SoundsCurrentlyPlaying.swift */,
-				2529F186233B9B300086A5A2 /* HideKeyBoardOnTap.swift */,
 				2581C22E231EAC9500A99EE4 /* PlayBar.swift */,
-				2529F1942341268D0086A5A2 /* FirebasePath.swift */,
 				2526D7C022F9702500D70005 /* Assets.xcassets */,
+				25C97752230F0A2E000D0607 /* SupportFiles */,
 				2526D7CB22FB24EB00D70005 /* Models */,
 				2526D7CC22FB24F200D70005 /* Views */,
 				2526D7CD22FB24F900D70005 /* Presenters */,
-				25C97752230F0A2E000D0607 /* SupportFiles */,
 			);
 			path = Tinnitus;
 			sourceTree = "<group>";
@@ -297,6 +295,11 @@
 			children = (
 				2581C232231FB9E400A99EE4 /* SoundLibrary.xcassets */,
 				2526D7B922F9701C00D70005 /* AppDelegate.swift */,
+				254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */,
+				2529F186233B9B300086A5A2 /* HideKeyBoardOnTap.swift */,
+				254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */,
+				2529F1942341268D0086A5A2 /* FirebasePath.swift */,
+				2529F19623428B8D0086A5A2 /* PresentPopup.swift */,
 				2526D7C222F9702500D70005 /* LaunchScreen.storyboard */,
 			);
 			path = SupportFiles;
@@ -523,6 +526,7 @@
 				2529F18F233E17030086A5A2 /* SettingsNavigationController_UI.swift in Sources */,
 				2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */,
 				2581C282232F800800A99EE4 /* SleepTimerPopupPresenter.swift in Sources */,
+				2529F19723428B8D0086A5A2 /* PresentPopup.swift in Sources */,
 				254EA0EC231AF82A008E2D64 /* ShareOnSocialMedia.swift in Sources */,
 				2581C24F2329742B00A99EE4 /* NewFavoritePopup_UI.swift in Sources */,
 				2526D7BA22F9701C00D70005 /* AppDelegate.swift in Sources */,

@@ -180,16 +180,12 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
    
     func showSleepTimerPopup(){
-        let popOverVC = UIStoryboard(name: "SleepTimerPopup", bundle: nil).instantiateViewController(withIdentifier: "SleepTimerPopup_UI") as! SleepTimerPopup_UI
-        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        tabBarController?.present(popOverVC, animated: true)
+        presentPopup(UIStoryboardName: "SleepTimerPopup", WithIdentifier: "SleepTimerPopup_UI", tabBarController: tabBarController ?? nil)
     }
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
         //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-        let popOverVC = UIStoryboard(name: "AskForFeedbackPopup", bundle: nil).instantiateViewController(withIdentifier: "AskForFeedbackUI") as! AskForFeedbackUI
-        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        tabBarController?.present(popOverVC, animated: true)
+        presentPopup(UIStoryboardName: "AskForFeedbackPopup", WithIdentifier: "AskForFeedbackPopup", tabBarController: tabBarController ?? nil)
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
@@ -258,15 +254,11 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     func sendToPopup(){
-        let popOverVC = UIStoryboard(name: "PremiumPopup", bundle: nil).instantiateViewController(withIdentifier: "PremiumPopup_UI") as! PremiumPopup_UI
-        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        tabBarController?.present(popOverVC, animated: true)
+        presentPopup(UIStoryboardName: "PremiumPopup", WithIdentifier: "PremiumPopup_UI", tabBarController: tabBarController ?? nil)
     }
     
-    public func sendToFavoritePopup(){
-        let popOverFavoriteVC = UIStoryboard(name: "NewFavoritePopup", bundle: nil).instantiateViewController(withIdentifier: "NewFavoritePopup") as! NewFavoritePopup_UI
-        popOverFavoriteVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        tabBarController?.present(popOverFavoriteVC, animated: true)
+    func sendToFavoritePopup(){
+        presentPopup(UIStoryboardName: "NewFavoritePopup", WithIdentifier: "NewFavoritePopup", tabBarController: tabBarController ?? nil)
     }
     
     @IBAction func menuBtnOne(_ sender: Any) {
