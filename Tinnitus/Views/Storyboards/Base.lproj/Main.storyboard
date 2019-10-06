@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-3v-WPu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1873"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1873.0000000000002"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eux-lA-iJy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
@@ -70,7 +70,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hk-8E-SdI">
                                                         <rect key="frame" x="130.5" y="0.0" width="121" height="40"/>
-                                                        <state key="normal" title="Mechanic">
+                                                        <state key="normal" title="Public">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -79,7 +79,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zy3-2m-fJD">
                                                         <rect key="frame" x="261.5" y="0.0" width="120.5" height="40"/>
-                                                        <state key="normal" title="Favorites">
+                                                        <state key="normal" title="Sound Mixes">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -254,7 +254,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116.5" height="160"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="cicada">
+                                                        <state key="normal" image="train">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -265,7 +265,7 @@
                                                         <rect key="frame" x="132.5" y="0.0" width="117" height="160"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="fire">
+                                                        <state key="normal" image="crowd">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -276,7 +276,7 @@
                                                         <rect key="frame" x="265.5" y="0.0" width="116.5" height="160"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="flood">
+                                                        <state key="normal" image="airliner">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -296,7 +296,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116.5" height="160"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="cicada">
+                                                        <state key="normal" image="highway">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -340,7 +340,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mechanic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XG-bC-JuU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XG-bC-JuU">
                                                 <rect key="frame" x="16" y="608" width="382" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="FnX-Ni-1o9"/>
@@ -349,7 +349,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKO-YY-oeC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Mixes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKO-YY-oeC">
                                                 <rect key="frame" x="16" y="1064" width="382" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="wXg-B3-P6G"/>
@@ -1765,15 +1765,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="airliner" width="64" height="64"/>
         <image name="background1" width="259" height="110"/>
         <image name="background2" width="563" height="1002"/>
         <image name="background5" width="424" height="211"/>
         <image name="background6" width="562" height="182"/>
         <image name="background7" width="622" height="221"/>
         <image name="cicada" width="64" height="64"/>
+        <image name="crowd" width="64" height="64"/>
         <image name="ecg-lines (1)" width="32" height="32"/>
         <image name="fire" width="64" height="64"/>
         <image name="flood" width="64" height="64"/>
+        <image name="highway" width="64" height="64"/>
         <image name="knowledge" width="24" height="24"/>
         <image name="lock2" width="64" height="64"/>
         <image name="rain" width="64" height="64"/>
@@ -1782,6 +1785,7 @@
         <image name="star" width="64" height="64"/>
         <image name="storm" width="64" height="64"/>
         <image name="sunset" width="64" height="64"/>
+        <image name="train" width="64" height="64"/>
     </resources>
     <color key="tintColor" red="0.95294117647058818" green="0.32549019607843138" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

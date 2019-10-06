@@ -31,6 +31,10 @@
 		253F16D5230D79470070C68F /* Facts_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253F16D4230D79470070C68F /* Facts_UI.swift */; };
 		254EA0E8231AAFFA008E2D64 /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */; };
 		254EA0EC231AF82A008E2D64 /* ShareOnSocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */; };
+		25777193234A78C600DF5042 /* train.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777192234A78C600DF5042 /* train.wav */; };
+		25777195234A79DC00DF5042 /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777194234A79DC00DF5042 /* crowd.wav */; };
+		25777197234A7E8900DF5042 /* airliner.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777196234A7E8900DF5042 /* airliner.wav */; };
+		25777199234A838600DF5042 /* highway.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777198234A838600DF5042 /* highway.wav */; };
 		2581C229231DA9AD00A99EE4 /* ToneOutputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */; };
 		2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */; };
 		2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */; };
@@ -116,6 +120,10 @@
 		253F16D4230D79470070C68F /* Facts_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facts_UI.swift; sourceTree = "<group>"; };
 		254EA0E7231AAFFA008E2D64 /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppStoreReviewManager.swift; path = ../AppStoreReviewManager.swift; sourceTree = "<group>"; };
 		254EA0EB231AF82A008E2D64 /* ShareOnSocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareOnSocialMedia.swift; path = ../ShareOnSocialMedia.swift; sourceTree = "<group>"; };
+		25777192234A78C600DF5042 /* train.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = train.wav; sourceTree = "<group>"; };
+		25777194234A79DC00DF5042 /* crowd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crowd.wav; sourceTree = "<group>"; };
+		25777196234A7E8900DF5042 /* airliner.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = airliner.wav; sourceTree = "<group>"; };
+		25777198234A838600DF5042 /* highway.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = highway.wav; sourceTree = "<group>"; };
 		2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
 		2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPresenter.swift; sourceTree = "<group>"; };
 		2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
@@ -276,6 +284,10 @@
 				2581C242231FC70500A99EE4 /* beachWaves.wav */,
 				2581C23B231FC44200A99EE4 /* thunder.wav */,
 				2581C240231FC6CF00A99EE4 /* cicadas.wav */,
+				25777192234A78C600DF5042 /* train.wav */,
+				25777194234A79DC00DF5042 /* crowd.wav */,
+				25777196234A7E8900DF5042 /* airliner.wav */,
+				25777198234A838600DF5042 /* highway.wav */,
 			);
 			path = SoundFiles;
 			sourceTree = "<group>";
@@ -417,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2581C23D231FC44300A99EE4 /* rain.wav in Resources */,
+				25777199234A838600DF5042 /* highway.wav in Resources */,
 				2526D7C422F9702500D70005 /* LaunchScreen.storyboard in Resources */,
 				2581C23E231FC44300A99EE4 /* thunder.wav in Resources */,
 				2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */,
@@ -426,13 +439,16 @@
 				2581C23F231FC44300A99EE4 /* fire.wav in Resources */,
 				2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */,
 				2526D7C122F9702500D70005 /* Assets.xcassets in Resources */,
+				25777195234A79DC00DF5042 /* crowd.wav in Resources */,
 				2526D7BF22F9701C00D70005 /* Main.storyboard in Resources */,
 				2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */,
 				2529F191233F69F80086A5A2 /* GoogleService-Info.plist in Resources */,
+				25777197234A7E8900DF5042 /* airliner.wav in Resources */,
 				2581C233231FB9E400A99EE4 /* SoundLibrary.xcassets in Resources */,
 				2581C241231FC6CF00A99EE4 /* cicadas.wav in Resources */,
 				2581C24D2329675100A99EE4 /* NewFavoritePopup.storyboard in Resources */,
 				2581C27E232EB79200A99EE4 /* SleepTimerPopup.storyboard in Resources */,
+				25777193234A78C600DF5042 /* train.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

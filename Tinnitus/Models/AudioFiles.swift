@@ -27,13 +27,13 @@ struct AudioFiles {
         case 6:
             soundName = "cicadas"
         case 7:
-            soundName = "rain"
+            soundName = "train"
         case 8:
-            soundName = "rain"
+            soundName = "crowd"
         case 9:
-            soundName = "rain"
+            soundName = "airliner"
         case 10:
-           soundName = "rain"
+           soundName = "highway"
         case 11:
            soundName = "rain"
         case 12:
