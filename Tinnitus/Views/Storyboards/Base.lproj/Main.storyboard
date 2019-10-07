@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="YHO-3v-WPu">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1873.0000000000002"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1873"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eux-lA-iJy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="95"/>
@@ -307,7 +307,7 @@
                                                         <rect key="frame" x="132.5" y="0.0" width="117" height="160"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="fire">
+                                                        <state key="normal" image="coffee">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -318,7 +318,7 @@
                                                         <rect key="frame" x="265.5" y="0.0" width="116.5" height="160"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="flood">
+                                                        <state key="normal" image="city">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -1772,6 +1772,8 @@
         <image name="background6" width="562" height="182"/>
         <image name="background7" width="622" height="221"/>
         <image name="cicada" width="64" height="64"/>
+        <image name="city" width="64" height="64"/>
+        <image name="coffee" width="64" height="64"/>
         <image name="crowd" width="64" height="64"/>
         <image name="ecg-lines (1)" width="32" height="32"/>
         <image name="fire" width="64" height="64"/>

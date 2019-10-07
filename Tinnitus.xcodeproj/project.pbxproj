@@ -35,6 +35,8 @@
 		25777195234A79DC00DF5042 /* crowd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777194234A79DC00DF5042 /* crowd.wav */; };
 		25777197234A7E8900DF5042 /* airliner.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777196234A7E8900DF5042 /* airliner.wav */; };
 		25777199234A838600DF5042 /* highway.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777198234A838600DF5042 /* highway.wav */; };
+		2577719D234A949800DF5042 /* coffee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2577719C234A949800DF5042 /* coffee.wav */; };
+		2577719F234A984600DF5042 /* city.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2577719E234A984600DF5042 /* city.wav */; };
 		2581C229231DA9AD00A99EE4 /* ToneOutputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */; };
 		2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */; };
 		2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */; };
@@ -124,6 +126,8 @@
 		25777194234A79DC00DF5042 /* crowd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crowd.wav; sourceTree = "<group>"; };
 		25777196234A7E8900DF5042 /* airliner.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = airliner.wav; sourceTree = "<group>"; };
 		25777198234A838600DF5042 /* highway.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = highway.wav; sourceTree = "<group>"; };
+		2577719C234A949800DF5042 /* coffee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coffee.wav; sourceTree = "<group>"; };
+		2577719E234A984600DF5042 /* city.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = city.wav; sourceTree = "<group>"; };
 		2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
 		2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPresenter.swift; sourceTree = "<group>"; };
 		2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				25777194234A79DC00DF5042 /* crowd.wav */,
 				25777196234A7E8900DF5042 /* airliner.wav */,
 				25777198234A838600DF5042 /* highway.wav */,
+				2577719E234A984600DF5042 /* city.wav */,
+				2577719C234A949800DF5042 /* coffee.wav */,
 			);
 			path = SoundFiles;
 			sourceTree = "<group>";
@@ -442,11 +448,13 @@
 				25777195234A79DC00DF5042 /* crowd.wav in Resources */,
 				2526D7BF22F9701C00D70005 /* Main.storyboard in Resources */,
 				2586C568231AA15600D960A5 /* Onboarding.storyboard in Resources */,
+				2577719D234A949800DF5042 /* coffee.wav in Resources */,
 				2529F191233F69F80086A5A2 /* GoogleService-Info.plist in Resources */,
 				25777197234A7E8900DF5042 /* airliner.wav in Resources */,
 				2581C233231FB9E400A99EE4 /* SoundLibrary.xcassets in Resources */,
 				2581C241231FC6CF00A99EE4 /* cicadas.wav in Resources */,
 				2581C24D2329675100A99EE4 /* NewFavoritePopup.storyboard in Resources */,
+				2577719F234A984600DF5042 /* city.wav in Resources */,
 				2581C27E232EB79200A99EE4 /* SleepTimerPopup.storyboard in Resources */,
 				25777193234A78C600DF5042 /* train.wav in Resources */,
 			);

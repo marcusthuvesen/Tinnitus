@@ -185,7 +185,7 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
         //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-        presentPopup(UIStoryboardName: "AskForFeedbackPopup", WithIdentifier: "AskForFeedbackPopup", tabBarController: tabBarController ?? nil)
+        print("firstbtn")
     }
     @IBAction func secondSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)

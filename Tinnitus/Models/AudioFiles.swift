@@ -35,9 +35,9 @@ struct AudioFiles {
         case 10:
            soundName = "highway"
         case 11:
-           soundName = "rain"
+           soundName = "coffee"
         case 12:
-           soundName = "rain"
+           soundName = "city"
         case 13:
            soundName = "rain"
         default:
