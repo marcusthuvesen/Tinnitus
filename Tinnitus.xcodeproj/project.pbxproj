@@ -42,6 +42,7 @@
 		257771A5234BD02D00DF5042 /* waterfall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A4234BD02D00DF5042 /* waterfall.wav */; };
 		257771A7234BD14300DF5042 /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A6234BD14300DF5042 /* cat.wav */; };
 		257771A9234BD17C00DF5042 /* seagull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A8234BD17C00DF5042 /* seagull.wav */; };
+		257771AB234BD50600DF5042 /* snow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771AA234BD50600DF5042 /* snow.wav */; };
 		2581C229231DA9AD00A99EE4 /* ToneOutputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */; };
 		2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */; };
 		2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */; };
@@ -138,6 +139,7 @@
 		257771A4234BD02D00DF5042 /* waterfall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = waterfall.wav; sourceTree = "<group>"; };
 		257771A6234BD14300DF5042 /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat.wav; sourceTree = "<group>"; };
 		257771A8234BD17C00DF5042 /* seagull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = seagull.wav; sourceTree = "<group>"; };
+		257771AA234BD50600DF5042 /* snow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snow.wav; sourceTree = "<group>"; };
 		2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
 		2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPresenter.swift; sourceTree = "<group>"; };
 		2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				257771A4234BD02D00DF5042 /* waterfall.wav */,
 				257771A6234BD14300DF5042 /* cat.wav */,
 				257771A8234BD17C00DF5042 /* seagull.wav */,
+				257771AA234BD50600DF5042 /* snow.wav */,
 			);
 			path = SoundFiles;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				2581C243231FC70500A99EE4 /* beachWaves.wav in Resources */,
 				2529F189233D39F60086A5A2 /* AskForFeedbackPopup.storyboard in Resources */,
 				2581C23F231FC44300A99EE4 /* fire.wav in Resources */,
+				257771AB234BD50600DF5042 /* snow.wav in Resources */,
 				2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */,
 				2526D7C122F9702500D70005 /* Assets.xcassets in Resources */,
 				25777195234A79DC00DF5042 /* crowd.wav in Resources */,
