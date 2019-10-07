@@ -184,63 +184,9 @@ class SoundVC_UI: UIViewController, SoundDelegate{
     }
     
     @IBAction func firstSoundBtn(_ sender: UIButton) {
-        //soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-        print("firstbtn")
-    }
-    @IBAction func secondSoundBtn(_ sender: UIButton) {
         soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
     }
-    @IBAction func thirdSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func fourthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func fifthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func sixthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func seventhSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func eigthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func ninthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func tenthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func eleventhSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func twelfthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    @IBAction func thirteenthSoundBtn(_ sender: UIButton) {
-        soundPresenter.soundButtonClicked(senderOutlet: btnBackgroundImages[sender.tag-1], sender: sender)
-    }
-    
-    //Send To Premium Popup
-    @IBAction func fourteenthSoundBtn(_ sender: UIButton) {
-        sendToPopup()
-    }
-    @IBAction func fifteenthSoundBtn(_ sender: UIButton) {
-        sendToPopup()
-    }
-    @IBAction func sixteenthSoundBtn(_ sender: UIButton) {
-        sendToPopup()
-    }
-    @IBAction func seventeenthSoundBtn(_ sender: UIButton) {
-        sendToPopup()
-    }
-    @IBAction func eighteenthSoundBtn(_ sender: UIButton) {
-        sendToPopup()
-    }
-    
+
     @IBAction func firstSliderAction(_ sender: UISlider) {
         SoundVC_UI.soundsCurrentlyPlaying.changeVolumeOnSound(soundName: firstSliderSoundName, newValue: sender.value)
     }
