@@ -37,6 +37,11 @@
 		25777199234A838600DF5042 /* highway.wav in Resources */ = {isa = PBXBuildFile; fileRef = 25777198234A838600DF5042 /* highway.wav */; };
 		2577719D234A949800DF5042 /* coffee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2577719C234A949800DF5042 /* coffee.wav */; };
 		2577719F234A984600DF5042 /* city.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2577719E234A984600DF5042 /* city.wav */; };
+		257771A1234BCEEE00DF5042 /* bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A0234BCEED00DF5042 /* bird.wav */; };
+		257771A3234BD02000DF5042 /* wind.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A2234BD01F00DF5042 /* wind.wav */; };
+		257771A5234BD02D00DF5042 /* waterfall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A4234BD02D00DF5042 /* waterfall.wav */; };
+		257771A7234BD14300DF5042 /* cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A6234BD14300DF5042 /* cat.wav */; };
+		257771A9234BD17C00DF5042 /* seagull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 257771A8234BD17C00DF5042 /* seagull.wav */; };
 		2581C229231DA9AD00A99EE4 /* ToneOutputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */; };
 		2581C22B231E4F6600A99EE4 /* FrequencyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */; };
 		2581C22D231EAB0E00A99EE4 /* PlayBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */; };
@@ -128,6 +133,11 @@
 		25777198234A838600DF5042 /* highway.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = highway.wav; sourceTree = "<group>"; };
 		2577719C234A949800DF5042 /* coffee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coffee.wav; sourceTree = "<group>"; };
 		2577719E234A984600DF5042 /* city.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = city.wav; sourceTree = "<group>"; };
+		257771A0234BCEED00DF5042 /* bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird.wav; sourceTree = "<group>"; };
+		257771A2234BD01F00DF5042 /* wind.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wind.wav; sourceTree = "<group>"; };
+		257771A4234BD02D00DF5042 /* waterfall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = waterfall.wav; sourceTree = "<group>"; };
+		257771A6234BD14300DF5042 /* cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cat.wav; sourceTree = "<group>"; };
+		257771A8234BD17C00DF5042 /* seagull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = seagull.wav; sourceTree = "<group>"; };
 		2581C228231DA9AD00A99EE4 /* ToneOutputUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
 		2581C22A231E4F6600A99EE4 /* FrequencyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPresenter.swift; sourceTree = "<group>"; };
 		2581C22C231EAB0E00A99EE4 /* PlayBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayBarView.xib; sourceTree = "<group>"; };
@@ -294,6 +304,11 @@
 				25777198234A838600DF5042 /* highway.wav */,
 				2577719E234A984600DF5042 /* city.wav */,
 				2577719C234A949800DF5042 /* coffee.wav */,
+				257771A0234BCEED00DF5042 /* bird.wav */,
+				257771A2234BD01F00DF5042 /* wind.wav */,
+				257771A4234BD02D00DF5042 /* waterfall.wav */,
+				257771A6234BD14300DF5042 /* cat.wav */,
+				257771A8234BD17C00DF5042 /* seagull.wav */,
 			);
 			path = SoundFiles;
 			sourceTree = "<group>";
@@ -439,6 +454,7 @@
 				2526D7C422F9702500D70005 /* LaunchScreen.storyboard in Resources */,
 				2581C23E231FC44300A99EE4 /* thunder.wav in Resources */,
 				2526D7D7230CA5E100D70005 /* PremiumPopup.storyboard in Resources */,
+				257771A3234BD02000DF5042 /* wind.wav in Resources */,
 				2581C237231FC26300A99EE4 /* waves.wav in Resources */,
 				2581C243231FC70500A99EE4 /* beachWaves.wav in Resources */,
 				2529F189233D39F60086A5A2 /* AskForFeedbackPopup.storyboard in Resources */,
@@ -453,10 +469,14 @@
 				25777197234A7E8900DF5042 /* airliner.wav in Resources */,
 				2581C233231FB9E400A99EE4 /* SoundLibrary.xcassets in Resources */,
 				2581C241231FC6CF00A99EE4 /* cicadas.wav in Resources */,
+				257771A9234BD17C00DF5042 /* seagull.wav in Resources */,
 				2581C24D2329675100A99EE4 /* NewFavoritePopup.storyboard in Resources */,
 				2577719F234A984600DF5042 /* city.wav in Resources */,
+				257771A1234BCEEE00DF5042 /* bird.wav in Resources */,
 				2581C27E232EB79200A99EE4 /* SleepTimerPopup.storyboard in Resources */,
+				257771A7234BD14300DF5042 /* cat.wav in Resources */,
 				25777193234A78C600DF5042 /* train.wav in Resources */,
+				257771A5234BD02D00DF5042 /* waterfall.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
